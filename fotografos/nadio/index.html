@@ -24,7 +24,75 @@ footer{padding:35px 3.5vw;display:grid;grid-template-columns:1fr 1fr 1fr;align-i
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
 @media(max-width:760px){.topline{font-size:7px;padding:0 4vw}.topline span:last-child{display:none}header{height:66px;padding:0 5vw}header .menu{display:block}nav{display:none;position:absolute;top:66px;left:0;right:0;padding:28px 6vw;background:#090909f5;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:25px}nav.open{display:flex}.hero{padding:125px 5vw 28px;min-height:95svh}.hero-image{inset:27px 0 0 0}.hero-image:after{background:linear-gradient(90deg,#090909a8,transparent),linear-gradient(0deg,#090909 0%,transparent 55%,#09090955)}.hero-title-wrap{margin:14vh 0 10vh}.hero-title{font-size:clamp(82px,19vw,145px)}.hero-title .line-two{margin-left:6vw}.hero-title .serif-word{font-size:clamp(76px,17vw,130px);margin-left:28vw}.hero-note{position:relative;right:auto;bottom:auto;margin:28px 0 0 42%;width:155px}.hero-side{font-size:7px}.hero-bottom p{max-width:180px;font-size:9px}.scroll-cue{font-size:7px}.scroll-cue i{width:22px}.marquee{padding:12px 0}.manifesto{padding:105px 7vw;grid-template-columns:1fr;gap:25px}.manifesto h2{font-size:clamp(44px,10vw,70px)}.manifesto p{grid-column:1;margin:15px 0 0 auto}.portfolio{padding:85px 5vw 100px}.section-head{display:block;margin-bottom:38px}.section-head h2{font-size:clamp(60px,14vw,95px)}.section-head p{margin-top:20px}.project-grid{grid-template-columns:1fr 1fr;gap:8px}.project{min-height:300px}.project:nth-child(n){margin-top:0}.project:nth-child(2n){margin-top:65px}.project-info{left:12px;right:12px;bottom:13px;display:block}.project-info h3{font-size:27px;margin-bottom:7px}.project-info small{font-size:7px}.project-index{top:12px;left:12px}.statement{min-height:75vh;padding:100px 6vw}.statement h2{font-size:clamp(65px,14vw,105px)}.statement p{margin-left:20%;font-size:9px}.film{padding:90px 5vw 100px}.film-top{display:block}.film-top h2{font-size:clamp(55px,12vw,85px)}.film-stage{height:520px}.film-slide figcaption{font-size:clamp(40px,10vw,65px);left:20px;bottom:85px}.film-controls{right:12px;bottom:12px}.film-controls button{width:42px;height:42px}.services{padding:90px 7vw 100px}.services-head{display:block}.services-head h2{font-size:clamp(58px,13vw,90px)}.services-head p{margin:20px 0}.service{grid-template-columns:30px 1fr 24px;gap:12px;padding:22px 0}.service h3{font-size:32px}.service p{grid-column:2;grid-row:2;margin:0}.service .arrow{grid-column:3;grid-row:1}.contact{padding:105px 5vw 40px}.contact h2{font-size:clamp(76px,17vw,125px);margin:35px 0 55px}.contact h2 em{margin-left:12vw}.contact-bottom{align-items:start;flex-direction:column}.contact-link{padding:16px 17px}footer{grid-template-columns:1fr 1fr;padding:28px 5vw}footer strong{grid-column:1/-1}footer small:nth-child(2){grid-column:1}footer .end{text-align:right}}@media(max-width:390px){.hero-title{font-size:78px}.hero-title .serif-word{font-size:72px}.project{min-height:250px}.project-info h3{font-size:23px}.film-stage{height:440px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
+
+/* DARK CINEMATIC EDITORIAL — art-direction correction */
+:root{--black:#080808;--white:#eee9df;--grey:#a29a8d;--red:#b69a70;--line:#eee9df26;--serif:'Italiana',Georgia,serif;--sans:'Manrope',sans-serif;--mono:'DM Mono',monospace;--display:'Italiana',Georgia,serif}
+.topline{background:#11100e;color:#b69a70;border-bottom:1px solid #b69a7044}
+header{background:linear-gradient(180deg,#08080855,transparent);border-bottom-color:#eee9df24}
+header .brand{font-family:var(--serif);font-size:31px;font-weight:400;letter-spacing:.04em}
+nav a{font-family:var(--mono);letter-spacing:.16em}
+.hero-image{inset:27px 0 0 0;z-index:0}
+.hero-image img{filter:brightness(.54) saturate(.72) contrast(1.08);transform:scale(1.01);object-position:center 42%}
+.hero-image:after{background:linear-gradient(90deg,#080808d9 0%,#08080870 34%,transparent 75%),linear-gradient(0deg,#080808 0%,transparent 48%,#08080865 100%)}
+.hero>*:not(.hero-image){z-index:2}
+.hero-title{font-family:var(--serif);font-size:clamp(100px,17vw,245px);font-weight:400;letter-spacing:-.075em;line-height:.72}
+.hero-title .line-two{font-family:var(--serif);font-weight:400;letter-spacing:-.06em;-webkit-text-stroke:1px #eee9df99}
+.hero-title .serif-word{font-family:var(--serif);font-weight:400;color:#c4a77c;letter-spacing:-.07em}
+.hero-note{font-family:var(--sans);font-size:11px;line-height:1.9;letter-spacing:.04em;text-transform:none;color:#e1d9cc}
+.marquee{background:#11100e;color:#c4a77c;transform:none;border-color:#b69a7044;padding:19px 0}
+.marquee span{font:italic clamp(27px,3.5vw,48px)/1 var(--serif);letter-spacing:.015em;text-transform:none}
+.marquee span b{font-weight:400;color:#eee9df}
+.manifesto h2{font-family:var(--serif);font-size:clamp(48px,6.2vw,88px);line-height:1.02;font-weight:400;letter-spacing:-.035em}
+.portfolio{border-top-color:#b69a7033}
+.section-head h2,.film-top h2,.services-head h2{font-family:var(--serif);font-weight:400;letter-spacing:-.055em;line-height:.88;text-transform:none}
+.section-head h2 span,.film-top h2 em,.services-head h2 em{font-style:italic;color:#c4a77c}
+.project{background:#12110f;min-height:480px}
+.project img{filter:brightness(.72) saturate(.72);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .8s}
+.project:hover img{filter:brightness(.9) saturate(.9);transform:scale(1.045)}
+.project:after{background:linear-gradient(transparent 38%,#080808e8)}
+.project-info h3{font-family:var(--serif);font-size:clamp(32px,3.2vw,48px);font-weight:400}
+.statement{background:#11100e;color:var(--white);min-height:78vh;border-top:1px solid #b69a7033;border-bottom:1px solid #b69a7033}
+.statement:after{color:#eee9df08;font-family:var(--serif);font-weight:400;letter-spacing:-.06em}
+.statement h2{font-family:var(--serif);font-weight:400;letter-spacing:-.055em;line-height:.9;text-transform:none}
+.statement h2 em{color:#c4a77c}
+.statement p{color:#aaa196}
+.film-stage{width:100%;height:clamp(440px,66vw,780px);min-height:0;overflow:hidden;position:relative;background:#080808}
+.film-track{width:100%;height:100%;display:flex;align-items:stretch}
+.film-slide{display:block;position:relative;flex:0 0 100%;width:100%;min-width:100%;height:100%;min-height:100%;margin:0;padding:0;overflow:hidden}
+.film-slide img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center center;filter:brightness(.68) saturate(.78);transition:filter .8s,transform 1.2s}
+.film-slide:after{inset:0;background:linear-gradient(0deg,#080808d9 0%,transparent 58%),linear-gradient(90deg,#08080838,transparent 55%)}
+.film-slide figcaption{font-family:var(--serif);font-weight:400;letter-spacing:-.025em;text-shadow:0 2px 25px #0008}
+.film-slide figcaption small{color:#c4a77c}
+.film-controls button{border-color:#c4a77c66;background:#08080899}
+.film-controls button:hover{background:#c4a77c;color:#080808;border-color:#c4a77c}
+.services{border-top-color:#b69a7033}
+.service h3{font-family:var(--serif);font-weight:400}
+.contact{padding:150px 7vw 65px;border-top-color:#b69a7033}
+.contact:before{content:none}
+.contact-main{position:relative;z-index:1;max-width:1400px;margin:0 auto}
+.contact-main>.micro{display:block;position:relative;max-width:100%;margin:0 0 54px;padding:0 0 20px;border-bottom:1px solid #b69a7044;letter-spacing:.18em;line-height:1.8}
+.contact h2{position:relative;display:block;font:clamp(76px,13.5vw,190px)/.88 var(--serif);font-weight:400;letter-spacing:-.065em;text-transform:none;margin:0 0 80px;max-width:1100px;overflow-wrap:normal}
+.contact h2>em{display:block;position:relative;font:italic clamp(82px,14vw,200px)/.86 var(--serif);font-weight:400;letter-spacing:-.055em;color:#c4a77c;text-transform:none;margin:0 0 0 13vw}
+.contact-bottom{position:relative;z-index:2;padding-top:28px;border-top:1px solid #b69a7044}
+.contact-bottom p{font:12px/1.9 var(--sans);color:#aaa196;max-width:330px}
+.contact-link{border-color:#b69a70;color:#eee9df;font-family:var(--mono);letter-spacing:.1em}
+.contact-link b{color:#c4a77c}
+.contact-link:hover{background:#b69a70;color:#080808}
+footer{border-top-color:#b69a7033}
+footer strong{font-family:var(--serif);font-size:31px;font-weight:400;letter-spacing:.03em}
+@media(max-width:760px){
+ .hero-title{font-size:clamp(82px,18vw,138px)}
+ .hero-title .serif-word{font-size:clamp(76px,16vw,126px)}
+ .project{min-height:330px}
+ .film-stage{height:72svh;min-height:430px;max-height:680px}
+ .film-slide img{object-position:center center}
+ .contact{padding:100px 6vw 45px}
+ .contact-main>.micro{margin-bottom:38px}
+ .contact h2{font-size:clamp(68px,15vw,112px);line-height:.92;margin-bottom:55px}
+ .contact h2>em{font-size:clamp(70px,15vw,118px);margin-left:6vw;line-height:.95}
+}
+@media(max-width:390px){.film-stage{height:62svh;min-height:390px}.contact h2{font-size:64px}.contact h2>em{font-size:67px}}
+\n</style>
 </head>
 <body>
 <div class="grain"></div><div class="topline"><span>ESTÚDIO NÁDIO® — ANGOLA</span><span>IMAGEM · MEMÓRIA · MOVIMENTO</span><span>DESDE O PRIMEIRO OLHAR</span></div>
@@ -42,7 +110,7 @@ footer{padding:35px 3.5vw;display:grid;grid-template-columns:1fr 1fr 1fr;align-i
 <section class="statement"><div class="statement-inner reveal"><div class="micro">Uma nota sobre o tempo</div><h2>NÃO POSSO<br>PARAR O <em>tempo.</em><br>POSSO GUARDÁ-LO.</h2><p>Uma fotografia não devolve o dia. Devolve a sensação. O cheiro da festa, a voz de quem amas, a versão de ti que existia naquele instante.</p></div></section>
 <section class="film" id="filmes"><div class="film-top reveal"><div><div class="micro">04 / Sequências em movimento</div><h2>QUANDO A<br>IMAGEM <em>respira.</em></h2></div><div class="micro">FOTOGRAFIA + VIDEO</div></div><div class="film-stage reveal"><div class="film-track" id="track"><figure class="film-slide"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1900&q=90" alt="História de casamento"><figcaption><small>CAPÍTULO 01 — CASAMENTO</small>Um dia. Uma vida inteira.</figcaption></figure><figure class="film-slide"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1900&q=90" alt="Família e maternidade"><figcaption><small>CAPÍTULO 02 — MATERNIDADE</small>O amor antes do nome.</figcaption></figure><figure class="film-slide"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1900&q=90" alt="Retrato pessoal"><figcaption><small>CAPÍTULO 03 — RETRATO</small>A tua presença basta.</figcaption></figure></div><div class="film-controls"><button id="prev" aria-label="Anterior">←</button><button id="next" aria-label="Seguinte">→</button></div></div><div class="film-meta"><span id="counter">01 — 03</span><span>ARRASTA O OLHAR. FICA COM A MEMÓRIA.</span></div></section>
 <section class="services" id="servicos"><div class="services-head reveal"><div><div class="micro">05 / O meu ofício</div><h2>DUAS FORMAS<br>DE <em>sentir.</em></h2></div><p>Não vendo apenas ficheiros. Construo uma memória visual daquilo que não queres perder.</p></div><div class="service-list"><article class="service reveal"><span class="num">01</span><h3>Fotografia</h3><p>Casamentos, aniversários, maternidade e sessões pessoais. Imagens com intenção, sensibilidade e identidade.</p><span class="arrow">↗</span></article><article class="service reveal"><span class="num">02</span><h3>Videografia</h3><p>O som, o gesto, o movimento e a atmosfera. Filmes que te devolvem ao lugar onde tudo aconteceu.</p><span class="arrow">↗</span></article></div></section>
-<section class="contact" id="contacto"><div class="contact-main reveal"><div class="micro">06 / O próximo capítulo pode ser teu</div><h2>VAMOS<br>FAZER <em>história.</em></h2><div class="contact-bottom"><p>Conta-me o que estás a preparar. Uma celebração, uma nova fase, um retrato ou uma história que merece ser guardada.</p><a class="contact-link" href="https://wa.me/244939627443?text=Ol%C3%A1%20N%C3%A1dio%2C%20gostaria%20de%20conversar%20sobre%20uma%20sess%C3%A3o.">ABRIR CONVERSA NO WHATSAPP <b>↗</b></a></div></div></section>
+<section class="contact" id="contacto"><div class="contact-main reveal"><div class="micro">06 / O próximo capítulo pode ser teu</div><h2>Vamos<br><em>fazer história.</em></h2><div class="contact-bottom"><p>Conta-me o que estás a preparar. Uma celebração, uma nova fase, um retrato ou uma história que merece ser guardada.</p><a class="contact-link" href="https://wa.me/244939627443?text=Ol%C3%A1%20N%C3%A1dio%2C%20gostaria%20de%20conversar%20sobre%20uma%20sess%C3%A3o.">ABRIR CONVERSA NO WHATSAPP <b>↗</b></a></div></div></section>
 </main><footer><strong>NÁDIO®</strong><small>FOTOGRAFIA · FILME · ANGOLA<br>© <span id="year"></span> TODOS OS DIREITOS RESERVADOS</small><small class="end">O TEMPO PASSA.<br>A MEMÓRIA FICA.</small></footer>
 <script>
 const nav=document.getElementById('nav'),menu=document.getElementById('menu');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
