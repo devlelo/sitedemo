@@ -253,3 +253,169 @@ Never silently replace the chosen style with a safer or more familiar design dir
 **Choose the style. Commit to the style. Explore the style. Finish the style.**
 
 The design must be recognizable from the header to the footer.
+
+
+---
+
+# DESIGN MANIFEST — STRICT ART-DIRECTION STANDARD
+**Version:** 2.0  
+**Status:** Mandatory extension to all previous sections. This version takes precedence wherever older wording is permissive or ambiguous.
+
+## 11. STYLE FIDELITY IS A PASS/FAIL REQUIREMENT
+
+A style name is not a mood-board suggestion. It is a visual specification.
+
+The implementation must be recognizably faithful to the selected style across the entire page. A dark background, a fashionable font, oversized headings or a few animations do not prove style fidelity.
+
+Before implementation, create a short style fingerprint containing:
+- The defining visual principles of the selected style.
+- Its characteristic typography and type hierarchy.
+- Its characteristic composition and spatial behavior.
+- Its image treatment and art direction.
+- Its color logic, contrast and material qualities.
+- Its characteristic motion and transitions.
+- The visual patterns that would make the result belong to a different style.
+
+Use this fingerprint as a constraint during implementation and as a checklist during review.
+
+## 12. STYLE BOUNDARIES — DO NOT CONFUSE RELATED STYLES
+
+Styles may be combined only when the user explicitly approves the combination. Similarity is not permission to substitute one style for another.
+
+### Dark Cinematic Editorial
+**Core identity:** A film still translated into an immersive editorial website. The experience is atmospheric, photographic, emotionally paced and controlled.
+
+Required characteristics:
+- Photography and moving image are the dominant visual material, not decorative cards.
+- Deep blacks, charcoal, shadow, restrained warm neutrals and carefully controlled highlights.
+- Tonal depth, directional light, dark gradients, subtle grain and deliberate image contrast.
+- Refined editorial typography, usually expressive serif display typography paired with quiet, highly legible supporting type.
+- Large image-led compositions, cinematic crops, layered depth and intentional negative space.
+- Slow, deliberate transitions and restrained motion that supports atmosphere.
+- Pacing that feels like a sequence of scenes: establish, reveal, pause, intensify, resolve.
+- Captions, credits, metadata and navigation should feel like film/editorial apparatus.
+- The contact and footer sections must preserve the cinematic atmosphere and never become generic conversion blocks.
+
+Avoid:
+- Brutalist display typography as the dominant identity.
+- Loud primary-color slabs, aggressive geometric labels and poster-like graphic overload.
+- Random asymmetry whose only purpose is to look experimental.
+- Repeated card grids as the main visual language.
+- Constant motion, excessive parallax or effects that compete with the photography.
+- Treating a black background alone as cinematic direction.
+
+### Brutalist Editorial
+**Core identity:** Typography, structure and graphic confrontation. The page behaves like an experimental printed publication or cultural poster.
+
+Typical characteristics:
+- Monumental, often heavy or condensed typography.
+- Strong asymmetry, hard edges, exposed grids and deliberate structural tension.
+- High-contrast graphic blocks, bold rules, labels, numbers and annotations.
+- Visible layout mechanics and assertive editorial hierarchy.
+- More confrontational graphic composition than atmospheric image-led storytelling.
+
+Avoid calling a design Dark Cinematic Editorial merely because it uses black backgrounds and photography.
+
+### Editorial Luxury
+**Core identity:** Quiet refinement, precision, material quality and restraint. It is not automatically cinematic and not automatically minimalist.
+
+### Immersive Cinematic
+**Core identity:** Full-screen audiovisual immersion, scene-based transitions, spatial depth and controlled narrative movement. It may be combined with Dark Cinematic Editorial only when the user authorizes it.
+
+## 13. STYLE PURITY AND COMBINATION RULES
+
+- The selected style is the primary system, not one ingredient among several.
+- Do not let a secondary style dominate the primary style.
+- If combining styles, declare the primary style and the limited role of each secondary influence.
+- A style combination must be visible in the design system before coding.
+- Never silently replace the chosen style with a more familiar, easier or safer aesthetic.
+- Do not use a generic component library aesthetic as the foundation and then skin it.
+- Do not equate visual intensity with fidelity. More effects do not mean a more faithful result.
+
+## 14. COMPOSITIONAL INTEGRITY
+
+Every major composition must be checked for:
+- No accidental overlap between labels, headings, logos, images or CTAs.
+- No collisions at intermediate viewport widths.
+- Clear hierarchy and readable text over photography.
+- Intentional alignment, margins and negative space.
+- Image containers that fill their declared frame correctly.
+- Correct aspect ratio and object-fit behavior.
+- No accidental gaps caused by default margins, intrinsic image sizing or flex/grid overflow.
+- No clipped text unless clipping is a deliberate, tested art-direction decision.
+- No decorative background text obscuring foreground content.
+
+For full-frame image panels and slides:
+- The image must cover the complete frame using a deliberate crop.
+- The image element must fill the frame in both dimensions.
+- The slide itself must have zero unintended default figure margins.
+- The image must not distort.
+- The crop must be checked on desktop and mobile.
+- Controls and captions must remain legible without reducing the image to a small background strip.
+
+## 15. TYPOGRAPHY AND LAYOUT MUST NOT DRIFT
+
+Typography must match the selected style, not merely look fashionable.
+- Define display, editorial heading, body, caption, metadata and interface roles.
+- Avoid combining unrelated type personalities without a clear reason.
+- Check actual font loading and sensible fallbacks.
+- Check line wrapping at narrow, medium and wide widths.
+- Keep heading and supporting-copy relationships intentional.
+- Never allow a title, background wordmark or decorative type layer to collide unintentionally with another element.
+
+## 16. IMAGE ART DIRECTION AND HONESTY
+
+- Image selection, crop, light, contrast, color treatment and sequence are part of the design.
+- Use supplied client imagery when available and appropriate.
+- If placeholder imagery is used, label it clearly as temporary and do not present it as the client's actual portfolio.
+- Never invent client work, testimonials, awards, locations or credentials.
+- Do not use a visually convenient image if its subject contradicts the section's content.
+- Check every image URL and its rendered crop; broken or mismatched imagery is a release blocker.
+
+## 17. REQUIRED VALIDATION BEFORE RELEASE
+
+A project is not complete merely because it compiles, commits or deploys.
+
+Review at minimum:
+- Wide desktop.
+- Standard laptop.
+- Tablet.
+- Narrow mobile.
+- Mobile navigation open and closed.
+- Every carousel/slider state.
+- Every image-led section.
+- Contact CTA and all navigation destinations.
+- Reduced-motion behavior.
+- Text wrapping, overlap, overflow and image coverage.
+
+For each selected style, run a style-fidelity review:
+1. Can the style be recognized without reading the project brief?
+2. Does every major section belong to the same art direction?
+3. Are the strongest defining characteristics genuinely present?
+4. Are there visual elements that belong more strongly to another style?
+5. Is the result more than a generic template with stylistic decoration?
+6. Are the style's image, typography, composition and motion rules all working together?
+
+If any answer reveals a mismatch, revise before calling the work finished.
+
+Do not claim visual QA unless the rendered site was actually inspected at the relevant viewport sizes. Distinguish code review, deployment verification and visual browser testing.
+
+## 18. RELEASE BLOCKERS
+
+Do not declare completion while any of these remain:
+- Accidental text or image overlap.
+- Broken or incorrectly sized image panels.
+- Slider or navigation controls that fail.
+- Unintended horizontal overflow.
+- Missing or misleading contact links.
+- Mobile layouts that lose hierarchy or identity.
+- A visual direction that materially drifts from the user-selected style.
+- Placeholder assets presented as final client assets.
+
+## 19. FINAL EXECUTION RULE
+
+The assistant must not merely name the style. It must demonstrate the style through typography, composition, imagery, pacing, interaction and responsive behavior.
+
+When the user asks to “abuse” or fully explore a style, interpret that as a request for deeper fidelity to the style's defining language—not random decoration, uncontrolled effects or visual noise.
+
+**Style fidelity is mandatory. A successful deployment is not proof of a successful design.**
