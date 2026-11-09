@@ -1,0 +1,255 @@
+# DESIGN MANIFEST — CREATIVE DIRECTION SYSTEM
+
+**Version:** 1.0  
+**Purpose:** Establish a mandatory visual direction and design execution standard for every website and web application project.
+
+---
+
+## 1. CORE PRINCIPLE
+
+Never create a generic website when a defined visual identity is expected.
+
+The selected design style must control the entire visual experience, not merely decorate it.
+
+Do not produce a conventional template and add a few stylistic details afterward.
+
+Build the interface from the visual language of the selected style.
+
+**The goal is not to make a website look acceptable. The goal is to make its design recognizable, intentional, memorable and coherent.**
+
+## 2. MANDATORY STYLE SELECTION — BEFORE CODING
+
+Before starting any new visual project:
+
+1. Understand the project's purpose, audience and content.
+2. Present the user with a visual style selection catalog.
+3. Include reference images for each proposed style.
+4. Give each style a short explanation of its visual characteristics.
+5. Allow the user to select one style or combine multiple styles.
+6. Ask for confirmation of the chosen direction before implementation.
+
+Never assume the style based on the type of business.
+
+A photography website does not automatically require luxury design. A technology website does not automatically require futuristic design.
+
+The business category and visual style are separate decisions.
+
+If the user has already selected a style for the current project, do not ask again unnecessarily.
+
+## 3. STYLE CATALOG
+
+The catalog should include, but not be limited to:
+
+### Editorial and typography
+- Brutalist Editorial
+- Swiss / International Typographic
+- Editorial Luxury
+- Modernist Editorial
+- Experimental Typography
+- Newspaper / Magazine Layout
+
+### Digital and experimental
+- Experimental Art Direction
+- Immersive Cinematic
+- Digital Brutalism
+- Neo-Brutalism
+- Futuristic Interface
+- Retro-Futurism
+- Cyberpunk
+- Spatial / 3D Web Design
+
+### Visual and artistic
+- Memphis Design
+- Digital Collage
+- Avant-Garde
+- Surrealism
+- Organic / Biomorphic
+- Abstract Minimalism
+- Maximalism
+
+### Commercial and product
+- Modern Corporate
+- Premium Commerce
+- Minimal Product Design
+- Editorial Commerce
+- Dashboard / Data Visualization
+
+The catalog must evolve. Suggest other relevant styles when they offer a stronger creative direction.
+
+## 4. FULL-STYLE EXECUTION
+
+Once the user selects a style, apply it consistently to every relevant part of the project.
+
+### Typography
+- Select fonts that genuinely belong to the chosen style.
+- Use a deliberate combination of display, heading, body and utility fonts.
+- Define a complete typographic hierarchy.
+- Explore font weights, widths, sizes, letter spacing, line height and text transformations.
+- Use oversized typography when appropriate.
+- Do not default to Inter, Roboto or generic system fonts without a deliberate reason.
+- Typography must be a central design element, not an afterthought.
+
+### Color system
+- Establish a coherent palette based on the selected style.
+- Define primary, secondary, accent, background, surface, border and text colors.
+- Explore contrast and color relationships.
+- Avoid generic color combinations when a more distinctive palette is appropriate.
+
+### Layout and composition
+- Explore the full possibilities of the chosen style.
+- Use asymmetry, overlapping elements, unusual grids, editorial compositions and unconventional section structures when appropriate.
+- Do not force every section into identical cards.
+- Vary composition across the page while maintaining visual coherence.
+- Use whitespace intentionally.
+- Avoid repetitive, predictable layouts.
+
+### Navigation and header
+- Design the navigation according to the chosen visual identity.
+- Explore typography, positioning, transparency, borders, backgrounds and scroll behavior.
+- The header must feel integrated with the design rather than like a default component.
+
+### Hero section
+- Make the first screen visually distinctive.
+- Explore strong typography, image composition, layering, graphic elements and motion.
+- Communicate the project's identity immediately.
+- Avoid generic hero layouts unless specifically requested.
+
+### Buttons and interactions
+- Design buttons as part of the visual language.
+- Define hover, focus, active and disabled states.
+- Use transitions and micro-interactions where appropriate.
+- Avoid default browser-looking controls.
+
+### Images and visual assets
+- Use imagery that reinforces the selected art direction.
+- Consider image ratios, cropping, masks, overlays, filters and positioning.
+- Use image treatments consistently.
+- Never use random decorative assets that weaken the visual identity.
+
+### Sections and content
+- Every section must have its own compositional purpose.
+- Explore different layouts instead of repeating the same component pattern.
+- Use dividers, labels, numbers, captions, graphic elements and editorial details when appropriate.
+- Content hierarchy must support the design.
+
+### Footer
+- The footer is part of the design, not an afterthought.
+- Apply the selected typography, colors, grid, composition and interactions.
+- Explore distinctive closing compositions.
+- Avoid automatically using the standard three-column footer.
+
+### Responsive design
+- Preserve the visual identity on mobile.
+- Recompose layouts rather than merely shrinking desktop elements.
+- Adapt typography, image crops, spacing, navigation and interactions.
+- Never sacrifice the mobile experience for desktop aesthetics.
+
+## 5. MOTION AND INTERACTION
+
+Use motion as a design language, not decoration.
+
+Depending on the selected style, explore:
+
+- Scroll-triggered reveals.
+- Parallax and depth.
+- Text transitions.
+- Image transformations.
+- Horizontal scrolling.
+- Mask reveals.
+- Layered animations.
+- Cursor interactions.
+- Hover-driven compositions.
+- Section transitions.
+- Animated graphic elements.
+
+Motion must have a purpose and remain performant.
+
+Respect reduced-motion preferences and avoid interactions that obstruct usability.
+
+## 6. CREATIVE INTENSITY
+
+Do not stop at the safest interpretation of a style.
+
+Explore its strongest visual characteristics.
+
+For example, when the user selects Brutalist Editorial:
+
+- Use genuinely oversized typography.
+- Experiment with asymmetrical composition.
+- Explore unconventional grids.
+- Use strong visual contrast.
+- Combine typography and photography as compositional elements.
+- Use editorial labels, annotations, numbers and graphic marks.
+- Make the footer and navigation follow the same art direction.
+- Avoid turning the design into an ordinary minimal website with a bold heading.
+
+When the user selects another style, apply the same level of commitment to that style's own characteristics.
+
+**Do not confuse creativity with adding random effects. Every decision must reinforce the chosen visual identity.**
+
+## 7. DESIGN SYSTEM BEFORE IMPLEMENTATION
+
+Before building the page, define:
+
+- Selected style.
+- Art direction.
+- Font families and roles.
+- Color palette.
+- Typographic scale.
+- Layout principles.
+- Image treatment.
+- Component language.
+- Motion principles.
+- Responsive behavior.
+
+These decisions must guide implementation.
+
+## 8. QUALITY CONTROL
+
+Before declaring the project complete, review the entire experience.
+
+### Visual consistency
+- Does the complete page follow the selected style?
+- Are the fonts appropriate?
+- Are all sections visually coherent?
+- Do buttons, navigation and footer belong to the same design system?
+- Does the mobile version preserve the identity?
+
+### Creative quality
+- Does the website have a recognizable visual identity?
+- Are the compositions sufficiently distinctive?
+- Have the style's strongest characteristics been explored?
+- Does the result avoid generic template aesthetics?
+
+### Functional quality
+- Are all links working?
+- Are navigation and interactions functional?
+- Are forms and CTAs operational?
+- Are animations smooth?
+- Is the page responsive?
+- Is accessibility considered?
+
+Do not sacrifice usability, accessibility or performance for visual effects.
+
+## 9. PRESERVE EXISTING FUNCTIONALITY
+
+When modifying an existing project:
+
+- Inspect the current code before making changes.
+- Preserve working functionality unless the user requests otherwise.
+- Do not rewrite unrelated components.
+- Do not change established content or behavior without a reason.
+- Make design improvements without introducing regressions.
+- Test the result after implementation.
+
+## 10. FINAL RULE
+
+The user chooses the style.
+
+The assistant is responsible for exploring it deeply and translating it into a complete visual experience.
+
+Never silently replace the chosen style with a safer or more familiar design direction.
+
+**Choose the style. Commit to the style. Explore the style. Finish the style.**
+
+The design must be recognizable from the header to the footer.
