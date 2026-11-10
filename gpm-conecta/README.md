@@ -35,14 +35,17 @@ A GPM consulta fornecedores manualmente na primeira fase. A arquitetura deverá 
 
 ## Primeira implementação visual
 
-A primeira interface institucional e de descoberta do marketplace está em `index.html`, com estilos em `styles.css` e interações de navegação/catálogo em `app.js`. A direção aprovada é Neo-Industrial Field Manual, adaptada à identidade oficial da GPM: branco `#FFFFFF`, azul-marinho `#0A2945` e dourado `#CE9E53`. O catálogo apresenta um estado vazio honesto até existirem produtos reais validados. Esta versão é frontend estático e não processa pedidos nem autenticação.
+A interface institucional está em `index.html`. O catálogo dedicado está em `catalogo.html` e as fichas individuais em `produto.html`. Os estilos partilhados estão em `styles.css`; as interações institucionais e de catálogo usam `app.js`, `catalog.js` e `product.js`. A direção aprovada é Neo-Industrial Field Manual, adaptada à identidade oficial da GPM: branco `#FFFFFF`, azul-marinho `#0A2945` e dourado `#CE9E53`. O catálogo apresenta um estado vazio honesto até existirem produtos reais validados. Esta versão é frontend estático e não processa pedidos nem autenticação.
 
 ## Estrutura
 
 - `docs/PRODUCT_SPEC.md`: requisitos e jornadas.
 - `docs/ARCHITECTURE.md`: arquitetura e fronteiras entre módulos.
 - `docs/INTEGRATIONS.md`: estratégia para APIs, gateways e fornecedores.
-- `docs/DESIGN_BRIEF.md`: shortlist de direções visuais e decisão pendente.
+- `docs/DESIGN_BRIEF.md`: fingerprint visual aprovado e identidade oficial.
+- `docs/CATALOG.md`: modelo de dados, regras e limites do catálogo público.
+- `catalogo.html` e `produto.html`: descoberta pública e ficha de produto.
+- `products.js`, `catalog.js` e `product.js`: dados e interações do catálogo.
 
 ## Base tecnológica
 
