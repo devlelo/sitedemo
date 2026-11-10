@@ -1,9 +1,9 @@
 # DESIGN & DEVELOPMENT QUALITY CONSTITUTION
-## Master Manifest — Version 3.0
+## Master Manifest — Version 4.0
 
 **Status:** Mandatory operating standard for every new project, redesign, feature addition, bug fix, refactor, and code modification in this repository.
 **Scope:** Websites, web applications, landing pages, corporate websites, portfolios, catalogs, e-commerce, restaurant menus, rental-car platforms, booking systems, dashboards, directories, PWAs, offline applications, and other digital products.
-**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 3.0 wins.
+**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.0 wins.
 
 ---
 
@@ -541,3 +541,268 @@ The assistant must not take shortcuts by repeating a familiar design, diluting a
 **Understand the product. Read the manifest. Recommend the right styles. Let the user choose. Create a distinct identity. Execute with fidelity. Preserve what works. Test honestly. Deliver with evidence.**
 
 **The goal is not to make every project look like the last successful project. The goal is to make every project look like itself.**
+
+
+---
+
+# PART VIII — VERSION 4.0: ANTI-REPETITION, STYLE INTEGRITY, AND UNIVERSAL PROJECT READINESS
+
+This part strengthens and clarifies the rules above. If any earlier wording is interpreted as allowing a weaker standard, this Part takes precedence.
+
+## 28. ZERO-TOLERANCE DESIGN REPETITION SYSTEM
+
+The assistant must actively prevent visual and structural repetition across projects—not merely try to be creative.
+
+A new project must not inherit the previous project's visual formula by default. This prohibition applies even when:
+- The projects belong to different industries.
+- The projects belong to the same industry.
+- The same developer is building them.
+- The same framework or component library is used.
+- The previous design received positive feedback.
+- Reusing the previous structure would be faster.
+
+### 28.1 What counts as repetition
+
+Repetition includes, but is not limited to:
+- Reusing the same hero composition, headline placement, image arrangement, or CTA position.
+- Reusing the same sequence of sections.
+- Reusing the same card shapes, grids, borders, radii, shadows, and spacing patterns.
+- Reusing the same typography pairing or scale without a project-specific reason.
+- Reusing the same navigation treatment, footer structure, decorative marks, or background effects.
+- Reusing the same animation choreography, scroll effects, hover behavior, or transition timings.
+- Reusing the same color logic and merely changing the accent color.
+- Reusing a previous site's layout and replacing its text, images, and logo.
+- Producing several websites that look like variations of one assistant-made template.
+
+Changing the content, brand name, photos, or palette does not make a repeated design original.
+
+### 28.2 Mandatory cross-project audit
+
+Before proposing a new visual concept, inspect the other relevant projects in the repository and, when available, their recent design decisions.
+
+Create a short internal comparison covering:
+1. Recent projects and their visual identities.
+2. Repeated compositions or component patterns.
+3. Repeated section sequences and interaction patterns.
+4. Patterns that must be avoided in this new project.
+5. The new project's distinct visual signature.
+
+If repository history is unavailable, state that limitation and do not pretend to have completed the comparison.
+
+### 28.3 Distinctiveness requirement
+
+Every new project must have at least:
+- A project-specific art-direction concept.
+- A distinct hero or opening experience.
+- A deliberate information architecture suited to its actual purpose.
+- A unique composition and section rhythm.
+- A project-specific component language.
+- A motion and interaction approach derived from its chosen style.
+- A reasoned image and typography direction.
+
+These are not a demand for arbitrary novelty. Use familiar patterns only when they serve the user's task, and reinterpret them through the approved identity.
+
+### 28.4 Reuse is allowed only at the engineering level
+
+Reusable code, accessible primitives, utility functions, tested form logic, and neutral infrastructure may be reused when appropriate.
+
+However, engineering reuse must not silently become visual reuse. A component may be reused only after its appearance, composition, states, and behavior have been adapted to the current project's approved design system.
+
+A previous project's visual design is not a default starter template.
+
+## 29. STYLE PURITY IS A HARD CONSTRAINT
+
+The selected style must remain the single governing visual language unless the user explicitly approves a combination.
+
+The assistant must not:
+- Add visual traces of another style because they are fashionable.
+- Insert a brutalist label, cyberpunk glow, luxury serif, glassmorphism panel, editorial grid, or other recognizable language into a different style without approval.
+- Combine styles unconsciously through typography, color, layout, image treatment, motion, or components.
+- Use a selected style for the hero and then revert to generic template sections.
+- Use a style name as an excuse for superficial decoration.
+- Treat a reference image as permission to copy unrelated elements from other styles.
+
+### 29.1 Style purity test
+
+Before delivery, inspect every major page section and ask:
+- Does this section belong to the selected style?
+- Is any element importing a recognizable second style?
+- Is the component's visual language consistent with the style fingerprint?
+- Does the page maintain one coherent design logic from navigation to footer?
+- Have generic defaults diluted the selected style?
+
+If any answer reveals unapproved contamination, correct it before completion.
+
+### 29.2 Do not confuse product architecture with visual style
+
+A product type is not a visual style. A catalog, rental-car website, digital menu, corporate site, booking platform, or portfolio describes what the product does—not how it must look.
+
+Likewise, selecting a visual style does not mean copying a prebuilt template. The assistant must design the correct product architecture and express it through the approved style.
+
+If the user selects a named style, execute that style as the governing identity. Do not quietly reinterpret the request as a hybrid, a template category, or a different style.
+
+## 30. MANDATORY STYLE DISCOVERY FOR EVERY NEW VISUAL PROJECT
+
+Before writing or changing visual code for a new website, page, interface, or visual redesign, the assistant must complete this sequence:
+
+**Step A — Understand the project**
+- Identify the product type and business model.
+- Understand the audience, context, needs, and likely behavior.
+- Understand the user's essence from information they have actually supplied: taste, personality, brand values, positioning, references, and dislikes.
+- Identify the content, real assets, functional requirements, and technical constraints.
+- Establish the main user journey and desired outcome.
+
+Do not invent the user's personality or preferences. If the user's essence is not sufficiently clear and it materially affects the direction, ask a concise question.
+
+**Step B — Recommend styles for this exact project**
+- Present 4–7 suitable styles, selected specifically for this niche, audience, product, and user identity.
+- Ensure the options are genuinely different from one another, not minor palette variations.
+- Explain why each style is suitable and what experience it creates.
+- Include visual references or reference images whenever available and useful.
+- Include at least one less-obvious creative option when it is credible for the project.
+- Explain trade-offs such as conversion clarity, trust, atmosphere, visual experimentation, content density, and performance.
+- Do not recommend a style simply because it was used in the previous project.
+
+**Step C — Let the user decide**
+- The user may choose one style, request more suggestions, or explicitly authorize a combination.
+- Do not begin visual implementation until the user has selected and confirmed the direction.
+- Do not treat silence, a business category, or a reference to another website as approval to invent a style.
+- If the user has already chosen the style for this project, preserve that choice and do not ask them to repeat it.
+
+**Step D — Lock the direction**
+After approval, write the style fingerprint, anti-pattern list, originality distinction, and product-specific experience plan. Treat them as constraints during implementation and QA.
+
+This process applies to every visual product, whether it is a corporate website, institutional website, online store, product catalog, rental-car platform, digital restaurant menu, personal portfolio, booking site, dashboard, PWA, campaign page, or an entirely new type of product.
+
+## 31. USER ESSENCE AND BRAND ESSENCE MUST INFORM THE DESIGN
+
+The assistant must not design only for the industry. It must design for the actual person, brand, or organization behind the project.
+
+Consider, when supplied:
+- Personality and communication style.
+- Brand values and positioning.
+- Desired perception.
+- Audience relationship.
+- Visual taste and references.
+- Level of formality or experimentation.
+- Cultural and local context.
+- What the user wants to communicate and what they explicitly do not want.
+
+The same niche can support very different design directions. Two photographers may require opposite visual identities; two restaurants may have different audiences and service models; two rental-car companies may need different positioning and booking experiences.
+
+Do not impose stereotypes based on geography, industry, price level, or assumptions about the user's identity.
+
+The design must express the actual brief, not the assistant's generic idea of what that business should look like.
+
+## 32. UNIVERSAL PRODUCT-TYPE DISCOVERY MATRIX
+
+The assistant must be prepared to design for a broad range of products. The following is a minimum reference list, not a closed taxonomy.
+
+### Business and institutional
+- Corporate and institutional websites.
+- Company profiles and service businesses.
+- Agencies, consultancies, professional services, and B2B providers.
+- Local businesses and single-location service providers.
+- Nonprofits, churches, communities, and public-interest organizations.
+
+### Commerce and product discovery
+- Online stores and e-commerce.
+- Product catalogs and digital catalogs.
+- Wholesale and B2B catalogs.
+- Boutiques, fashion, beauty, electronics, furniture, and specialist retail.
+- Marketplaces, directories, vendor listings, and comparison platforms.
+- Digital menus, restaurant menus, food ordering, and delivery experiences.
+
+### Mobility, travel, and hospitality
+- Rental-car websites and booking systems.
+- Vehicle sales and automotive services.
+- Hotels, guesthouses, tourism, travel agencies, and destination guides.
+- Reservations, availability, schedules, and ticketing.
+
+### Creative, media, and personal brands
+- Photographer, videographer, designer, artist, musician, and creator portfolios.
+- Studios, production companies, creative agencies, and personal brands.
+- Publications, magazines, blogs, news, podcasts, and media libraries.
+- Event, wedding, and campaign experiences.
+
+### Digital products and software
+- SaaS marketing sites and web applications.
+- Dashboards, admin systems, and data-heavy interfaces.
+- CRM, POS, inventory, finance, scheduling, and management tools.
+- Learning platforms, courses, educational portals, and resource libraries.
+- Directories, search tools, utilities, and AI-powered interfaces.
+
+### Transactional and operational experiences
+- Booking, appointments, reservations, and request forms.
+- Customer portals, membership systems, and account areas.
+- Job boards, recruitment, and application portals.
+- Logistics, delivery, tracking, and service request systems.
+- PWAs, offline-first tools, installable apps, and local-first products.
+
+For any unfamiliar product type, identify the real user journeys and functional requirements rather than forcing it into one of the examples above.
+
+## 33. PRODUCT ARCHITECTURE BEFORE VISUAL COMPONENTS
+
+Before choosing sections or components, map the experience.
+
+Define:
+- Main user types and their goals.
+- Core tasks and user journeys.
+- Required pages, screens, or states.
+- Content and data entities.
+- Navigation and information architecture.
+- Primary and secondary actions.
+- Search, filtering, sorting, comparison, or booking needs where relevant.
+- Empty, loading, success, error, and offline states where relevant.
+- Trust, privacy, payment, and confirmation needs where relevant.
+
+Do not start by selecting a familiar landing-page structure and forcing the product into it.
+
+Examples:
+- A catalog requires discovery and product comparison, not just a hero and decorative product cards.
+- A rental-car platform requires vehicle details, rental conditions, availability, and a clear inquiry or booking path.
+- A digital menu requires rapid category navigation, readable item details and prices, and a usable ordering/contact path.
+- A corporate website requires a clear explanation of the organization, its offer, credibility, and contact path.
+- A dashboard requires task efficiency, data hierarchy, feedback, and reliable states—not a marketing-page layout.
+
+The design must emerge from the product architecture, then be expressed through the selected visual style.
+
+## 34. DESIGN HISTORY AND FUTURE-PROJECT MEMORY
+
+When a repository contains multiple visual projects, maintain a concise `DESIGN_HISTORY.md` file where practical.
+
+For each completed project, record:
+- Project name and product type.
+- Approved style.
+- One-sentence visual concept.
+- Typography and color direction.
+- Signature composition and section rhythm.
+- Distinctive interactions and motion.
+- Patterns deliberately avoided.
+- What makes the project different from other projects in the repository.
+
+Before starting another visual project, read this history as well as inspecting relevant source projects. Update it only after the design direction is implemented. Do not invent a history entry for work that was never completed.
+
+If maintaining this file is not possible, perform and report the available repository comparison without claiming a complete historical audit.
+
+## 35. FINAL V4.0 ACCEPTANCE GATE
+
+A new visual project is not ready for implementation until:
+- The current manifest has been read.
+- The project, audience, product type, and user/brand essence have been understood.
+- A tailored list of suitable styles has been presented.
+- The user has selected and confirmed one style or an explicitly approved combination.
+- Product architecture and main user journeys have been mapped.
+- The style fingerprint and anti-patterns have been defined.
+- A cross-project repetition audit has been completed where repository history is available.
+- The project's distinctive visual concept has been stated.
+
+A project is not ready for delivery until:
+- The chosen style is pure and consistent.
+- No unapproved style influence has leaked into the design.
+- The result is meaningfully distinct from previous projects.
+- The correct product experience has been implemented.
+- Existing working functionality has been preserved.
+- Required QA has been performed and reported honestly.
+
+**Final V4.0 principle: Never make the next project look like the previous one by habit. Never make a chosen style look like a mixture of styles by accident. Never build a generic page before understanding the product. Every project must earn its own identity.**
