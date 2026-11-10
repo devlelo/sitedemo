@@ -183,6 +183,22 @@ footer{min-height:150px}
   .hero-intro{font-size:12px;max-width:340px}
   .hero-action{margin-top:25px}
 }
+/* Navegação sólida e legível desde o topo */
+.site-head{position:sticky;top:0;background:var(--paper);opacity:1;visibility:visible;z-index:50;box-shadow:0 1px 0 var(--line)}
+.main-nav a,.head-contact{color:var(--ink);opacity:1;visibility:visible}
+.main-nav a:hover,.head-contact:hover{color:var(--olive)}
+@media(max-width:900px){.main-nav{background:var(--paper);opacity:1;visibility:visible}}
+/* Hero mais limpo, sem etiqueta nem divisores */
+.hero-copy{justify-content:center;gap:0}
+.hero-message{max-width:570px}
+.hero h1{margin-bottom:25px}
+.hero-rule{display:none}
+.hero-action{border-bottom:0;padding-bottom:0;gap:18px}
+.hero-action:hover{gap:25px}
+@media(max-width:620px){
+  .hero-copy{min-height:0;gap:0;padding:58px var(--gutter) 42px}
+  .hero h1{margin:0 0 23px}
+}
 </style>
 </head>
 <body>
@@ -197,10 +213,8 @@ footer{min-height:150px}
 <main>
 <section class="hero" id="inicio">
   <div class="hero-copy">
-    <div class="eyebrow">Mediação · Património · Futuro</div>
     <div class="hero-message">
       <h1>Há lugares que nos <em>escolhem.</em></h1>
-      <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-intro">Aproximamos pessoas de espaços com significado. Uma visão cuidada do mercado imobiliário, com acompanhamento em cada decisão.</p>
       <a class="hero-action" href="#imoveis">Explorar imóveis <span aria-hidden="true">↘</span></a>
     </div>
