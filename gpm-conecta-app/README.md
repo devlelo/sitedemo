@@ -5,7 +5,7 @@ Aplicação B2B para testes locais. O website institucional estático original c
 - Laravel 12 / PHP 8.2+
 - SQLite por omissão; MySQL/MariaDB configurável
 - Blade, autenticação por sessão, carrinho de sessão e CSS próprio
-- Sem gateway, APIs pagas, SMS ou serviços externos obrigatórios
+- PDF de propostas comerciais gerados no servidor; sem gateway, APIs pagas, SMS ou serviços externos obrigatórios
 
 ## Requisitos
 PHP 8.2+ com PDO, pdo_sqlite, mbstring, openssl, tokenizer, xml, ctype, curl, fileinfo e dom; Composer 2.7+. Não é necessário Node/npm.
@@ -35,4 +35,4 @@ admin@gpm.local / ChangeMe123! — apenas para teste local. Altere a palavra-pas
 Catálogo público, registo empresarial com NIF, carrinho multi-produto, pedidos independentes, painel do cliente, mensagens por pedido, consultas manuais a fornecedores, propostas versionadas, aceitação do cliente, confirmação final pela GPM, transições auditadas, gestão de catálogo e dashboard operacional.
 
 ## Limitações desta base
-Sem gateway de pagamento, integrações de fornecedores/logística, SMS/email transacional, PDFs gerados no servidor, upload de anexos ou gestão avançada de equipa. A impressão para PDF pode ser adicionada no próximo incremento. Catálogo vazio intencionalmente. Não é versão de produção.
+Sem gateway de pagamento, integrações de fornecedores/logística, SMS/email transacional, upload de anexos ou gestão avançada de equipa. A impressão para PDF pode ser adicionada no próximo incremento. Catálogo vazio intencionalmente. Não é versão de produção.

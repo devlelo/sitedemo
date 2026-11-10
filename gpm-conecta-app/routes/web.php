@@ -16,10 +16,12 @@ Route::middleware('guest')->group(function() {
  Route::post('/registar',[AuthController::class,'register'])->name('register.store');
 });
 Route::post('/sair',[AuthController::class,'logout'])->middleware('auth')->name('logout');
+Route::get('/documentos/propostas/{proposal}/pdf',[DocumentController::class,'proposal'])->middleware('auth')->name('documents.proposal');
 Route::middleware('auth')->prefix('portal')->name('portal.')->group(function() {
  Route::get('/',[PortalController::class,'dashboard'])->name('dashboard');
  Route::post('/pedidos',[PortalController::class,'createRequest'])->name('requests.store');
  Route::get('/pedidos/{supplyRequest}',[PortalController::class,'showRequest'])->name('requests.show');
+ Route::post('/pedidos/{supplyRequest}/repetir',[PortalController::class,'repeatRequest'])->name('requests.repeat');
  Route::post('/pedidos/{supplyRequest}/mensagens',[PortalController::class,'message'])->name('requests.message');
  Route::post('/propostas/{proposal}/aceitar',[PortalController::class,'acceptProposal'])->name('proposals.accept');
 });

@@ -3,12 +3,17 @@
   "name": "gpm/conecta",
   "type": "project",
   "description": "GPM Conecta B2B supply marketplace",
-  "keywords": ["laravel", "b2b", "marketplace"],
+  "keywords": [
+    "laravel",
+    "b2b",
+    "marketplace"
+  ],
   "license": "proprietary",
   "require": {
     "php": "^8.2",
     "laravel/framework": "^12.0",
-    "laravel/tinker": "^2.10"
+    "laravel/tinker": "^2.10",
+    "barryvdh/laravel-dompdf": "^3.1"
   },
   "require-dev": {
     "fakerphp/faker": "^1.23",
@@ -30,12 +35,38 @@
     }
   },
   "scripts": {
-    "setup": ["composer install", "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"", "@php artisan key:generate", "@php artisan migrate --seed"],
-    "dev": ["Composer\\Config::disableProcessTimeout", "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names=server,queue,vite"],
-    "test": ["@php artisan config:clear", "@php artisan test"]
+    "setup": [
+      "composer install",
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+      "@php artisan key:generate",
+      "@php artisan migrate --seed"
+    ],
+    "dev": [
+      "Composer\\Config::disableProcessTimeout",
+      "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names=server,queue,vite"
+    ],
+    "test": [
+      "@php artisan config:clear",
+      "@php artisan test"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\\\Foundation\\\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ]
   },
-  "extra": {"laravel": {"dont-discover": []}},
-  "config": {"optimize-autoloader": true, "preferred-install": "dist", "sort-packages": true, "allow-plugins": {"php-http/discovery": true}},
+  "extra": {
+    "laravel": {
+      "dont-discover": []
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "php-http/discovery": true
+    }
+  },
   "minimum-stability": "stable",
   "prefer-stable": true
 }
