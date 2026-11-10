@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxe Café e Restaurante | O Nordeste em Angola</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset e Variáveis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --laranja-forte: #E86A17;
+            --amarelo-ouro: #F5B041;
+            --marrom-madeira: #2E1C14;
+            --creme: #FFF8E7;
+            --texto-escuro: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--creme);
+            background-color: var(--marrom-madeira);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Alfa Slab One', serif;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .script-font {
+            font-family: 'Caveat', cursive;
+            text-transform: none;
+            font-weight: 700;
+        }
+
+        /* --- ANIMAÇÕES GERAIS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Classes para Scroll Reveal (acionadas via JS) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navegação */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .nav-logo {
+            font-family: 'Alfa Slab One', serif;
+            font-size: 2rem;
+            color: var(--amarelo-ouro);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .nav-logo:hover { transform: scale(1.05); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--creme);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            color: var(--amarelo-ouro);
+            transform: translateY(-2px);
+        }
+
+        /* Seção 1: Hero */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(to right, rgba(46, 28, 20, 0.95) 25%, rgba(46, 28, 20, 0.55)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6TQsjxA40JI1wsYTXicCwhwEx5agB3BSi2c8rU1dBLMPGnOX6V05f7Mu-qCZW9FcFX_gcODENA-MqWxD9v-OfztGR560D8DAeFoUZ6qlPwVSXdEP7jxFcrnfCLlUCsfWPGl6I6v4JwMiboO0zE6zi7CtrL8q5WVp3P7D5UOVdx6PXInOBITburJxpj4jAnZUZtHikhmUBMXorphpChO_A-UXtiV8QbW_K6BFZMSl7vcLYXmK0bglO0PPseI5JCJfFAw');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 10%;
+            border-bottom: 5px solid var(--amarelo-ouro);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            color: var(--amarelo-ouro);
+            text-shadow: 4px 4px 0px #000;
+            margin-bottom: 10px;
+            line-height: 1;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: var(--creme);
+            margin-bottom: 5px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+        }
+
+        .hero .script-font {
+            font-size: 2.5rem;
+            color: var(--laranja-forte);
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        /* Seção 2: Destaque */
+        .destaque {
+            background-color: var(--laranja-forte);
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .destaque-texto {
+            max-width: 500px;
+            z-index: 2;
+        }
+
+        .destaque h2 {
+            font-size: 3.5rem;
+            color: var(--creme);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px var(--marrom-madeira);
+        }
+
+        .destaque p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .prato-destaque {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 10px solid var(--creme);
+            box-shadow: -15px 15px 0px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+        .prato-destaque:hover {
+            transform: translateY(-50%) scale(1.02) rotate(2deg);
+        }
+
+        .tag-flutuante {
+            background-color: var(--marrom-madeira);
+            color: var(--amarelo-ouro);
+            padding: 10px 20px;
+            font-family: 'Alfa Slab One', serif;
+            font-size: 1.2rem;
+            transform: rotate(-3deg);
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .tag-flutuante:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        /* Seção: Nossa História */
+        .sobre {
+            padding: 100px 10%;
+            background-color: var(--creme);
+            color: var(--marrom-madeira);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .sobre-img {
+            width: 50%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 15px 15px 0px var(--laranja-forte);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .sobre-img:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 20px 20px 0px var(--laranja-forte);
+        }
+        .sobre-texto {
+            width: 50%;
+        }
+        .sobre-texto h2 {
+            font-size: 3rem;
+            color: var(--laranja-forte);
+            margin-bottom: 20px;
+        }
+        .sobre-texto p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        /* Seção 3: Experiência */
+        .experiencia {
+            background-image: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6TQsjxA40JI1wsYTXicCwhwEx5agB3BSi2c8rU1dBLMPGnOX6V05f7Mu-qCZW9FcFX_gcODENA-MqWxD9v-OfztGR560D8DAeFoUZ6qlPwVSXdEP7jxFcrnfCLlUCsfWPGl6I6v4JwMiboO0zE6zi7CtrL8q5WVp3P7D5UOVdx6PXInOBITburJxpj4jAnZUZtHikhmUBMXorphpChO_A-UXtiV8QbW_K6BFZMSl7vcLYXmK0bglO0PPseI5JCJfFAw');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 150px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .experiencia-conteudo {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .experiencia h2 {
+            font-size: 3.5rem;
+            color: var(--creme);
+            margin-bottom: 20px;
+        }
+
+        .experiencia h2 span {
+            color: var(--laranja-forte);
+        }
+
+        .experiencia p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .bilhete-cordel {
+            border: 2px dashed var(--amarelo-ouro);
+            padding: 20px 50px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: var(--amarelo-ouro);
+            transform: rotate(-2deg);
+            margin-top: 20px;
+            text-align: left;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .bilhete-cordel:hover {
+            transform: rotate(0deg) scale(1.02);
+            background-color: rgba(245, 176, 65, 0.1);
+        }
+
+        /* Seção 4: Cardápio Interativo */
+        .cardapio {
+            background-color: var(--marrom-madeira);
+            background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png');
+            padding: 100px 10%;
+            border-top: 5px solid var(--laranja-forte);
+            border-bottom: 5px solid var(--laranja-forte);
+            min-height: 80vh;
+        }
+
+        .cardapio-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .cardapio-header h2 {
+            font-size: 4rem;
+            color: var(--amarelo-ouro);
+        }
+
+        .cardapio-header p {
+            font-size: 1.8rem;
+            color: var(--creme);
+        }
+
+        /* Categorias (Tabs) */
+        .categorias {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .btn-categoria {
+            background-color: transparent;
+            border: 2px solid var(--laranja-forte);
+            color: var(--creme);
+            padding: 10px 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-categoria:hover, .btn-categoria.ativa {
+            background-color: var(--laranja-forte);
+            color: var(--creme);
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 5px 15px rgba(232, 106, 23, 0.4);
+        }
+
+        .cardapio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* Animação dos cards do menu */
+        .item-menu {
+            display: flex;
+            gap: 20px;
+            background-color: rgba(255, 248, 231, 0.05);
+            padding: 15px;
+            border-left: 4px solid var(--laranja-forte);
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .item-menu:hover {
+            transform: translateY(-5px) translateX(5px);
+            background-color: rgba(255, 248, 231, 0.1);
+            box-shadow: -5px 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .item-menu img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid var(--amarelo-ouro);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+        .item-menu:hover img {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .item-info {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--creme);
+            text-transform: uppercase;
+        }
+
+        .preco {
+            color: var(--amarelo-ouro);
+            font-family: 'Alfa Slab One', serif;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .item-info p {
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .btn-add {
+            background-color: var(--laranja-forte);
+            color: var(--creme);
+            border: none;
+            padding: 8px 15px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: flex-start;
+            transition: all 0.2s ease;
+        }
+        .btn-add:hover { 
+            background-color: var(--amarelo-ouro); 
+            color: var(--marrom-madeira);
+            transform: scale(1.05);
+        }
+        .btn-add:active {
+            transform: scale(0.95);
+        }
+
+        /* Seção 5: Mural */
+        .mural {
+            padding: 100px 10%;
+            background-color: #22140e;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            border-bottom: 5px solid var(--amarelo-ouro);
+        }
+
+        .mural-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .mural-header h2 {
+            font-size: 3.5rem;
+            color: var(--amarelo-ouro);
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .mural-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .bilhete {
+            background-color: var(--creme);
+            padding: 30px 25px;
+            position: relative;
+            box-shadow: 5px 10px 15px rgba(0,0,0,0.5);
+            color: var(--marrom-madeira);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .bilhete::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 100px;
+            height: 30px;
+            background-color: rgba(232, 106, 23, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(2px);
+        }
+
+        .bilhete:nth-child(1) { transform: rotate(-3deg); }
+        .bilhete:nth-child(2) { transform: rotate(2deg); background-color: #fdf5e6; }
+        .bilhete:nth-child(3) { transform: rotate(-1deg); }
+        
+        .bilhete:hover {
+            transform: rotate(0deg) scale(1.08) translateY(-10px);
+            box-shadow: 10px 15px 25px rgba(0,0,0,0.6);
+            z-index: 10;
+        }
+
+        .bilhete p {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .bilhete .autor {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: right;
+            color: var(--laranja-forte);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1a100c;
+            padding: 80px 10%;
+            border-top: 2px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-esquerda { max-width: 400px; }
+        .footer-logo {
+            font-family: 'Alfa Slab One', serif;
+            font-size: 3rem;
+            color: var(--laranja-forte);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .footer-logo:hover {
+            transform: scale(1.05) rotate(-3deg);
+        }
+        .footer-info p { font-size: 1rem; color: #888; margin-bottom: 10px; }
+        .footer-info strong { color: var(--creme); }
+
+        /* --- ESTILOS DO CARRINHO DE COMPRAS --- */
+        .cart-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--laranja-forte);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 0 4px rgba(245, 176, 65, 0.3);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 4s ease-in-out infinite; /* Animação flutuante */
+        }
+        .cart-floating-btn:hover { 
+            transform: scale(1.1) translateY(-5px); 
+            background-color: #d15c10;
+            animation-play-state: paused;
+        }
+        
+        .cart-floating-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Animação quando o badge atualiza */
+        .cart-badge.pop {
+            animation: popIn 0.3s ease-out;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: var(--creme);
+            color: var(--marrom-madeira);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.open { right: 0; }
+
+        .cart-header {
+            background-color: var(--marrom-madeira);
+            color: var(--amarelo-ouro);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 { font-family: 'Alfa Slab One', serif; font-size: 1.5rem; }
+        .close-cart { 
+            background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; 
+            transition: transform 0.2s ease;
+        }
+        .close-cart:hover {
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+            animation: fadeInUp 0.3s ease-out forwards;
+        }
+        .cart-item-info { flex: 1; }
+        .cart-item-info h4 { font-size: 1rem; color: var(--marrom-madeira); margin-bottom: 5px; }
+        .cart-item-info span { font-size: 0.9rem; color: var(--laranja-forte); font-weight: bold; }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 15px;
+        }
+        .cart-item-controls button {
+            width: 25px;
+            height: 25px;
+            background-color: var(--laranja-forte);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .cart-item-controls button:hover {
+            transform: scale(1.15);
+            background-color: var(--amarelo-ouro);
+        }
+        .cart-item-controls span { font-weight: bold; }
+
+        .cart-footer {
+            padding: 20px;
+            background-color: #fff;
+            border-top: 2px solid #ddd;
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .checkout-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .checkout-form input:focus {
+            border-color: var(--laranja-forte);
+            box-shadow: 0 0 8px rgba(232, 106, 23, 0.2);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--marrom-madeira);
+        }
+        .btn-checkout {
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-checkout:hover { 
+            background-color: #128C7E; 
+            transform: scale(1.02);
+        }
+        .btn-checkout:active {
+            transform: scale(0.98);
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 998;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .cart-overlay.active { 
+            display: block; 
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .cardapio-grid { grid-template-columns: 1fr; }
+            .mural-grid { grid-template-columns: 1fr; }
+            .prato-destaque { 
+                position: relative; right: auto; top: auto; transform: none; 
+                margin-top: 40px; width: 100%; max-width: 300px; height: 300px;
+            }
+            .prato-destaque:hover {
+                transform: scale(1.02) rotate(2deg);
+            }
+            .destaque { padding-bottom: 50px; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .sobre { flex-direction: column; }
+            .sobre-img, .sobre-texto { width: 100%; }
+        }
+
+        @media (max-width: 600px) {
+            .item-menu { flex-direction: column; text-align: center; }
+            .item-menu:hover { transform: translateY(-5px); }
+            .item-menu img { width: 120px; height: 120px; }
+            .btn-add { align-self: center; }
+            .cart-sidebar { width: 100%; right: -100%; }
+            .cart-floating-btn { bottom: 20px; right: 20px; width: 60px; height: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav>
+        <a href="#" class="nav-logo">OXE.</a>
+        <ul class="nav-links">
+            <li><a href="#sobre">Nossa História</a></li>
+            <li><a href="#cardapio">Menu</a></li>
+            <li><a href="#mural">Mural</a></li>
+        </ul>
+    </nav>
+
+    <!-- Seção 1: Banner Principal -->
+    <header class="hero">
+        <h2>Bem-vindo à</h2>
+        <h1>Sua Casa no Nordeste</h1>
+        <p class="script-font">"Felizidade em forma de comida"</p>
+    </header>
+
+    <!-- Seção 2: Destaque -->
+    <section class="destaque reveal" id="destaque">
+        <div class="destaque-texto">
+            <div class="tag-flutuante">O Mais Pedido</div>
+            <h2>Direto do Sertão</h2>
+            <p>Traga o verdadeiro sabor da nossa terra para a sua mesa em Talatona. Uma experiência que abraça a alma.</p>
+        </div>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqSCc579CsETOrJHpLPjqO9D84DRIm2SOXMI1VFXtKks2ALIz4yCXp85s6HiM6cpd4P6cXpmgDkrO_ec0cz_x_lsWKHqKMLT_9lILFUARoypsZUkdvbiNFRzJPlqyOQLFoAN8dKf69j9tlD9mPy0czuy43-6iUseFKrgrVB_IYgKwiWNWqSHvndsPy096Kj4NR4RWS2cJkNO_l6peiw97uR58AV2Q_fhAhww1u1BmgQS6LUV_lvPM" alt="Prato Nordestino - Carne de Sol com Mandioca" class="prato-destaque">
+    </section>
+
+    <!-- Seção: Nossa História -->
+    <section class="sobre reveal" id="sobre">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuArOLiMRQ-G_wssJN_-LNSjlw2FHmxxK-7gFFmpehJh9YtGUUsHtwpUl6HL3NKOlVkCgZ9c9-doe5QSPP5jNT7TSWFuh70wyEl2NEuAcmJoM5KTLnUBH1DLFntLsSFBTM307QfoqvyCFCHPe8-CmH6ZZ33pNq61_hgvurig4Ng8u4evv_HLu6hynQuG5Gii_xsb4owB4gBNs_3nfE89KYkT7Grq0cmgX3i6RQo--XiI5JO8mYCSOpacgTXh7FppDA4o2g" alt="Experiência Gastronômica no Oxe Café" class="sobre-img">
+        <div class="sobre-texto">
+            <h2>Nossa História</h2>
+            <p>O Oxe nasceu da saudade. Da vontade de trazer o calor humano, a alegria contagiante e, claro, o tempero inconfundível do Nordeste brasileiro para o coração de Luanda.</p>
+            <p>Cada prato é preparado com o cuidado de quem cozinha para a família. Da maciez da carne de sol ao toque doce do requeijão no cuscuz, tudo aqui tem história, tem afeto e tem aquele "quê" de casa de vó.</p>
+            <p class="script-font" style="color: var(--laranja-forte); font-size: 2rem; margin-top: 20px;">"Mais que um restaurante, um pedacinho do nosso lar."</p>
+        </div>
+    </section>
+
+    <!-- Seção 3: Experiência -->
+    <section class="experiencia reveal">
+        <div class="experiencia-conteudo">
+            <h2>Sem precisar sair do teu <span>conforto.</span></h2>
+            <p>Nós vamos até a sua porta. O autêntico tempero do Nordeste brasileiro, feito com amor e aquele toque especial de casa de vó, entregue quentinho em Luanda.</p>
+            <div class="bilhete-cordel">
+                De Seg. a Sáb. das 08h às 19h<br>
+                Mix Center, Talatona
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Cardápio Interativo -->
+    <section class="cardapio" id="cardapio">
+        <div class="cardapio-header reveal">
+            <h2>Nosso Menu</h2>
+            <p class="script-font">A verdadeira comida de verdade</p>
+        </div>
+
+        <!-- Categorias (Tabs) -->
+        <div class="categorias reveal">
+            <button class="btn-categoria ativa" onclick="filtrarMenu('todos', event)">Todos</button>
+            <button class="btn-categoria" onclick="filtrarMenu('principais', event)">Principais</button>
+            <button class="btn-categoria" onclick="filtrarMenu('petiscos', event)">Petiscos</button>
+            <button class="btn-categoria" onclick="filtrarMenu('bebidas', event)">Bebidas</button>
+            <button class="btn-categoria" onclick="filtrarMenu('doces', event)">Doces</button>
+        </div>
+
+        <!-- Grid de itens -->
+        <div class="cardapio-grid" id="cardapio-grid">
+            <!-- Injetado via JS -->
+        </div>
+    </section>
+
+    <!-- Seção 5: Mural de Depoimentos -->
+    <section class="mural reveal" id="mural">
+        <div class="mural-header">
+            <h2 class="script-font" style="color: var(--laranja-forte); font-size: 4rem; margin-bottom: 0px;">Quem prova, ama!</h2>
+            <h2>O Mural do Oxe</h2>
+        </div>
+
+        <div class="mural-grid">
+            <div class="bilhete">
+                <p>"A carne de sol me transportou direto pra Recife! Que tempero abençoado, viu? Já virei cliente fiel."</p>
+                <div class="autor">- Dona Maria, Luanda</div>
+            </div>
+            <div class="bilhete">
+                <p>"Pedi o Bobó de Camarão pelo WhatsApp e chegou super rápido e quentinho. O arroz soltinho é igual de casa de vó!"</p>
+                <div class="autor">- João Silva, Talatona</div>
+            </div>
+            <div class="bilhete">
+                <p>"Senti falta da nossa terrinha, mas encontrei aqui. O cuscuz com requeijão é a melhor coisa da semana!"</p>
+                <div class="autor">- Ana Clara, Luanda</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="reveal">
+        <div class="footer-esquerda">
+            <div class="footer-logo">OXE.</div>
+            <div class="footer-info">
+                <p><strong>Endereço:</strong> Mix Center, Talatona - Luanda</p>
+                <p><strong>Horário:</strong> Seg a Sáb, 08h às 19h</p>
+                <p><strong>Contato:</strong> +244 929 212 289</p>
+            </div>
+        </div>
+        <div class="footer-direita">
+            <p style="margin-top: 30px; font-size: 0.8rem; color: rgb(85, 85, 85); text-align: right;">© 2024 Oxe Café e Restaurante.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO CARRINHO -->
+    <div class="cart-floating-btn" id="cart-btn" onclick="toggleCart()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.24 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96C21.21 4.86 21.25 4.74 21.25 4.61C21.25 4.27 20.98 4 20.65 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"/>
+        </svg>
+        <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+    </div>
+
+    <!-- OVERLAY DO CARRINHO -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- SIDEBAR DO CARRINHO -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align: center; color: rgb(136, 136, 136); margin-top: 20px;">Seu carrinho está vazio. Adicione itens do menu!</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="checkout-form">
+                <input type="text" id="cliente-nome" placeholder="Seu Nome Completo" oninput="salvarNome()">
+                <input type="text" id="cliente-mesa" placeholder="Nº da Mesa (ou digite 'Retirada')">
+            </div>
+
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0 Kz</span>
+            </div>
+            <button class="btn-checkout" onclick="enviarPedidoWhatsApp()">
+                Enviar p/ WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Banco de Dados do Menu
+        const menuData = [
+            { id: 1, categoria: 'principais', nome: 'Bobó de Camarão', desc: 'Acompanhado de arroz branco soltinho.', preco: 7000, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBi50yK8Ml7kivf1KNYIAygtdy-h4HylGdjethXZiVNNnpBOKY-iYAUWG8oLu3-i4rTB_7HLd20iujhlfmu0Y6bLFmk4XY0QEZn1at5yaVeFk_O-lDwlIoqBedZd3V3SdymyoVC3CE3NZywLWTEhvxfvO1R6dS6P-q3YPiAw7m_aR6sb3qfIxEtNM8bKKEoI69PWWkLVlT0G2sdst5Xpnl5I7bSSOAZCmvMqyhQ25MI-DNzI39hLuA' },
+            { id: 2, categoria: 'principais', nome: 'Dobradinha', desc: 'Servida com arroz e farofa crocante.', preco: 7000, img: 'https://images.unsplash.com/photo-1544025162-811114215b6f?q=80&w=400&auto=format&fit=crop' },
+            { id: 3, categoria: 'principais', nome: 'Carne de Sol', desc: 'Acompanhada de mandioca cozida na manteiga.', preco: 6000, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBqSCc579CsETOrJHpLPjqO9D84DRIm2SOXMI1VFXtKks2ALIz4yCXp85s6HiM6cpd4P6cXpmgDkrO_ec0cz_x_lsWKHqKMLT_9lILFUARoypsZUkdvbiNFRzJPlqyOQLFoAN8dKf69j9tlD9mPy0czuy43-6iUseFKrgrVB_IYgKwiWNWqSHvndsPy096Kj4NR4RWS2cJkNO_l6peiw97uR58AV2Q_fhAhww1u1BmgQS6LUV_lvPM' },
+            { id: 4, categoria: 'petiscos', nome: 'Caldo Verde', desc: 'De mandioca, com costela e linguiça calabresa.', preco: 3000, img: 'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=400&auto=format&fit=crop' },
+            { id: 5, categoria: 'petiscos', nome: 'Cuscuz com Frango', desc: 'Servido com uma generosa camada de requeijão.', preco: 3900, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGWqyCMSIlrLU_BrPKrtNvieTQzTSo6AM6t0d-3MejWYi9TbplFMwQV362nJa4w8ra18l0hm8sbf8pFT2XVglqMC7PntR7V-OQ-6f_xafD7HGQr98TGgDYimRtWc4lPDzdtRwd9PYaJmGv8Ky3UvdJsrWC41meT-_HyOBa_6IXfLwsct5efCKNrqZBK2DI_9HEmXeosQmmJCPaBpvvU3ytch1L_9JXMsadw8EQwpap190km7Nyzv0' },
+            { id: 6, categoria: 'petiscos', nome: 'Cuscuz c/ Carne Seca', desc: 'O clássico nordestino com requeijão cremoso.', preco: 4000, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGWqyCMSIlrLU_BrPKrtNvieTQzTSo6AM6t0d-3MejWYi9TbplFMwQV362nJa4w8ra18l0hm8sbf8pFT2XVglqMC7PntR7V-OQ-6f_xafD7HGQr98TGgDYimRtWc4lPDzdtRwd9PYaJmGv8Ky3UvdJsrWC41meT-_HyOBa_6IXfLwsct5efCKNrqZBK2DI_9HEmXeosQmmJCPaBpvvU3ytch1L_9JXMsadw8EQwpap190km7Nyzv0' },
+            { id: 7, categoria: 'bebidas', nome: 'Suco de Cajá', desc: 'Natural e geladinho, 500ml.', preco: 2000, img: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=400&auto=format&fit=crop' },
+            { id: 8, categoria: 'bebidas', nome: 'Água de Coco', desc: 'Natural, 300ml.', preco: 1500, img: 'https://images.unsplash.com/photo-1536657464919-892534f60d6e?q=80&w=400&auto=format&fit=crop' },
+            { id: 9, categoria: 'doces', nome: 'Bolo de Milho', desc: 'Fatia generosa e quentinha.', preco: 1500, img: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=400&auto=format&fit=crop' },
+            { id: 10, categoria: 'doces', nome: 'Cartola', desc: 'Banana frita, queijo manteiga e canela.', preco: 2500, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUo3EZ3JS4pW6jCACUP4dGTS3Mzkns-BEIT5BD0ISlGAWDBN4RcmWOtRzwMXqULhZdsG0hhb01eKvrh4RKDrFwu9x5YtSOgQZuv4FBBSsvWto-5q4TpmfgH8fvIv9ck830ghd6G5xteneDA_Py291j55ojLYtjYEpXzLREM6Dz-aIWF1SyavXwh0_Eh59U3OuoS8F-0ErDT5Xg27MrEY1jb9yZz9kfZnalrM8eka_hhgbmrvbyqyg' }
+        ];
+
+        let carrinho = [];
+        let categoriaAtual = 'todos';
+
+        // Renderiza os itens com animação escalonada
+        function renderizarMenu() {
+            const grid = document.getElementById('cardapio-grid');
+            grid.innerHTML = '';
+
+            const itensFiltrados = categoriaAtual === 'todos' 
+                ? menuData 
+                : menuData.filter(item => item.categoria === categoriaAtual);
+
+            itensFiltrados.forEach((item, index) => {
+                const precoFormatado = item.preco.toLocaleString('pt-AO') + ' Kz';
+
+                // O animation-delay cria o efeito cascata na entrada
+                const itemHTML = `
+                    <div class="item-menu" style="animation-delay: ${index * 0.05}s">
+                        <img src="${item.img}" alt="${item.nome}">
+                        <div class="item-info">
+                            <div class="item-header">
+                                <h3>${item.nome}</h3>
+                                <span class="preco">${precoFormatado}</span>
+                            </div>
+                            <p>${item.desc}</p>
+                            <button class="btn-add" onclick="adicionarAoCarrinho(${item.id})">+ Adicionar</button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += itemHTML;
+            });
+        }
+
+        function filtrarMenu(categoria, event) {
+            categoriaAtual = categoria;
+            
+            document.querySelectorAll('.btn-categoria').forEach(btn => {
+                btn.classList.remove('ativa');
+            });
+            event.target.classList.add('ativa');
+
+            renderizarMenu();
+        }
+
+        function adicionarAoCarrinho(id) {
+            const itemExistente = carrinho.find(item => item.id === id);
+            
+            if (itemExistente) {
+                itemExistente.quantidade += 1;
+            } else {
+                const produto = menuData.find(item => item.id === id);
+                carrinho.push({ ...produto, quantidade: 1 });
+            }
+            
+            atualizarCarrinho();
+            
+            // Animação ao clicar em adicionar
+            const btnCart = document.querySelector('.cart-floating-btn');
+            btnCart.style.transform = 'scale(1.2)';
+            setTimeout(() => btnCart.style.transform = 'scale(1)', 200);
+        }
+
+        function removerDoCarrinho(id) {
+            const index = carrinho.findIndex(item => item.id === id);
+            if (index > -1) {
+                if (carrinho[index].quantidade > 1) {
+                    carrinho[index].quantidade -= 1;
+                } else {
+                    carrinho.splice(index, 1);
+                }
+            }
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const badge = document.getElementById('cart-badge');
+            const totalPriceElement = document.getElementById('cart-total-price');
+            
+            cartItemsDiv.innerHTML = '';
+            let totalGeral = 0;
+            let totalItens = 0;
+
+            if (carrinho.length === 0) {
+                cartItemsDiv.innerHTML = '<p style="text-align:center; color:#888; margin-top:20px;">Seu carrinho está vazio. Adicione itens do menu!</p>';
+            } else {
+                carrinho.forEach(item => {
+                    const subtotal = item.preco * item.quantidade;
+                    totalGeral += subtotal;
+                    totalItens += item.quantidade;
+
+                    const itemHTML = `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <h4>${item.nome}</h4>
+                                <span>${subtotal.toLocaleString('pt-AO')} Kz</span>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button onclick="removerDoCarrinho(${item.id})">-</button>
+                                <span>${item.quantidade}</span>
+                                <button onclick="adicionarAoCarrinho(${item.id})">+</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItemsDiv.innerHTML += itemHTML;
+                });
+            }
+
+            // Animação de "Pop" quando a quantidade de itens muda
+            badge.innerText = totalItens;
+            badge.style.display = totalItens > 0 ? 'flex' : 'none';
+            
+            if(totalItens > 0) {
+                badge.classList.remove('pop');
+                void badge.offsetWidth; // Truque para reiniciar a animação CSS
+                badge.classList.add('pop');
+            }
+
+            totalPriceElement.innerText = totalGeral.toLocaleString('pt-AO') + ' Kz';
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            const overlay = document.getElementById('cart-overlay');
+            
+            sidebar.classList.toggle('open');
+            
+            if(sidebar.classList.contains('open')) {
+                overlay.style.display = 'block';
+                setTimeout(() => overlay.style.opacity = '1', 10);
+            } else {
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.style.display = 'none', 300);
+            }
+        }
+
+        function salvarNome() {
+            const nome = document.getElementById('cliente-nome').value;
+            localStorage.setItem('oxe_cliente_nome', nome);
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio! Adicione alguma delícia primeiro.");
+                return;
+            }
+
+            const nome = document.getElementById('cliente-nome').value.trim();
+            const mesa = document.getElementById('cliente-mesa').value.trim();
+
+            if (!nome || !mesa) {
+                alert("Por favor, preencha o seu Nome e o Número da Mesa (ou digite 'Retirada') antes de enviar o pedido.");
+                return;
+            }
+
+            const numeroWhatsApp = "244929212289";
+            let mensagem = `*Olá, Oxe Café! Novo Pedido:*%0A%0A`;
+            
+            mensagem += `👤 *Nome:* ${nome}%0A`;
+            mensagem += `📍 *Mesa/Local:* ${mesa}%0A%0A`;
+            
+            mensagem += `*--- ITENS DO PEDIDO ---*%0A`;
+            let totalGeral = 0;
+
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                totalGeral += subtotal;
+                mensagem += `▪ ${item.quantidade}x *${item.nome}* - ${subtotal.toLocaleString('pt-AO')} Kz%0A`;
+            });
+
+            mensagem += `%0A*Total do Pedido:* ${totalGeral.toLocaleString('pt-AO')} Kz%0A%0A`;
+            mensagem += "*Por favor, confirmem a disponibilidade e o tempo de preparo!*";
+
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+            window.open(linkWhatsApp, '_blank');
+        }
+
+        // --- SCROLL REVEAL ANIMATION (Intersection Observer) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarMenu();
+            atualizarCarrinho();
+            
+            const nomeSalvo = localStorage.getItem('oxe_cliente_nome');
+            if (nomeSalvo) {
+                document.getElementById('cliente-nome').value = nomeSalvo;
+            }
+
+            // Configuração do Observador para animar as seções ao rolar
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Aciona quando 15% do elemento estiver visível
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Anima apenas uma vez
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
