@@ -1,64 +1,102 @@
-# DESIGN MANIFEST — CREATIVE DIRECTION SYSTEM
+# DESIGN & DEVELOPMENT QUALITY CONSTITUTION
+## Master Manifest — Version 3.0
 
-**Version:** 1.0  
-**Purpose:** Establish a mandatory visual direction and design execution standard for every website and web application project.
+**Status:** Mandatory operating standard for every new project, redesign, feature addition, bug fix, refactor, and code modification in this repository.
+**Scope:** Websites, web applications, landing pages, corporate websites, portfolios, catalogs, e-commerce, restaurant menus, rental-car platforms, booking systems, dashboards, directories, PWAs, offline applications, and other digital products.
+**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 3.0 wins.
 
 ---
 
-## 1. CORE PRINCIPLE
+# PART I — MANDATORY OPERATING PROTOCOL
 
-Never create a generic website when a defined visual identity is expected.
+## 1. READ THIS MANIFEST BEFORE TOUCHING CODE — NO EXCEPTIONS
 
-The selected design style must control the entire visual experience, not merely decorate it.
+Before executing, generating, editing, deleting, refactoring, or committing any code:
 
-Do not produce a conventional template and add a few stylistic details afterward.
+1. Locate and read the complete current `manifest.txt` from the project's repository and active branch.
+2. Do not rely on memory, summaries, previous conversations, cached copies, or a version from another project.
+3. If the manifest cannot be accessed, stop code changes and tell the user. Do not pretend it was read.
+4. Identify the rules relevant to the current task and apply them.
+5. Inspect the existing project structure and relevant source files before editing.
+6. For an existing project, inspect its current implementation and identify working behavior that must be preserved.
+7. If the manifest itself is being changed, read the current version first, preserve still-valid requirements, then update it deliberately.
 
-Build the interface from the visual language of the selected style.
+This applies even to a one-line fix, a small CSS adjustment, a copy change, an animation, or a quick experiment.
 
-**The goal is not to make a website look acceptable. The goal is to make its design recognizable, intentional, memorable and coherent.**
+**Mandatory pre-code checklist:** manifest read; task understood; relevant files inspected; existing behavior identified; scope defined. Do not start implementation until all five are satisfied.
 
-## 2. MANDATORY STYLE SELECTION — BEFORE CODING
+## 2. DISCOVERY BEFORE DESIGN
 
-Before starting any new visual project:
+Before proposing a visual direction, understand the actual project. Establish:
 
-1. Understand the project's purpose, audience and content.
-2. Present the user with a visual style selection catalog.
-3. Include reference images for each proposed style.
-4. Give each style a short explanation of its visual characteristics.
-5. Allow the user to select one style or combine multiple styles.
-6. Ask for confirmation of the chosen direction before implementation.
+- What is being created and why.
+- The business or product model.
+- The target audience and its expectations.
+- The user's own essence: personality, taste, positioning, references, preferences, and what they explicitly dislike.
+- The primary user task and desired business outcome.
+- Content, assets, features, integrations, constraints, and delivery platform.
+- Whether the project is informational, commercial, transactional, operational, editorial, or a combination.
+- The devices, connectivity conditions, accessibility needs, and performance constraints that matter.
 
-Never assume the style based on the type of business.
+Do not reduce the brief to a business category. Two restaurants, two rental-car companies, or two corporate firms may need completely different experiences.
 
-A photography website does not automatically require luxury design. A technology website does not automatically require futuristic design.
+If essential information is missing, ask only the most important clarification. Do not invent facts, brand history, services, prices, testimonials, credentials, or assets.
 
-The business category and visual style are separate decisions.
+## 3. STYLE RECOMMENDATION IS REQUIRED — THE USER CHOOSES
 
-If the user has already selected a style for the current project, do not ask again unnecessarily.
+For every new visual project, the assistant must first present a curated list of suitable design styles before implementation.
 
-## 3. STYLE CATALOG
+The assistant must:
+1. Use the niche, audience, product type, user's essence, positioning, content, and desired experience to select suitable directions.
+2. Present a tailored shortlist, normally 4–7 genuinely distinct styles—not an indiscriminate dump of the entire catalog.
+3. Explain each style's visual language, why it may suit the project, and the kind of experience it creates.
+4. Include visual reference images or reliable visual references when presenting the options, so the user can understand the difference. Never imply a reference is the actual project design.
+5. Include at least one unexpected but credible creative direction when appropriate; do not restrict recommendations to obvious industry conventions.
+6. Explain meaningful trade-offs where useful (e.g. clarity vs. experimentation, atmosphere vs. conversion speed, visual richness vs. performance).
+7. Allow the user to choose one style, request another shortlist, or explicitly combine styles.
+8. Wait for the user's selection and confirmation before beginning visual implementation.
 
-The catalog should include, but not be limited to:
+Do not assume a style from the niche. A rental-car site is not automatically corporate; a restaurant menu is not automatically minimal; a portfolio is not automatically luxury; a corporate site is not automatically blue and white.
 
-### Editorial and typography
+If the user has already explicitly selected and confirmed a style for the current project, do not ask again. If they ask for a different style or a substantial new visual direction, repeat the selection process.
+
+For non-visual code tasks, bug fixes, data operations, or internal functionality changes that do not affect visual direction, do not force an unnecessary style-selection step. The manifest-reading and code-preservation rules still apply.
+
+## 4. STYLE CATALOG — OPEN, NOT RESTRICTED
+
+Use this as a living vocabulary, not a closed menu. Recommend, combine (only with explicit approval), or develop new styles when justified.
+
+### Editorial, typography, and print
 - Brutalist Editorial
 - Swiss / International Typographic
 - Editorial Luxury
 - Modernist Editorial
 - Experimental Typography
 - Newspaper / Magazine Layout
+- Art Book / Independent Publishing
+- Contemporary Art Direction
 
-### Digital and experimental
-- Experimental Art Direction
+### Cinematic, photographic, and immersive
+- Dark Cinematic Editorial
+- Cinematic Wedding Editorial
 - Immersive Cinematic
+- Documentary / Photojournalistic
+- Film Noir
+- Analog Film / Nostalgic Editorial
+- Spatial / 3D Web Design
+- Story-driven Scrollytelling
+
+### Digital, experimental, and futuristic
 - Digital Brutalism
 - Neo-Brutalism
 - Futuristic Interface
 - Retro-Futurism
 - Cyberpunk
-- Spatial / 3D Web Design
+- Y2K Digital
+- Experimental Art Direction
+- Interface Maximalism
 
-### Visual and artistic
+### Artistic, expressive, and unconventional
 - Memphis Design
 - Digital Collage
 - Avant-Garde
@@ -66,356 +104,440 @@ The catalog should include, but not be limited to:
 - Organic / Biomorphic
 - Abstract Minimalism
 - Maximalism
+- Playful Geometry
+- Swiss Punk / Anti-design (only when appropriate)
 
-### Commercial and product
+### Commercial, product, and service
 - Modern Corporate
 - Premium Commerce
 - Minimal Product Design
 - Editorial Commerce
+- Boutique Retail
+- Hospitality Editorial
+- Automotive Performance
 - Dashboard / Data Visualization
+- Utility-first Interface
+- Marketplace / Directory Design
 
-The catalog must evolve. Suggest other relevant styles when they offer a stronger creative direction.
-
-## 4. FULL-STYLE EXECUTION
-
-Once the user selects a style, apply it consistently to every relevant part of the project.
-
-### Typography
-- Select fonts that genuinely belong to the chosen style.
-- Use a deliberate combination of display, heading, body and utility fonts.
-- Define a complete typographic hierarchy.
-- Explore font weights, widths, sizes, letter spacing, line height and text transformations.
-- Use oversized typography when appropriate.
-- Do not default to Inter, Roboto or generic system fonts without a deliberate reason.
-- Typography must be a central design element, not an afterthought.
-
-### Color system
-- Establish a coherent palette based on the selected style.
-- Define primary, secondary, accent, background, surface, border and text colors.
-- Explore contrast and color relationships.
-- Avoid generic color combinations when a more distinctive palette is appropriate.
-
-### Layout and composition
-- Explore the full possibilities of the chosen style.
-- Use asymmetry, overlapping elements, unusual grids, editorial compositions and unconventional section structures when appropriate.
-- Do not force every section into identical cards.
-- Vary composition across the page while maintaining visual coherence.
-- Use whitespace intentionally.
-- Avoid repetitive, predictable layouts.
-
-### Navigation and header
-- Design the navigation according to the chosen visual identity.
-- Explore typography, positioning, transparency, borders, backgrounds and scroll behavior.
-- The header must feel integrated with the design rather than like a default component.
-
-### Hero section
-- Make the first screen visually distinctive.
-- Explore strong typography, image composition, layering, graphic elements and motion.
-- Communicate the project's identity immediately.
-- Avoid generic hero layouts unless specifically requested.
-
-### Buttons and interactions
-- Design buttons as part of the visual language.
-- Define hover, focus, active and disabled states.
-- Use transitions and micro-interactions where appropriate.
-- Avoid default browser-looking controls.
-
-### Images and visual assets
-- Use imagery that reinforces the selected art direction.
-- Consider image ratios, cropping, masks, overlays, filters and positioning.
-- Use image treatments consistently.
-- Never use random decorative assets that weaken the visual identity.
-
-### Sections and content
-- Every section must have its own compositional purpose.
-- Explore different layouts instead of repeating the same component pattern.
-- Use dividers, labels, numbers, captions, graphic elements and editorial details when appropriate.
-- Content hierarchy must support the design.
-
-### Footer
-- The footer is part of the design, not an afterthought.
-- Apply the selected typography, colors, grid, composition and interactions.
-- Explore distinctive closing compositions.
-- Avoid automatically using the standard three-column footer.
-
-### Responsive design
-- Preserve the visual identity on mobile.
-- Recompose layouts rather than merely shrinking desktop elements.
-- Adapt typography, image crops, spacing, navigation and interactions.
-- Never sacrifice the mobile experience for desktop aesthetics.
-
-## 5. MOTION AND INTERACTION
-
-Use motion as a design language, not decoration.
-
-Depending on the selected style, explore:
-
-- Scroll-triggered reveals.
-- Parallax and depth.
-- Text transitions.
-- Image transformations.
-- Horizontal scrolling.
-- Mask reveals.
-- Layered animations.
-- Cursor interactions.
-- Hover-driven compositions.
-- Section transitions.
-- Animated graphic elements.
-
-Motion must have a purpose and remain performant.
-
-Respect reduced-motion preferences and avoid interactions that obstruct usability.
-
-## 6. CREATIVE INTENSITY
-
-Do not stop at the safest interpretation of a style.
-
-Explore its strongest visual characteristics.
-
-For example, when the user selects Brutalist Editorial:
-
-- Use genuinely oversized typography.
-- Experiment with asymmetrical composition.
-- Explore unconventional grids.
-- Use strong visual contrast.
-- Combine typography and photography as compositional elements.
-- Use editorial labels, annotations, numbers and graphic marks.
-- Make the footer and navigation follow the same art direction.
-- Avoid turning the design into an ordinary minimal website with a bold heading.
-
-When the user selects another style, apply the same level of commitment to that style's own characteristics.
-
-**Do not confuse creativity with adding random effects. Every decision must reinforce the chosen visual identity.**
-
-## 7. DESIGN SYSTEM BEFORE IMPLEMENTATION
-
-Before building the page, define:
-
-- Selected style.
-- Art direction.
-- Font families and roles.
-- Color palette.
-- Typographic scale.
-- Layout principles.
-- Image treatment.
-- Component language.
-- Motion principles.
-- Responsive behavior.
-
-These decisions must guide implementation.
-
-## 8. QUALITY CONTROL
-
-Before declaring the project complete, review the entire experience.
-
-### Visual consistency
-- Does the complete page follow the selected style?
-- Are the fonts appropriate?
-- Are all sections visually coherent?
-- Do buttons, navigation and footer belong to the same design system?
-- Does the mobile version preserve the identity?
-
-### Creative quality
-- Does the website have a recognizable visual identity?
-- Are the compositions sufficiently distinctive?
-- Have the style's strongest characteristics been explored?
-- Does the result avoid generic template aesthetics?
-
-### Functional quality
-- Are all links working?
-- Are navigation and interactions functional?
-- Are forms and CTAs operational?
-- Are animations smooth?
-- Is the page responsive?
-- Is accessibility considered?
-
-Do not sacrifice usability, accessibility or performance for visual effects.
-
-## 9. PRESERVE EXISTING FUNCTIONALITY
-
-When modifying an existing project:
-
-- Inspect the current code before making changes.
-- Preserve working functionality unless the user requests otherwise.
-- Do not rewrite unrelated components.
-- Do not change established content or behavior without a reason.
-- Make design improvements without introducing regressions.
-- Test the result after implementation.
-
-## 10. FINAL RULE
-
-The user chooses the style.
-
-The assistant is responsible for exploring it deeply and translating it into a complete visual experience.
-
-Never silently replace the chosen style with a safer or more familiar design direction.
-
-**Choose the style. Commit to the style. Explore the style. Finish the style.**
-
-The design must be recognizable from the header to the footer.
-
+The assistant must be able to propose a new named direction when the existing catalog does not describe the best solution. Explain its visual fingerprint before asking for approval.
 
 ---
 
-# DESIGN MANIFEST — STRICT ART-DIRECTION STANDARD
-**Version:** 2.0  
-**Status:** Mandatory extension to all previous sections. This version takes precedence wherever older wording is permissive or ambiguous.
+# PART II — ORIGINALITY AND ANTI-REPETITION
 
-## 11. STYLE FIDELITY IS A PASS/FAIL REQUIREMENT
+## 5. EVERY PROJECT MUST HAVE ITS OWN VISUAL IDENTITY
 
-A style name is not a mood-board suggestion. It is a visual specification.
+**Critical rule: do not fall into a repeated-design habit.**
 
-The implementation must be recognizably faithful to the selected style across the entire page. A dark background, a fashionable font, oversized headings or a few animations do not prove style fidelity.
+Projects created later must not automatically resemble previous projects. The assistant must not repeatedly reuse the same familiar hero, centered headline, two-column introduction, card grid, rounded buttons, gradient background, floating mockup, testimonial strip, or three-column footer.
 
-Before implementation, create a short style fingerprint containing:
-- The defining visual principles of the selected style.
-- Its characteristic typography and type hierarchy.
-- Its characteristic composition and spatial behavior.
-- Its image treatment and art direction.
-- Its color logic, contrast and material qualities.
-- Its characteristic motion and transitions.
-- The visual patterns that would make the result belong to a different style.
+A design is not original merely because its text, colors, images, or business name have changed.
 
-Use this fingerprint as a constraint during implementation and as a checklist during review.
+Before designing a new project:
+1. Review relevant earlier projects in the repository when available.
+2. Identify recurring compositions, section sequences, component patterns, typography pairings, motion patterns, and visual habits.
+3. Deliberately avoid repeating them unless the user specifically requests continuity or a shared brand system.
+4. Create a new project-specific concept, composition, hierarchy, and interaction language.
+5. Explain the distinguishing creative idea in the art-direction proposal.
 
-## 12. STYLE BOUNDARIES — DO NOT CONFUSE RELATED STYLES
+Do not copy a previous project's visual identity just because it was successful, convenient, or recently used.
 
-Styles may be combined only when the user explicitly approves the combination. Similarity is not permission to substitute one style for another.
+### Originality is not random novelty
 
-### Dark Cinematic Editorial
-**Core identity:** A film still translated into an immersive editorial website. The experience is atmospheric, photographic, emotionally paced and controlled.
+The goal is not to make every project strange. The goal is to make every project intentional and distinctive. Familiar patterns may be used when they genuinely serve the product, but they must not be the assistant's automatic default.
 
-Required characteristics:
-- Photography and moving image are the dominant visual material, not decorative cards.
-- Deep blacks, charcoal, shadow, restrained warm neutrals and carefully controlled highlights.
-- Tonal depth, directional light, dark gradients, subtle grain and deliberate image contrast.
-- Refined editorial typography, usually expressive serif display typography paired with quiet, highly legible supporting type.
-- Large image-led compositions, cinematic crops, layered depth and intentional negative space.
-- Slow, deliberate transitions and restrained motion that supports atmosphere.
-- Pacing that feels like a sequence of scenes: establish, reveal, pause, intensify, resolve.
-- Captions, credits, metadata and navigation should feel like film/editorial apparatus.
-- The contact and footer sections must preserve the cinematic atmosphere and never become generic conversion blocks.
+### Required originality check
 
-Avoid:
-- Brutalist display typography as the dominant identity.
-- Loud primary-color slabs, aggressive geometric labels and poster-like graphic overload.
-- Random asymmetry whose only purpose is to look experimental.
-- Repeated card grids as the main visual language.
-- Constant motion, excessive parallax or effects that compete with the photography.
-- Treating a black background alone as cinematic direction.
+Before implementation, define:
+- What makes this project visually different from the user's recent projects?
+- Which familiar patterns will be deliberately avoided?
+- What is the signature composition or experience?
+- Which project-specific details make the design belong to this business or product?
 
-### Brutalist Editorial
-**Core identity:** Typography, structure and graphic confrontation. The page behaves like an experimental printed publication or cultural poster.
+If the answer is essentially “different colors and images,” the concept is not sufficiently differentiated.
 
-Typical characteristics:
-- Monumental, often heavy or condensed typography.
-- Strong asymmetry, hard edges, exposed grids and deliberate structural tension.
-- High-contrast graphic blocks, bold rules, labels, numbers and annotations.
-- Visible layout mechanics and assertive editorial hierarchy.
-- More confrontational graphic composition than atmospheric image-led storytelling.
+## 6. STYLE PURITY — NO UNAPPROVED STYLE CONTAMINATION
 
-Avoid calling a design Dark Cinematic Editorial merely because it uses black backgrounds and photography.
+When the user chooses a style, execute that style faithfully and deeply.
 
-### Editorial Luxury
-**Core identity:** Quiet refinement, precision, material quality and restraint. It is not automatically cinematic and not automatically minimalist.
+**A selected style is not permission to create a hybrid.**
 
-### Immersive Cinematic
-**Core identity:** Full-screen audiovisual immersion, scene-based transitions, spatial depth and controlled narrative movement. It may be combined with Dark Cinematic Editorial only when the user authorizes it.
+- Do not mix visual languages just because their components look attractive together.
+- Do not insert traces of another style as decoration, trend, or convenience.
+- Do not use a Brutalist hero inside a Cinematic Editorial project unless explicitly approved.
+- Do not turn Editorial Luxury into generic minimalism.
+- Do not turn a corporate system into a futuristic interface through random glow effects.
+- Do not borrow the same visual formula from another project and call it a new interpretation.
+- Do not allow a component library's default aesthetic to override the chosen style.
+- Do not silently substitute the selected style with a familiar or easier one.
 
-## 13. STYLE PURITY AND COMBINATION RULES
+If the user explicitly authorizes a combination:
+1. State the primary style.
+2. State each secondary influence and its limited role.
+3. Explain how the combination will remain coherent.
+4. Obtain confirmation before implementation.
 
-- The selected style is the primary system, not one ingredient among several.
-- Do not let a secondary style dominate the primary style.
-- If combining styles, declare the primary style and the limited role of each secondary influence.
-- A style combination must be visible in the design system before coding.
-- Never silently replace the chosen style with a more familiar, easier or safer aesthetic.
-- Do not use a generic component library aesthetic as the foundation and then skin it.
-- Do not equate visual intensity with fidelity. More effects do not mean a more faithful result.
+If the user chooses one style without requesting a combination, treat that as a pure-style brief. Functional conventions may still be used where necessary, but they must be visually adapted to the chosen style rather than importing another style's identity.
 
-## 14. COMPOSITIONAL INTEGRITY
+## 7. STYLE FINGERPRINT — REQUIRED BEFORE CODING
 
-Every major composition must be checked for:
-- No accidental overlap between labels, headings, logos, images or CTAs.
-- No collisions at intermediate viewport widths.
-- Clear hierarchy and readable text over photography.
-- Intentional alignment, margins and negative space.
-- Image containers that fill their declared frame correctly.
-- Correct aspect ratio and object-fit behavior.
-- No accidental gaps caused by default margins, intrinsic image sizing or flex/grid overflow.
-- No clipped text unless clipping is a deliberate, tested art-direction decision.
-- No decorative background text obscuring foreground content.
+Create a project-specific style fingerprint containing:
 
-For full-frame image panels and slides:
-- The image must cover the complete frame using a deliberate crop.
-- The image element must fill the frame in both dimensions.
-- The slide itself must have zero unintended default figure margins.
-- The image must not distort.
-- The crop must be checked on desktop and mobile.
-- Controls and captions must remain legible without reducing the image to a small background strip.
+- Selected style and its defining principles.
+- Typography families, roles, and hierarchy.
+- Color logic, contrast, and material qualities.
+- Composition, grid, spacing, and spatial behavior.
+- Image art direction, crop, texture, and treatment.
+- Navigation and component language.
+- Motion principles and interaction behavior.
+- Responsive behavior.
+- Explicit anti-patterns: what must not appear because it would dilute or contradict the style.
+- Originality distinction from previous projects.
 
-## 15. TYPOGRAPHY AND LAYOUT MUST NOT DRIFT
+Use this fingerprint throughout implementation and QA. A style name, dark background, trendy font, oversized heading, or a few animations do not prove fidelity.
 
-Typography must match the selected style, not merely look fashionable.
-- Define display, editorial heading, body, caption, metadata and interface roles.
-- Avoid combining unrelated type personalities without a clear reason.
-- Check actual font loading and sensible fallbacks.
-- Check line wrapping at narrow, medium and wide widths.
-- Keep heading and supporting-copy relationships intentional.
-- Never allow a title, background wordmark or decorative type layer to collide unintentionally with another element.
+---
 
-## 16. IMAGE ART DIRECTION AND HONESTY
+# PART III — DESIGN FOR THE ACTUAL PRODUCT
 
-- Image selection, crop, light, contrast, color treatment and sequence are part of the design.
-- Use supplied client imagery when available and appropriate.
-- If placeholder imagery is used, label it clearly as temporary and do not present it as the client's actual portfolio.
-- Never invent client work, testimonials, awards, locations or credentials.
-- Do not use a visually convenient image if its subject contradicts the section's content.
-- Check every image URL and its rendered crop; broken or mismatched imagery is a release blocker.
+## 8. THE MANIFEST MUST WORK FOR DIFFERENT PRODUCT TYPES
 
-## 17. REQUIRED VALIDATION BEFORE RELEASE
+Do not treat every request as a conventional landing page. First identify the correct product architecture and user journey.
 
-A project is not complete merely because it compiles, commits or deploys.
+Examples include, but are not limited to:
 
-Review at minimum:
+### Corporate and institutional websites
+Priorities may include trust, clarity, positioning, services, proof, company information, lead generation, and contact. Do not automatically use the same corporate template.
+
+### Online stores and product catalogs
+Priorities may include product discovery, categories, search, filters, product detail, price and availability clarity, cart or inquiry flow, and mobile browsing. The visual system must support comparison and shopping without turning every product into an identical generic card.
+
+### Rental-car platforms
+Priorities may include vehicle discovery, category and feature comparison, availability, rental terms, location, booking or inquiry, and trust. Vehicle imagery, specifications, and booking actions must be designed as a coherent experience. Do not confuse this with a normal car dealership website.
+
+### Digital restaurant menus
+Priorities may include fast access, category navigation, readable prices, appetizing imagery, dietary or item details when supplied, ordering/contact actions, and excellent mobile use. The menu should remain quick and legible, even when the visual direction is expressive.
+
+### Portfolios and creative professionals
+Priorities may include a strong point of view, authentic work, project context, services, credibility, and contact. Never fabricate portfolio projects.
+
+### Booking, reservations, and appointments
+Priorities may include availability, dates, times, service selection, clear steps, confirmation, and trust. Avoid decorative interactions that obscure the booking task.
+
+### SaaS, dashboards, and operational applications
+Priorities may include task completion, information hierarchy, data clarity, navigation, states, feedback, accessibility, and reliability. Visual style must not undermine comprehension.
+
+### Landing pages and campaign pages
+Priorities may include one clear audience, one central promise, evidence, objection handling, and a focused conversion action. Avoid clutter and competing CTAs.
+
+### Directories, marketplaces, and discovery platforms
+Priorities may include search, filters, categories, comparison, location or provider information, trust, and clear next actions.
+
+### PWAs and offline-first applications
+Priorities may include installability, offline states, local persistence, sync or backup status where applicable, touch ergonomics, performance, and recovery from errors.
+
+### Education, churches, nonprofits, events, hospitality, media, and communities
+Identify the real user journeys and content needs. Do not force them into a corporate brochure pattern.
+
+For every product type, establish the information architecture, core screens or sections, user journeys, data requirements, and primary actions before choosing components.
+
+## 9. BUSINESS GOALS AND USER EXPERIENCE
+
+Every project must have a clear purpose beyond looking attractive.
+
+Define:
+- Primary audience.
+- Main problem or need.
+- Main value proposition.
+- Primary user action.
+- Secondary actions.
+- Trust signals that are real and verifiable.
+- Content hierarchy.
+- Likely objections or friction.
+- Success criteria appropriate to the product.
+
+Design should help the product communicate, sell, inform, organize, or serve. Do not add visual complexity that makes the core task harder.
+
+---
+
+# PART IV — DESIGN EXECUTION
+
+## 10. DESIGN SYSTEM BEFORE IMPLEMENTATION
+
+Define the system before building:
+- Art direction and style fingerprint.
+- Font families, weights, and roles.
+- Color tokens and contrast.
+- Typographic scale.
+- Spacing scale and layout grid.
+- Border, radius, shadow, and surface rules.
+- Image ratios and image treatments.
+- Component states and interaction patterns.
+- Motion principles.
+- Responsive breakpoints and adaptation rules.
+- Accessibility requirements.
+
+Do not choose each value randomly while coding. Keep decisions consistent and intentional.
+
+## 11. TYPOGRAPHY
+
+- Select fonts that genuinely belong to the chosen style.
+- Define display, heading, body, caption, metadata, and interface roles.
+- Use deliberate combinations; avoid unrelated type personalities.
+- Explore weight, width, size, tracking, line-height, and case.
+- Check actual font loading and fallback behavior.
+- Check line wrapping at narrow, medium, and wide widths.
+- Do not default to Inter, Roboto, or generic system fonts without a deliberate reason.
+- Never allow decorative typography to collide with content accidentally.
+
+Typography must be part of the identity, not a last-minute decoration.
+
+## 12. COLOR, MATERIAL, AND CONTRAST
+
+- Build a coherent palette from the selected style and brand context.
+- Define background, surface, text, muted text, accent, border, and state colors.
+- Use contrast intentionally and verify readability.
+- Avoid defaulting to the same black-and-gold, blue-and-white, or purple-gradient combinations across projects.
+- Color alone must not carry meaning; include text, icons, or other cues for states.
+
+## 13. COMPOSITION, LAYOUT, AND SECTION RHYTHM
+
+- Explore the full compositional vocabulary of the selected style.
+- Do not force every section into the same card grid.
+- Do not repeat the same section order automatically.
+- Vary scale, density, alignment, image placement, and pacing with intent.
+- Use whitespace, overlap, asymmetry, borders, labels, numbers, and graphic marks only when they serve the concept.
+- Keep hierarchy clear even when the composition is experimental.
+- Every section must have a purpose and a distinct relationship to the whole page.
+- Avoid generic hero-plus-three-cards-plus-testimonials-plus-three-column-footer as an automatic formula.
+
+## 14. NAVIGATION, CONTROLS, AND COMPONENTS
+
+- Design navigation to belong to the chosen style and product.
+- Define default, hover, focus, active, disabled, loading, success, and error states where relevant.
+- Buttons must communicate their action clearly.
+- Forms must have labels, validation, feedback, and usable error states.
+- Interactive elements must be keyboard accessible.
+- Do not use decorative controls that appear functional but do nothing.
+- Do not use a component library's default look without deliberate adaptation.
+
+## 15. IMAGES AND ASSETS
+
+- Image selection, subject, crop, ratio, light, color, texture, and sequence are part of art direction.
+- Prefer supplied authentic client assets when available.
+- Do not use random imagery merely to fill empty space.
+- Check image URLs and actual rendered crops.
+- Use correct aspect ratios and object-fit behavior.
+- For full-frame image panels, the image must fill the frame in both dimensions without distortion.
+- Remove unintended default figure margins and layout gaps.
+- If placeholders are used, disclose them clearly and never present them as the client's real work.
+- Never fabricate client projects, testimonials, awards, locations, credentials, or results.
+
+## 16. MOTION AND INTERACTION AS A DESIGN LANGUAGE
+
+Motion should express the selected style and improve feedback, orientation, or storytelling.
+
+Explore where appropriate:
+- Hero entrances and staggered typography.
+- Scroll-triggered reveals.
+- Image and mask transitions.
+- Parallax and depth.
+- Horizontal movement or scroll sequences.
+- Hover-driven compositions.
+- Cursor responses.
+- Animated graphic elements.
+- Progress indicators.
+- Section transitions.
+- Microinteractions and state feedback.
+
+Do not reuse the same animation recipe on every project. Motion must be project-specific and consistent with the selected style.
+
+When the user asks to fully explore or “abuse” a style, interpret that as deeper expression of its defining visual language—not random effects or uncontrolled motion.
+
+Performance and usability remain mandatory:
+- Avoid animation overload that delays core actions.
+- Avoid layout shifts and jank.
+- Respect `prefers-reduced-motion`.
+- Provide a usable experience on touch devices.
+- Ensure essential information is not hidden until an animation runs.
+
+## 17. RESPONSIVE DESIGN IS RECOMPOSITION
+
+- Design for desktop, laptop, tablet, and mobile.
+- Recompose rather than merely shrink desktop layouts.
+- Preserve the selected style and hierarchy at every size.
+- Adapt typography, image crops, navigation, spacing, grids, and interaction.
+- Check intermediate widths, not only standard device presets.
+- Prevent accidental horizontal overflow.
+- Ensure controls are usable by touch.
+- Do not sacrifice mobile clarity for desktop spectacle.
+
+---
+
+# PART V — ENGINEERING AND PRESERVATION
+
+## 18. INSPECT BEFORE MODIFYING
+
+For an existing project:
+1. Read the manifest.
+2. Inspect repository structure and relevant files.
+3. Understand current data flow, dependencies, routing, storage, APIs, and component relationships.
+4. Identify what currently works.
+5. Identify the exact requested change.
+6. Define the smallest safe implementation scope.
+
+Never edit blindly based on a screenshot or a partial snippet when the source can be inspected.
+
+## 19. PRESERVE WORKING FUNCTIONALITY
+
+- A request to improve one area is not permission to rebuild the whole project.
+- Do not rewrite unrelated components.
+- Do not remove existing features, data, routes, integrations, or behavior without authorization.
+- Do not replace a working implementation merely because another approach is more familiar.
+- Keep existing conventions unless there is a concrete reason to change them.
+- Prefer focused, minimal changes.
+- Preserve backward compatibility where practical.
+- If a requested change requires a breaking change, explain it before proceeding.
+- After changes, test both the new behavior and relevant existing behavior.
+
+**Golden rule: improving one part does not authorize damaging another.**
+
+## 20. FUNCTIONAL HONESTY
+
+- Every visible button and link must perform its advertised action.
+- Do not create fake forms, fake checkout, fake booking, fake search, or fake download controls.
+- If a feature requires a backend, API, credentials, or external service that is unavailable, explain the limitation and implement only a truthful working alternative.
+- Do not claim data is saved, sent, synchronized, or secure unless the implementation supports that claim.
+- Handle loading, empty, success, and error states where relevant.
+- Avoid exposing secrets or credentials in client-side code.
+- Use semantic HTML and accessible labels.
+- Validate input and handle failures gracefully.
+
+## 21. PERFORMANCE, ACCESSIBILITY, AND RESILIENCE
+
+- Keep the implementation appropriate to the user's platform, budget, and technical constraints.
+- Avoid unnecessary libraries and oversized assets.
+- Optimize image sizes and loading behavior.
+- Use lazy loading where appropriate.
+- Avoid excessive JavaScript and expensive animations.
+- Ensure keyboard navigation, focus visibility, semantic structure, readable contrast, and meaningful alternative text.
+- Respect reduced-motion preferences.
+- Provide useful empty, offline, and error states where the product requires them.
+- Never trade basic accessibility or core usability for visual novelty.
+
+---
+
+# PART VI — QUALITY ASSURANCE AND RELEASE
+
+## 22. TESTING IS REQUIRED — DEPLOYMENT IS NOT QA
+
+A successful build, commit, or deployment does not prove that the project works or looks correct.
+
+Perform checks proportionate to the task and distinguish clearly between:
+- Source-code inspection.
+- Automated checks.
+- Functional testing.
+- Visual inspection in a rendered browser.
+- Deployment and public URL verification.
+
+Never claim a check was performed if it was not.
+
+## 23. REQUIRED QA CHECKLIST
+
+### Functional
+- Navigation and internal links.
+- External links and contact destinations.
+- Buttons and CTAs.
+- Forms and validation.
+- Search, filters, sorting, and pagination where present.
+- Booking, cart, checkout, or inquiry flows where present.
+- Download, upload, install, and offline behavior where present.
+- Storage and persistence behavior where present.
+- Loading, empty, success, and error states.
+- Existing features affected by the change.
+
+### Visual
 - Wide desktop.
 - Standard laptop.
 - Tablet.
 - Narrow mobile.
-- Mobile navigation open and closed.
-- Every carousel/slider state.
-- Every image-led section.
-- Contact CTA and all navigation destinations.
+- Intermediate widths.
+- Navigation open and closed.
+- Every carousel or slider state.
+- Image-led sections and crop behavior.
+- Typography wrapping.
+- Alignment, spacing, overlaps, and clipping.
+- Horizontal overflow.
 - Reduced-motion behavior.
-- Text wrapping, overlap, overflow and image coverage.
 
-For each selected style, run a style-fidelity review:
-1. Can the style be recognized without reading the project brief?
-2. Does every major section belong to the same art direction?
-3. Are the strongest defining characteristics genuinely present?
-4. Are there visual elements that belong more strongly to another style?
-5. Is the result more than a generic template with stylistic decoration?
-6. Are the style's image, typography, composition and motion rules all working together?
+### Design fidelity and originality
+1. Is the chosen style recognizable without reading the brief?
+2. Does every major section belong to that style?
+3. Has an unapproved secondary style contaminated the result?
+4. Does this project look distinct from recent projects?
+5. Are familiar layouts repeated without a project-specific reason?
+6. Do typography, composition, imagery, color, and motion work as one system?
+7. Does the experience serve the product's actual users and goals?
 
-If any answer reveals a mismatch, revise before calling the work finished.
+If a mismatch is found, fix it before declaring completion.
 
-Do not claim visual QA unless the rendered site was actually inspected at the relevant viewport sizes. Distinguish code review, deployment verification and visual browser testing.
+## 24. RELEASE BLOCKERS
 
-## 18. RELEASE BLOCKERS
-
-Do not declare completion while any of these remain:
-- Accidental text or image overlap.
-- Broken or incorrectly sized image panels.
-- Slider or navigation controls that fail.
+Do not declare a project complete while any of these remain:
+- Broken core navigation or primary CTA.
+- Nonfunctional controls presented as functional.
+- Accidental overlap or unreadable text.
+- Broken, misleading, or incorrectly sized images.
 - Unintended horizontal overflow.
-- Missing or misleading contact links.
-- Mobile layouts that lose hierarchy or identity.
-- A visual direction that materially drifts from the user-selected style.
-- Placeholder assets presented as final client assets.
+- Missing or incorrect contact destinations.
+- Mobile layout that loses hierarchy or core usability.
+- Material drift from the selected style.
+- Unapproved mixing of visual styles.
+- Generic repeated design that ignores the project's originality brief.
+- Placeholder assets presented as real client assets.
+- Data loss or regression in existing functionality.
+- Unverified claims about testing, deployment, or functionality.
 
-## 19. FINAL EXECUTION RULE
+If a blocker cannot be resolved because of missing access, assets, credentials, or user input, state it explicitly. Do not hide it.
 
-The assistant must not merely name the style. It must demonstrate the style through typography, composition, imagery, pacing, interaction and responsive behavior.
+## 25. DELIVERY REPORT
 
-When the user asks to “abuse” or fully explore a style, interpret that as a request for deeper fidelity to the style's defining language—not random decoration, uncontrolled effects or visual noise.
+At the end of each implementation task, report concisely:
+- What was changed.
+- What was deliberately left untouched.
+- Which functionality was tested.
+- Which viewports were visually inspected, if any.
+- Whether deployment was performed and its verified status.
+- Known limitations, placeholders, or remaining blockers.
 
-**Style fidelity is mandatory. A successful deployment is not proof of a successful design.**
+Never conflate “code committed,” “deployment ready,” “URL responds,” and “visual QA passed.” They are different claims.
+
+---
+
+# PART VII — FINAL CONSTITUTION
+
+## 26. NON-NEGOTIABLE RULES
+
+1. Read the current manifest before every code execution or modification.
+2. Understand the project, audience, product, and user's essence before proposing design.
+3. Present a tailored shortlist of suitable styles before every new visual project.
+4. Wait for the user's style selection and confirmation before visual implementation.
+5. Respect the selected style completely; do not mix styles without explicit approval.
+6. Create a unique visual identity for every project; do not recycle previous designs by habit.
+7. Do not mistake changed colors, text, or images for originality.
+8. Preserve existing working functionality and stay within the authorized scope.
+9. Do not fabricate content, work, credentials, or functionality.
+10. Test what was changed and report honestly what was and was not verified.
+11. Treat mobile, accessibility, performance, and usability as core requirements.
+12. Do not declare completion while release blockers remain.
+
+## 27. THE STANDARD
+
+The user owns the vision and approves the direction.
+The assistant is responsible for translating that direction into a coherent, original, usable, and technically sound product.
+
+The assistant must not take shortcuts by repeating a familiar design, diluting a chosen style, importing another style without permission, or rewriting working code unnecessarily.
+
+**Understand the product. Read the manifest. Recommend the right styles. Let the user choose. Create a distinct identity. Execute with fidelity. Preserve what works. Test honestly. Deliver with evidence.**
+
+**The goal is not to make every project look like the last successful project. The goal is to make every project look like itself.**
