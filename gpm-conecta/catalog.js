@@ -47,9 +47,15 @@
     list.replaceChildren(...visible.map(makeProductRow));
     empty.hidden = visible.length > 0;
     total.textContent = visible.length + (visible.length === 1 ? ' REFERÊNCIA' : ' REFERÊNCIAS') + ' / ' + products.length + ' PUBLICADAS';
+    const emptyTitle = empty.querySelector('h3');
+    const emptyText = empty.querySelector('p');
     if (products.length === 0) {
+      emptyTitle.textContent = 'Catálogo em preparação';
+      emptyText.textContent = 'A GPM ainda não publicou referências neste catálogo. Estamos a preparar a informação de cada produto para evitar apresentar especificações, preços ou disponibilidade sem validação.';
       status.textContent = 'Ainda não existem produtos publicados. A pesquisa e os filtros estão prontos para o catálogo validado.';
     } else if (visible.length === 0) {
+      emptyTitle.textContent = 'Sem resultados nesta seleção';
+      emptyText.textContent = 'Não encontrámos produtos para os termos pesquisados nesta área. Experimente outra palavra ou selecione todas as áreas.';
       status.textContent = 'Nenhum produto corresponde à pesquisa e à área selecionada.';
     } else {
       status.textContent = visible.length + ' produto(s) encontrado(s). Consulte cada ficha para conhecer a informação validada.';
