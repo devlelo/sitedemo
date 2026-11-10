@@ -35,7 +35,7 @@ A GPM consulta fornecedores manualmente na primeira fase. A arquitetura deverá 
 
 ## Primeira implementação visual
 
-A primeira interface institucional e de descoberta do marketplace está em `index.html`, com estilos em `styles.css` e interações de navegação/catálogo em `app.js`. A direção aprovada é Neo-Industrial Field Manual. O catálogo apresenta um estado vazio honesto até existirem produtos reais validados. Esta versão é frontend estático e não processa pedidos nem autenticação.
+A primeira interface institucional e de descoberta do marketplace está em `index.html`, com estilos em `styles.css` e interações de navegação/catálogo em `app.js`. A direção aprovada é Neo-Industrial Field Manual, adaptada à identidade oficial da GPM: branco `#FFFFFF`, azul-marinho `#0A2945` e dourado `#CE9E53`. O catálogo apresenta um estado vazio honesto até existirem produtos reais validados. Esta versão é frontend estático e não processa pedidos nem autenticação.
 
 ## Estrutura
 
