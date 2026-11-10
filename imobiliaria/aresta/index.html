@@ -152,6 +152,15 @@ footer{min-height:150px}
  .services{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+/* Hero banner: authentic location photography, restrained editorial treatment */
+.hero-visual img{filter:none!important;animation:hero-photo-natural 1.15s ease-out both!important}
+.hero-visual:before{display:none!important}
+.hero-visual:after{background:linear-gradient(0deg,rgba(16,20,16,.42),transparent 24%)!important}
+.hero-caption{right:clamp(22px,4vw,58px);bottom:clamp(22px,4vw,46px);gap:16px}
+.hero-caption strong{font-size:clamp(20px,2.3vw,30px);text-shadow:0 1px 10px #0003}
+.hero-caption span{max-width:170px;letter-spacing:.16em;font-size:8px}
+@keyframes hero-photo-natural{from{opacity:.55;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+@media(max-width:620px){.hero-caption{right:22px;bottom:22px}.hero-caption span{max-width:135px}}
 </style>
 </head>
 <body>
@@ -170,7 +179,7 @@ footer{min-height:150px}
     <div><h1>Há lugares<br>que nos <em>escolhem.</em></h1><p class="hero-intro">Aproximamos pessoas de espaços com significado. Uma visão cuidada do mercado imobiliário, com acompanhamento em cada decisão.</p></div>
     <div class="hero-foot"><span class="micro">Imóveis selecionados.<br>Decisões bem acompanhadas.</span><a class="round-link" href="#imoveis" aria-label="Explorar imóveis">↘</a></div>
   </div>
-  <div class="hero-visual"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88" alt="Arquitetura contemporânea com pátio e jardim"><div class="hero-stamp">01 / 04<br>Selecção Aresta<br>Angola · 2026</div><div class="hero-caption"><strong>Espaço para viver melhor.</strong><span>Arquitectura, localização<br>e intenção.</span></div></div>
+  <div class="hero-visual"><img src="https://images.unsplash.com/photo-1774226905114-1daa47ee03dc?auto=format&fit=crop&w=2000&q=88" alt="Fachada residencial fotografada à luz natural ao fim da tarde"><div class="hero-caption"><strong>Um lugar para começar.</strong><span>SELECÇÃO RESIDENCIAL · ANGOLA</span></div></div>
 </section>
 <div class="metrics" aria-label="Indicadores da empresa"><div class="metric"><strong>01</strong><span>Visão imobiliária</span></div><div class="metric"><strong>04</strong><span>Categorias de imóveis</span></div><div class="metric"><strong>360°</strong><span>Acompanhamento</span></div></div>
 <section class="section" id="empresa">
