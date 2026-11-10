@@ -25,7 +25,7 @@ class StaffController extends Controller {
     }
     public function status(Request $request, SupplyRequest $supplyRequest) {
         $data=$request->validate(['status'=>['required','in:under_review,supplier_check,awaiting_customer,rejected,preparing,dispatched,delivered'],'reason'=>['required','string','max:1000']]);
-        $allowed=['submitted'=>['under_review','supplier_check','rejected'],'under_review'=>['supplier_check','awaiting_customer','rejected'],'supplier_check'=>['under_review','awaiting_customer','rejected'],'awaiting_customer'=>['under_review','supplier_check','rejected'],'customer_accepted'=>['preparing'],'confirmed'=>['preparing'],'preparing'=>['dispatched'],'dispatched'=>['delivered']];
+        $allowed=['submitted'=>['under_review','supplier_check','rejected'],'under_review'=>['supplier_check','awaiting_customer','rejected'],'supplier_check'=>['under_review','awaiting_customer','rejected'],'awaiting_customer'=>['under_review','supplier_check','rejected'],'customer_accepted'=>[],'confirmed'=>['preparing'],'preparing'=>['dispatched'],'dispatched'=>['delivered']];
         abort_unless(in_array($data['status'],$allowed[$supplyRequest->status]??[],true),422,'Transição de estado não permitida.');
         $old=$supplyRequest->status;
         DB::transaction(function() use($request,$supplyRequest,$data,$old) {
@@ -47,6 +47,7 @@ class StaffController extends Controller {
         $data=$request->validate(['currency'=>['required','in:AOA,USD,EUR'],'valid_until'=>['required','date','after_or_equal:today'],'notes'=>['nullable','string','max:2000'],'lines'=>['required','array','min:1'],'lines.*.item_id'=>['required','exists:supply_request_items,id'],'lines.*.quantity'=>['required','numeric','min:0.01'],'lines.*.unit_price'=>['required','numeric','min:0'],'lines.*.availability_note'=>['nullable','string','max:500'],'lines.*.lead_time_days'=>['nullable','integer','min:0']]);
         $proposal=DB::transaction(function() use($request,$supplyRequest,$data) {
             $version=(int)$supplyRequest->proposals()->max('version')+1;
+            $supplyRequest->proposals()->where('status','sent')->update(['status'=>'superseded']);
             $proposal=$supplyRequest->proposals()->create(['version'=>$version,'status'=>'sent','currency'=>$data['currency'],'valid_until'=>$data['valid_until'],'subtotal'=>0,'notes'=>$data['notes']??null,'sent_at'=>now(),'created_by'=>$request->user()->id]);
             $sum=0;
             foreach($data['lines'] as $line) {
