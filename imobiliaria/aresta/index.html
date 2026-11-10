@@ -81,6 +81,76 @@ footer{padding:34px var(--gutter);background:var(--ink);color:var(--paper);displ
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;clip-path:none;transition:none;will-change:auto}.hero-visual img,.hero h1,.hero h1 em,.hero-copy>.eyebrow,.hero-intro,.hero-stamp,.hero-caption{animation:none}.institution-visual:after{display:none}.institution-visual img{transform:none;transition:none}.hero-visual:before{display:none}.modal.open .modal-panel,.modal.open .modal-image{animation:none}}
 @media(max-width:900px){.site-head{grid-template-columns:1fr auto}.main-nav{display:none;position:absolute;left:0;right:0;top:88px;background:var(--paper);padding:24px var(--gutter) 30px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}.main-nav.open{display:flex}.head-right{grid-column:2}.menu-toggle{display:block}.head-contact{display:none}.hero{grid-template-columns:.9fr 1.1fr;min-height:620px}.hero-copy{padding-top:65px}.hero h1{font-size:clamp(58px,9vw,90px)}.institution{gap:6vw}.institution-visual{height:500px}.property{grid-column:span 6}.property:nth-child(3n+2){margin-top:0}.property:nth-child(even){margin-top:45px}.catalog-head{align-items:flex-start;flex-direction:column}.catalog-tools{justify-content:flex-start}.services{gap:7vw}.contact{gap:6vw}}
 @media(max-width:620px){:root{--gutter:22px}.demo-ribbon{font-size:7px}.site-head{height:74px}.brand-name{font-size:17px}.main-nav{top:74px}.hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:0}.hero-copy{padding:52px var(--gutter) 28px;min-height:440px}.hero h1{font-size:clamp(66px,17vw,100px);margin:48px 0 22px}.hero h1 em{margin-left:35px}.hero-intro{font-size:12px}.hero-foot{margin-top:40px}.hero-visual{height:390px;margin:0}.hero-visual:after{background:linear-gradient(0deg,#1d241b66,transparent 55%)}.hero-caption{right:22px;bottom:22px}.hero-stamp{top:18px;right:18px}.metrics{margin:0 22px}.metric{padding:17px 8px 17px 0;gap:6px;flex-direction:column}.metric:not(:first-child){padding-left:12px}.metric strong{font-size:29px}.metric span{font-size:7px}.section{padding:78px var(--gutter)}.section-top{grid-template-columns:1fr;gap:20px;margin-bottom:35px}.section-note{justify-self:start}.institution{grid-template-columns:1fr;gap:32px}.institution-visual{height:390px}.institution-copy{padding-top:0}.institution-copy h2{font-size:49px}.values{margin-top:28px}.catalog-head{margin-bottom:25px}.catalog-tools{display:grid;grid-template-columns:1fr 1fr;width:100%}.filter{min-width:0;width:100%;font-size:8px;padding-right:24px}.property-grid{grid-template-columns:1fr;gap:34px}.property,.property:nth-child(4n){grid-column:1;margin:0!important}.property-image{height:360px}.property h3{font-size:27px}.catalog-foot{align-items:flex-start;flex-direction:column;gap:20px}.services{grid-template-columns:1fr;gap:40px}.services-intro{position:static}.service{grid-template-columns:36px 1fr 20px;padding:20px 0}.service h3{font-size:25px}.quote-band{grid-template-columns:1fr;gap:22px}.quote-band .micro{writing-mode:initial}.contact{grid-template-columns:1fr;gap:42px}.contact-form{grid-template-columns:1fr}.field.full{grid-column:auto}.submit{grid-column:auto}footer{align-items:flex-start;flex-direction:column}.footer-note{text-align:left}.modal-panel{grid-template-columns:1fr;max-height:92svh}.modal-image{min-height:250px;height:260px}.modal-copy{padding:28px 23px}.modal-copy h2{font-size:38px}}
+/* MONOGRAPH COMPOSITION — architectural plates, measured margins and editorial indexing */
+.hero{grid-template-columns:minmax(310px,.72fr) 1.28fr}
+.hero-copy{padding-top:clamp(66px,8vw,112px);padding-bottom:54px}
+.hero h1{font-size:clamp(68px,8.8vw,136px);line-height:.82;letter-spacing:-.085em}
+.hero-intro{max-width:300px;margin-left:clamp(0px,2vw,28px)}
+.hero-copy:after{content:"A / 01";position:absolute;right:18px;top:50%;writing-mode:vertical-rl;font:9px var(--mono);letter-spacing:.22em;color:var(--muted);border-left:1px solid var(--line);padding:14px 0}
+.hero-visual{margin-left:0}
+.hero-visual img{object-position:center 52%}
+.metrics{grid-template-columns:1.1fr 1fr 1fr}
+.metric{min-height:94px;align-items:center}
+.metric strong{font-size:clamp(34px,4vw,56px)}
+.section{position:relative}
+.section-top{grid-template-columns:1.15fr .85fr}
+.section-top .section-note{border-left:1px solid var(--olive);padding:6px 0 6px 24px}
+.institution{grid-template-columns:.92fr 1.08fr;gap:clamp(48px,10vw,155px)}
+.institution-visual{height:clamp(440px,52vw,690px)}
+.institution-visual:before{content:"PLATE 01";position:absolute;z-index:2;top:18px;left:18px;color:white;font:9px var(--mono);letter-spacing:.18em}
+.institution-copy{padding-top:clamp(20px,6vw,90px)}
+.institution-copy h2{max-width:650px;font-size:clamp(44px,5.6vw,80px)}
+.catalog{position:relative}
+.catalog:before{content:"PROPERTY INDEX / 2026";position:absolute;right:var(--gutter);top:38px;font:8px var(--mono);letter-spacing:.18em;color:var(--muted)}
+.catalog-head{align-items:end;margin-bottom:70px}
+.catalog-head .section-title{font-size:clamp(54px,7vw,96px)}
+.property-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:76px 24px;align-items:start}
+.property{grid-column:span 6}
+.property:nth-child(1){grid-column:1 / span 7}
+.property:nth-child(2){grid-column:8 / span 5;margin-top:145px}
+.property:nth-child(3){grid-column:1 / span 5;margin-top:0}
+.property:nth-child(4){grid-column:6 / span 7;margin-top:110px}
+.property:nth-child(5){grid-column:1 / span 7;margin-top:0}
+.property:nth-child(6){grid-column:8 / span 5;margin-top:145px}
+.property-image{height:clamp(310px,39vw,510px)}
+.property:nth-child(2n) .property-image{height:clamp(250px,29vw,390px)}
+.property-meta{padding-top:3px;border-top:1px solid var(--line)}
+.property h3{font-size:clamp(27px,3.1vw,43px);margin-top:5px}
+.property-price{font-size:13px}
+.property-specs{font-size:9px}
+.catalog-foot{margin-top:90px}
+.services{grid-template-columns:.72fr 1.28fr;gap:10vw}
+.services-intro{padding-top:24px}
+.service{grid-template-columns:62px 1fr 45px;padding:34px 0}
+.service h3{font-size:clamp(28px,3.4vw,44px)}
+.quote-band{padding-top:clamp(95px,12vw,170px);padding-bottom:clamp(95px,12vw,170px)}
+.quote-band blockquote{max-width:1050px;font-size:clamp(42px,6.2vw,88px)}
+.contact{grid-template-columns:.9fr 1.1fr;gap:12vw}
+footer{min-height:150px}
+@media(max-width:900px){
+ .hero{grid-template-columns:.85fr 1.15fr}
+ .hero-copy:after{right:6px}
+ .property-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 18px}
+ .property,.property:nth-child(n){grid-column:auto;margin:0}
+ .property:nth-child(even){margin-top:65px}
+ .property-image,.property:nth-child(2n) .property-image{height:clamp(260px,38vw,390px)}
+}
+@media(max-width:620px){
+ .hero{display:flex;flex-direction:column}
+ .hero-copy:after{display:none}
+ .hero h1{font-size:clamp(68px,17vw,100px)}
+ .section-top{grid-template-columns:1fr}
+ .section-top .section-note{padding-left:16px}
+ .institution{grid-template-columns:1fr}
+ .institution-visual{height:390px}
+ .property-grid{grid-template-columns:1fr;gap:42px}
+ .property,.property:nth-child(n){grid-column:1;margin:0}
+ .property-image,.property:nth-child(2n) .property-image{height:360px}
+ .property h3{font-size:30px}
+ .catalog:before{display:none}
+ .catalog-head{margin-bottom:35px}
+ .services{grid-template-columns:1fr}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -157,7 +227,7 @@ const properties=[
 {id:6,type:'Terreno',location:'Luanda',name:'Terras do Mirante',area:'Benfica, Luanda',price:'72.000.000 Kz',beds:'Urbano',baths:'—',size:'1.200 m²',image:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=88',description:'Terreno conceptual para desenvolvimento, apresentado apenas para demonstrar a organização de oportunidades e dados de um catálogo imobiliário.'}
 ];
 const grid=document.getElementById('propertyGrid'),typeFilter=document.getElementById('typeFilter'),locationFilter=document.getElementById('locationFilter');
-function renderProperties(){const filtered=properties.filter(p=>(typeFilter.value==='all'||p.type===typeFilter.value)&&(locationFilter.value==='all'||p.location===locationFilter.value));grid.innerHTML=filtered.length?filtered.map(p=>'<article class="property" tabindex="0" role="button" data-id="'+p.id+'"><div class="property-image"><img src="'+p.image+'" alt="'+p.name+'"><span class="property-tag">'+p.type+'</span><span class="property-arrow">↗</span></div><div class="property-meta"><span>'+p.area+'</span><span>AR—'+String(p.id).padStart(3,'0')+'</span></div><h3>'+p.name+'</h3><div class="property-bottom"><span class="property-price">'+p.price+'</span><span class="property-specs">'+p.beds+' · '+p.size+'</span></div></article>').join(''):'<div class="empty-state">Não encontrámos imóveis com estes filtros.</div>';grid.querySelectorAll('.property').forEach(card=>{card.addEventListener('click',()=>openProperty(Number(card.dataset.id)));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProperty(Number(card.dataset.id))}})});}
+function renderProperties(){const filtered=properties.filter(p=>(typeFilter.value==='all'||p.type===typeFilter.value)&&(locationFilter.value==='all'||p.location===locationFilter.value));grid.innerHTML=filtered.length?filtered.map(p=>'<article class="property reveal" tabindex="0" role="button" data-id="'+p.id+'"><div class="property-image"><img src="'+p.image+'" alt="'+p.name+'"><span class="property-tag">'+p.type+'</span><span class="property-arrow">↗</span></div><div class="property-meta"><span>'+p.area+'</span><span>AR—'+String(p.id).padStart(3,'0')+'</span></div><h3>'+p.name+'</h3><div class="property-bottom"><span class="property-price">'+p.price+'</span><span class="property-specs">'+p.beds+' · '+p.size+'</span></div></article>').join(''):'<div class="empty-state">Não encontrámos imóveis com estes filtros.</div>';grid.querySelectorAll('.property').forEach(card=>{card.addEventListener('click',()=>openProperty(Number(card.dataset.id)));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProperty(Number(card.dataset.id))}})});}
 typeFilter.addEventListener('change',renderProperties);locationFilter.addEventListener('change',renderProperties);
 const modal=document.getElementById('propertyModal');
 function openProperty(id){const p=properties.find(x=>x.id===id);if(!p)return;document.getElementById('modalImg').src=p.image;document.getElementById('modalImg').alt=p.name;document.getElementById('modalMeta').textContent=p.type+' · '+p.area;document.getElementById('modalTitle').textContent=p.name;document.getElementById('modalDescription').textContent=p.description;document.getElementById('modalPrice').textContent=p.price;document.getElementById('modalSpecs').innerHTML='<span>Tipologia<b>'+p.beds+'</b></span><span>Instalações<b>'+p.baths+'</b></span><span>Área<b>'+p.size+'</b></span>';document.getElementById('modalCta').href='https://wa.me/?text='+encodeURIComponent('Olá, gostaria de receber informações sobre '+p.name+' ('+p.area+').');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('modalClose').focus()}
