@@ -1,9 +1,9 @@
 # DESIGN & DEVELOPMENT QUALITY CONSTITUTION
-## Master Manifest — Version 4.0
+## Master Manifest — Version 4.1
 
 **Status:** Mandatory operating standard for every new project, redesign, feature addition, bug fix, refactor, and code modification in this repository.
 **Scope:** Websites, web applications, landing pages, corporate websites, portfolios, catalogs, e-commerce, restaurant menus, rental-car platforms, booking systems, dashboards, directories, PWAs, offline applications, and other digital products.
-**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.0 wins.
+**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.1 wins.
 
 ---
 
@@ -806,3 +806,84 @@ A project is not ready for delivery until:
 - Required QA has been performed and reported honestly.
 
 **Final V4.0 principle: Never make the next project look like the previous one by habit. Never make a chosen style look like a mixture of styles by accident. Never build a generic page before understanding the product. Every project must earn its own identity.**
+
+
+---
+
+# PART IX — VERSION 4.1: ANTI-DECORATIVE MICRO-LINES AND INTENTIONAL GRAPHIC ELEMENTS
+
+This section is mandatory for every visual project and takes precedence over any earlier instruction that could encourage unnecessary decorative strokes.
+
+## 36. NO AUTOMATIC MICRO-LINES OR AI-LIKE DECORATION
+
+The assistant must not add tiny lines, short horizontal strokes, miniature vertical bars, pseudo-separators, tiny rules beside labels, or isolated decorative marks simply to make a composition look designed.
+
+These elements are a common visual shortcut and often make interfaces look formulaic, machine-generated, or unnecessarily busy.
+
+Before adding any small line or stroke, the assistant must be able to explain its concrete design function. If it has no clear function, do not add it. If removing it improves the composition without harming hierarchy, navigation, comprehension, or the chosen style, remove it.
+
+### 36.1 Explicitly prohibited by default
+
+Do not automatically add:
+- A tiny horizontal line before an eyebrow, label, section title, or caption.
+- A short vertical line beside a paragraph or metadata.
+- Small divider strokes between unrelated text elements.
+- Thin rules used only to fill empty space.
+- Decorative underlines beneath headings or ordinary text.
+- Repeated miniature lines in every section to create a false sense of consistency.
+- Random measurement marks, ticks, crosshairs, or architectural annotations that have no real conceptual or functional role.
+- Borders around every card, metric, list row, form field, or section merely because the layout feels empty.
+
+These are not forbidden when they are genuinely part of the approved design language. They are forbidden as automatic filler or default decoration.
+
+### 36.2 Lines that are allowed and should be preserved when purposeful
+
+The assistant may use lines when they have a clear role in the composition or interaction, including:
+- Underlines on clickable text links and text-based calls to action.
+- Focus indicators, input boundaries, table rules, and separators needed for usability or data comprehension.
+- Architectural grids, measured alignments, framing, image edges, and structural rules that genuinely define the composition.
+- Section boundaries or dividers that improve orientation and reading rhythm.
+- Lines that are integral to the selected style and have been deliberately justified in the style fingerprint.
+- Brand marks or graphic symbols that are part of an approved identity.
+
+Do not remove purposeful lines merely to satisfy a simplistic “no lines” interpretation. The rule is intentionality, not the elimination of all strokes.
+
+### 36.3 Required micro-line audit
+
+Before delivery, inspect every small stroke and ask:
+1. What exact function does this line serve?
+2. Does it improve hierarchy, navigation, interaction, readability, or the chosen visual concept?
+3. Is it repeated mechanically across sections?
+4. Would spacing, typography, alignment, contrast, or image composition solve the same problem more naturally?
+5. Does it resemble a familiar AI-generated decoration rather than a project-specific design decision?
+
+Remove every line that cannot pass this audit. Do not add replacement decorations to fill the space.
+
+## 37. HERO IMAGE AND OVERLAID NAVIGATION MUST BE COMPOSED AS ONE SCENE
+
+When the chosen direction calls for an edge-to-edge or full-bleed hero image:
+- The image must begin at the top edge of the page, behind the transparent navigation.
+- The navigation must not reserve a blank strip above the image or introduce an opaque bar at the top.
+- The header background, border, and shadow must remain transparent or absent while overlaying the hero.
+- Navigation text, logo, and controls must remain legible against the actual image through deliberate color, contrast, and subtle shadow or a restrained overlay when needed.
+- Do not make the navigation literally invisible. “Transparent navigation” means its container has no opaque background; its labels and controls must remain visible and accessible.
+- The image crop must preserve the important subject and leave sufficient visual space for the overlaid text.
+- Text must not collide with the subject, caption, navigation, or key image details.
+- Desktop and mobile may use different crops, text positions, and overlay strengths to preserve the composition.
+- If the image is too bright or visually complex for legible navigation, adjust crop, overlay, text color, or image choice instead of hiding the navigation.
+
+## 38. HERO COPY MUST BE EDITED FOR VISUAL RHYTHM, NOT JUST MEANING
+
+Hero copy is a visual component as well as a message.
+
+- Avoid long introductory paragraphs in the hero.
+- Use a concise headline with deliberate line breaks and a clear typographic silhouette.
+- Keep supporting copy short enough to scan quickly, usually one or two sentences.
+- Do not let the headline and paragraph compete for the same visual weight.
+- Place the call to action where it belongs in the reading sequence and keep it visually distinct.
+- Ensure the text block has a deliberate width, alignment, position, and relationship to the image.
+- Do not force awkward line breaks, excessive indentation, or arbitrary offsets merely to appear editorial.
+- When a full-bleed image is used, position text where it has sufficient contrast and does not obscure the photograph's main subject.
+- Shorten copy before shrinking the font or compressing the layout to make an overlong paragraph fit.
+
+**Version 4.1 principle: no decorative stroke by habit. Every line must earn its place. The image, typography, spacing, and composition should do the design work.**
