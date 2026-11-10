@@ -231,6 +231,146 @@ footer{min-height:150px}
   .hero-copy{padding-top:52px}
   .site-head .brand{color:#fff;text-shadow:0 1px 8px #0008}
 }
+
+/* HERO FULL-BLEED — imagem, navegação e texto como uma única composição */
+.hero{
+  display:block;
+  height:min(900px,100svh);
+  min-height:680px;
+  padding:0;
+  background:#30362d;
+  isolation:isolate;
+}
+.hero-visual{
+  position:absolute;
+  inset:0;
+  margin:0;
+  z-index:-1;
+}
+.hero-visual img{
+  object-position:center 48%;
+  filter:saturate(.72);
+}
+.hero-visual:after{
+  background:
+    linear-gradient(90deg,rgba(18,23,19,.68) 0%,rgba(18,23,19,.38) 42%,rgba(18,23,19,.04) 100%),
+    linear-gradient(0deg,rgba(18,23,19,.34) 0%,transparent 48%);
+}
+.hero-copy{
+  position:absolute;
+  left:var(--gutter);
+  bottom:clamp(105px,14vh,160px);
+  width:min(650px,58vw);
+  padding:0;
+  justify-content:flex-end;
+  gap:0;
+  z-index:3;
+}
+.hero-message{max-width:650px}
+.hero h1{
+  max-width:650px;
+  margin:0 0 24px;
+  color:#fff;
+  font-size:clamp(66px,8.4vw,124px);
+  line-height:.91;
+  letter-spacing:-.075em;
+  text-wrap:balance;
+}
+.hero h1 em{
+  display:block;
+  margin:0;
+  color:#dce1d2;
+  font-style:italic;
+}
+.hero-intro{
+  max-width:370px;
+  color:rgba(255,255,255,.84);
+  font-size:14px;
+  line-height:1.75;
+}
+.hero-action{
+  margin-top:29px;
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.78);
+  padding-bottom:8px;
+  gap:22px;
+}
+.hero-action span{color:#dce1d2}
+.hero-action:hover{color:#dce1d2;gap:30px}
+.hero-caption{
+  right:var(--gutter);
+  bottom:35px;
+  gap:22px;
+}
+.hero-caption strong{font-size:clamp(20px,2.2vw,28px)}
+.hero-caption span{max-width:145px}
+.site-head{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:94px;
+  padding-inline:var(--gutter);
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  z-index:50;
+}
+.site-head .brand,
+.site-head .brand-name,
+.site-head .brand-name small,
+.site-head .main-nav a,
+.site-head .head-contact{color:#fff}
+.site-head .brand-mark{border-color:#fff}
+.site-head .main-nav a,
+.site-head .head-contact{ text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.site-head .head-contact{
+  border:0;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:6px;
+}
+.site-head .main-nav a:hover,
+.site-head .head-contact:hover{color:#dce1d2}
+@media(max-width:900px){
+  .site-head{height:78px}
+  .site-head .menu-toggle{color:#fff;text-shadow:0 1px 10px #0008}
+  .site-head .main-nav{
+    top:78px;
+    background:rgba(233,229,220,.97);
+    backdrop-filter:blur(12px);
+  }
+  .site-head .main-nav a{color:var(--ink);text-shadow:none}
+  .hero{height:90svh;min-height:650px}
+  .hero-copy{width:min(680px,72vw);bottom:clamp(100px,13vh,145px)}
+}
+@media(max-width:620px){
+  .hero{height:88svh;min-height:650px}
+  .hero-visual img{object-position:58% center}
+  .hero-visual:after{
+    background:linear-gradient(0deg,rgba(17,22,18,.82) 0%,rgba(17,22,18,.45) 48%,rgba(17,22,18,.12) 100%);
+  }
+  .hero-copy{
+    left:22px;
+    right:22px;
+    bottom:112px;
+    width:auto;
+    padding:0;
+  }
+  .hero h1{
+    font-size:clamp(58px,14.5vw,84px);
+    line-height:.94;
+    margin-bottom:19px;
+  }
+  .hero-intro{font-size:12px;line-height:1.7;max-width:310px}
+  .hero-action{margin-top:22px;font-size:9px}
+  .hero-caption{right:22px;bottom:24px;gap:10px}
+  .hero-caption strong{font-size:18px}
+  .hero-caption span{font-size:7px;max-width:112px}
+  .site-head .brand-name small{color:rgba(255,255,255,.8)}
+}
+
 </style>
 </head>
 <body>
@@ -246,8 +386,8 @@ footer{min-height:150px}
 <section class="hero" id="inicio">
   <div class="hero-copy">
     <div class="hero-message">
-      <h1>Há lugares que nos <em>escolhem.</em></h1>
-      <p class="hero-intro">Aproximamos pessoas de espaços com significado. Uma visão cuidada do mercado imobiliário, com acompanhamento em cada decisão.</p>
+      <h1>O lugar certo <em>muda tudo.</em></h1>
+      <p class="hero-intro">Imóveis escolhidos com critério. Acompanhamento próximo em cada decisão.</p>
       <a class="hero-action" href="#imoveis">Explorar imóveis <span aria-hidden="true">↘</span></a>
     </div>
   </div>
