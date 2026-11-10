@@ -50,7 +50,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--signal);outline-off
 .network-graphic .wire-hot{stroke:var(--signal);stroke-width:1.5;fill:none}
 .network-graphic .node{fill:var(--ink);stroke:#bdcbd6;stroke-width:1}
 .network-graphic .node-hot{fill:var(--signal);stroke:var(--signal)}
-.network-graphic text{fill:#c9ccc2;font:9px var(--mono);letter-spacing:1px}
+.network-graphic text{fill:#d7e0e8;font:9px var(--mono);letter-spacing:1px}
 .network-graphic .node-label{fill:var(--signal)}
 .board-bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--line-light);padding-top:17px}
 .board-stat strong{display:block;font:600 26px var(--display);color:var(--signal)}
