@@ -1,0 +1,6 @@
+@extends('layouts.app')
+@section('title',$product->name)
+@section('content')
+<section class="page-head"><div class="section-code">{{ $product->reference }} / {{ $product->category->name }}</div><h1>{{ $product->name }}</h1><p>{{ $product->summary }}</p></section>
+<div class="detail-grid"><article><h2>Descrição</h2><p>{{ $product->description ?: 'Descrição técnica a confirmar pela GPM.' }}</p>@if($product->specifications)<h2>Especificações</h2>@foreach($product->specifications as $spec)<div class="spec-row"><span>{{ $spec['label'] ?? '' }}</span><b>{{ $spec['value'] ?? '' }}</b></div>@endforeach @endif</article><aside class="notice"><b>CONDIÇÕES COMERCIAIS</b><p>Preço, stock, quantidade mínima e prazo são confirmados pela equipa GPM após consulta aos fornecedores.</p>@auth<form method="post" action="{{ route('portal.requests.store') }}">@csrf<input type="hidden" name="items[0][product_id]" value="{{ $product->id }}"><label>Quantidade<input type="number" min="0.01" step="0.01" name="items[0][quantity]" value="1" required></label><label>Observações<textarea name="customer_note"></textarea></label><button class="button">Enviar pedido de consulta</button></form>@else<a class="button" href="{{ route('login') }}">Entrar para pedir</a><p><a href="{{ route('register') }}">Criar conta empresarial</a></p>@endauth</aside></div>
+@endsection
