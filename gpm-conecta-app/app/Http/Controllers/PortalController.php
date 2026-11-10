@@ -30,14 +30,14 @@ class PortalController extends Controller {
         return view('portal.request',compact('supplyRequest'));
     }
     public function message(Request $request, SupplyRequest $supplyRequest) {
-        abort_unless($supplyRequest->customer_id===$request->user()->id,404);
+        abort_unless($request->user()->isStaff() || $supplyRequest->customer_id===$request->user()->id,404);
         $data=$request->validate(['body'=>['required','string','max:4000']]);
         $supplyRequest->messages()->create(['user_id'=>$request->user()->id,'body'=>$data['body'],'is_internal'=>false]);
         return back()->with('success','Mensagem enviada.');
     }
     public function acceptProposal(Request $request, \App\Models\CommercialProposal $proposal) {
         abort_unless($proposal->request->customer_id===$request->user()->id,404);
-        abort_unless($proposal->status==='sent' && (!$proposal->valid_until || $proposal->valid_until->isFuture()),409,'Esta proposta já não pode ser aceite.');
+        abort_unless($proposal->status==='sent' && (!$proposal->valid_until || !$proposal->valid_until->isBefore(today())),409,'Esta proposta já não pode ser aceite.');
         $proposal->update(['status'=>'customer_accepted','accepted_at'=>now()]);
         $proposal->request->events()->create(['user_id'=>$request->user()->id,'from_status'=>$proposal->request->status,'to_status'=>'customer_accepted','reason'=>'Cliente aceitou a proposta.']);
         $proposal->request->update(['status'=>'customer_accepted']);
