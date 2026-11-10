@@ -161,6 +161,28 @@ footer{min-height:150px}
 .hero-caption span{max-width:170px;letter-spacing:.16em;font-size:8px}
 @keyframes hero-photo-natural{from{opacity:.55;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
 @media(max-width:620px){.hero-caption{right:22px;bottom:22px}.hero-caption span{max-width:135px}}
+/* Hero copy — one calm editorial reading sequence */
+.hero-copy{justify-content:center;gap:clamp(42px,7vh,82px);padding-top:42px;padding-bottom:42px}
+.hero-message{max-width:570px}
+.hero h1{font-size:clamp(58px,6.4vw,94px);line-height:.98;letter-spacing:-.075em;margin:0;max-width:560px}
+.hero h1 em{display:inline;margin:0;color:var(--olive)}
+.hero-rule{width:46px;height:1px;background:var(--olive);margin:30px 0 22px}
+.hero-intro{max-width:365px;font-size:13px;line-height:1.85}
+.hero-action{display:inline-flex;align-items:center;gap:28px;margin-top:30px;padding-bottom:9px;border-bottom:1px solid var(--ink);font:9px var(--mono);letter-spacing:.13em;text-transform:uppercase;transition:gap .3s ease,color .3s ease}
+.hero-action span{font-size:17px;line-height:1;color:var(--olive)}
+.hero-action:hover{gap:38px;color:var(--olive)}
+.hero-foot,.round-link{display:none}
+@media(max-width:900px) and (min-width:621px){
+  .hero-copy{gap:48px}
+  .hero h1{font-size:clamp(54px,7vw,76px)}
+}
+@media(max-width:620px){
+  .hero-copy{min-height:0;gap:42px;padding:48px var(--gutter) 42px}
+  .hero h1{font-size:clamp(57px,14vw,82px);line-height:.98}
+  .hero-rule{margin:24px 0 18px}
+  .hero-intro{font-size:12px;max-width:340px}
+  .hero-action{margin-top:25px}
+}
 </style>
 </head>
 <body>
@@ -176,8 +198,12 @@ footer{min-height:150px}
 <section class="hero" id="inicio">
   <div class="hero-copy">
     <div class="eyebrow">Mediação · Património · Futuro</div>
-    <div><h1>Há lugares<br>que nos <em>escolhem.</em></h1><p class="hero-intro">Aproximamos pessoas de espaços com significado. Uma visão cuidada do mercado imobiliário, com acompanhamento em cada decisão.</p></div>
-    <div class="hero-foot"><span class="micro">Imóveis selecionados.<br>Decisões bem acompanhadas.</span><a class="round-link" href="#imoveis" aria-label="Explorar imóveis">↘</a></div>
+    <div class="hero-message">
+      <h1>Há lugares que nos <em>escolhem.</em></h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-intro">Aproximamos pessoas de espaços com significado. Uma visão cuidada do mercado imobiliário, com acompanhamento em cada decisão.</p>
+      <a class="hero-action" href="#imoveis">Explorar imóveis <span aria-hidden="true">↘</span></a>
+    </div>
   </div>
   <div class="hero-visual"><img src="https://images.unsplash.com/photo-1774226905114-1daa47ee03dc?auto=format&fit=crop&w=2000&q=88" alt="Fachada residencial fotografada à luz natural ao fim da tarde"><div class="hero-caption"><strong>Um lugar para começar.</strong><span>SELECÇÃO RESIDENCIAL · ANGOLA</span></div></div>
 </section>
