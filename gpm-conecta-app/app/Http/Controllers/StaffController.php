@@ -34,8 +34,9 @@ class StaffController extends Controller {
  }
  public function supplierCheck(Request $request, SupplyRequest $supplyRequest) {
   $data=$request->validate(['supplier_name'=>['required','string','max:180'],'supplier_contact'=>['nullable','string','max:180'],'notes'=>['nullable','string','max:2000'],'lines'=>['nullable','array'],'lines.*.item_id'=>['required_with:lines','exists:supply_request_items,id'],'lines.*.available_quantity'=>['nullable','numeric','min:0'],'lines.*.unit_cost'=>['nullable','numeric','min:0'],'lines.*.currency'=>['nullable','in:AOA,USD,EUR'],'lines.*.lead_time_days'=>['nullable','integer','min:0'],'lines.*.minimum_quantity'=>['nullable','numeric','min:0'],'lines.*.conditions'=>['nullable','string','max:1000']]);
-  $check=$supplyRequest->supplierChecks()->create(['supplier_name'=>$data['supplier_name'],'supplier_contact'=>$data['supplier_contact']??null,'notes'=>$data['notes']??null,'status'=>empty($data['lines'])?'requested':'responded','requested_at'=>now(),'responded_at'=>empty($data['lines'])?null:now(),'created_by'=>$request->user()->id]);
-  foreach(($data['lines']??[]) as $line) {
+  $responseLines=array_filter($data['lines']??[],fn($line)=>($line['available_quantity']??null)!==null || ($line['unit_cost']??null)!==null || ($line['lead_time_days']??null)!==null || trim($line['conditions']??'')!=='');
+  $check=$supplyRequest->supplierChecks()->create(['supplier_name'=>$data['supplier_name'],'supplier_contact'=>$data['supplier_contact']??null,'notes'=>$data['notes']??null,'status'=>empty($responseLines)?'requested':'responded','requested_at'=>now(),'responded_at'=>empty($responseLines)?null:now(),'created_by'=>$request->user()->id]);
+  foreach($responseLines as $line) {
    $item=$supplyRequest->items()->findOrFail($line['item_id']);
    $check->lines()->create(['supply_request_item_id'=>$item->id,'available_quantity'=>$line['available_quantity']??null,'unit_cost'=>$line['unit_cost']??null,'currency'=>$line['currency']??'AOA','lead_time_days'=>$line['lead_time_days']??null,'minimum_quantity'=>$line['minimum_quantity']??null,'conditions'=>$line['conditions']??null]);
   }
@@ -46,6 +47,7 @@ class StaffController extends Controller {
   return back()->with('success','Consulta manual registada. Contacto e resposta do fornecedor devem ser confirmados pela equipa.');
  }
  public function proposal(Request $request, SupplyRequest $supplyRequest) {
+  abort_unless(in_array($supplyRequest->status,['under_review','supplier_check','awaiting_customer','proposal_sent'],true),409,'O pedido ainda não está numa fase em que possa receber proposta.');
   $data=$request->validate(['currency'=>['required','in:AOA,USD,EUR'],'valid_until'=>['required','date','after_or_equal:today'],'notes'=>['nullable','string','max:2000'],'lines'=>['required','array','min:1'],'lines.*.item_id'=>['required','exists:supply_request_items,id'],'lines.*.quantity'=>['required','numeric','min:0.01'],'lines.*.unit_price'=>['required','numeric','min:0'],'lines.*.availability_note'=>['nullable','string','max:500'],'lines.*.lead_time_days'=>['nullable','integer','min:0']]);
   $proposal=DB::transaction(function() use($request,$supplyRequest,$data) {
    $version=(int)$supplyRequest->proposals()->max('version')+1;
