@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AuthController,CatalogController,PortalController,StaffController,CartController};
+use App\Http\Controllers\{AuthController,CatalogController,PortalController,StaffController,CartController,DocumentController};
 Route::get('/', fn()=>view('home'))->name('home');
 Route::get('/catalogo',[CatalogController::class,'index'])->name('catalog.index');
 Route::get('/produto/{product:slug}',[CatalogController::class,'show'])->name('catalog.show');

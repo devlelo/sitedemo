@@ -1,11 +1,11 @@
 <?php
-namespace Tests\\Feature;
-use Tests\\TestCase;
-use Illuminate\\Foundation\\Testing\\RefreshDatabase;
-use App\\Models\\User;
-use App\\Models\\Category;
-use App\\Models\\Product;
-use App\\Models\\SupplyRequest;
+namespace Tests\Feature;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\SupplyRequest;
 class MarketplaceFlowTest extends TestCase {
  use RefreshDatabase;
  public function test_customer_request_moves_through_supplier_proposal_and_gpm_confirmation(): void {

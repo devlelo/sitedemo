@@ -1,8 +1,8 @@
 <?php
-namespace App\\Http\\Controllers;
-use App\\Models\\CommercialProposal;
-use Barryvdh\\DomPDF\\Facade\\Pdf;
-use Illuminate\\Http\\Request;
+namespace App\Http\Controllers;
+use App\Models\CommercialProposal;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Request;
 class DocumentController extends Controller {
  public function proposal(Request $request, CommercialProposal $proposal) {
   $proposal->load(['request.customer','lines']);
