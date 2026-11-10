@@ -23,7 +23,7 @@ class StaffController extends Controller {
  }
  public function status(Request $request, SupplyRequest $supplyRequest) {
   $data=$request->validate(['status'=>['required','in:under_review,supplier_check,awaiting_customer,rejected,preparing,dispatched,delivered'],'reason'=>['required','string','max:1000']]);
-  $allowed=['submitted'=>['under_review','supplier_check','rejected'],'under_review'=>['supplier_check','awaiting_customer','rejected'],'supplier_check'=>['under_review','awaiting_customer','rejected'],'awaiting_customer'=>['under_review','supplier_check','rejected'],'customer_accepted'=>[],'confirmed'=>['preparing'],'preparing'=>['dispatched'],'dispatched'=>['delivered']];
+  $allowed=['submitted'=>['under_review','supplier_check','rejected'],'under_review'=>['supplier_check','awaiting_customer','rejected'],'supplier_check'=>['under_review','awaiting_customer','rejected'],'awaiting_customer'=>['under_review','supplier_check','rejected'],'proposal_sent'=>['under_review','supplier_check','rejected'],'customer_accepted'=>[],'confirmed'=>['preparing'],'preparing'=>['dispatched'],'dispatched'=>['delivered']];
   abort_unless(in_array($data['status'],$allowed[$supplyRequest->status]??[],true),422,'Transição de estado não permitida.');
   $old=$supplyRequest->status;
   DB::transaction(function() use($request,$supplyRequest,$data,$old) {
@@ -33,8 +33,12 @@ class StaffController extends Controller {
   return back()->with('success','Estado atualizado e auditado.');
  }
  public function supplierCheck(Request $request, SupplyRequest $supplyRequest) {
-  $data=$request->validate(['supplier_name'=>['required','string','max:180'],'supplier_contact'=>['nullable','string','max:180'],'notes'=>['nullable','string','max:2000']]);
-  $check=$supplyRequest->supplierChecks()->create($data+['status'=>'requested','requested_at'=>now(),'created_by'=>$request->user()->id]);
+  $data=$request->validate(['supplier_name'=>['required','string','max:180'],'supplier_contact'=>['nullable','string','max:180'],'notes'=>['nullable','string','max:2000'],'lines'=>['nullable','array'],'lines.*.item_id'=>['required_with:lines','exists:supply_request_items,id'],'lines.*.available_quantity'=>['nullable','numeric','min:0'],'lines.*.unit_cost'=>['nullable','numeric','min:0'],'lines.*.currency'=>['nullable','in:AOA,USD,EUR'],'lines.*.lead_time_days'=>['nullable','integer','min:0'],'lines.*.minimum_quantity'=>['nullable','numeric','min:0'],'lines.*.conditions'=>['nullable','string','max:1000']]);
+  $check=$supplyRequest->supplierChecks()->create(['supplier_name'=>$data['supplier_name'],'supplier_contact'=>$data['supplier_contact']??null,'notes'=>$data['notes']??null,'status'=>empty($data['lines'])?'requested':'responded','requested_at'=>now(),'responded_at'=>empty($data['lines'])?null:now(),'created_by'=>$request->user()->id]);
+  foreach(($data['lines']??[]) as $line) {
+   $item=$supplyRequest->items()->findOrFail($line['item_id']);
+   $check->lines()->create(['supply_request_item_id'=>$item->id,'available_quantity'=>$line['available_quantity']??null,'unit_cost'=>$line['unit_cost']??null,'currency'=>$line['currency']??'AOA','lead_time_days'=>$line['lead_time_days']??null,'minimum_quantity'=>$line['minimum_quantity']??null,'conditions'=>$line['conditions']??null]);
+  }
   if($supplyRequest->status!=='supplier_check') {
    $old=$supplyRequest->status; $supplyRequest->update(['status'=>'supplier_check']);
    $supplyRequest->events()->create(['user_id'=>$request->user()->id,'from_status'=>$old,'to_status'=>'supplier_check','reason'=>'Consulta a fornecedor criada.']);
