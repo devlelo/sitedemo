@@ -1,0 +1,3 @@
+@extends('layouts.app') @section('title','Entrar') @section('content')
+<div class="auth-wrap"><div class="section-code">ACESSO / CLIENTE E EQUIPA</div><h1>Entrar na <em>plataforma.</em></h1><form class="form-panel" method="post" action="{{ route('login.store') }}">@csrf<label>Email<input type="email" name="email" value="{{ old('email') }}" required autocomplete="email"></label><label>Palavra-passe<input type="password" name="password" required autocomplete="current-password"></label><label class="check"><input type="checkbox" name="remember"> Manter sessão iniciada</label><button class="button">Entrar</button><p>Ainda não tem conta? <a href="{{ route('register') }}">Registar empresa</a></p></form></div>
+@endsection
