@@ -1,499 +1,220 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="pt">
+<html lang="pt" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Lelo | Desenvolvedor de Sites</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Ícones (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
-                    colors: {
-                        brand: {
-                            orange: '#FF6B2B', orangeHover: '#E85A1D',
-                            dark: '#111111', darker: '#0A0A0A',
-                            light: '#F8F9FA', gray: '#6B7280'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* === ANIMAÇÕES CRIATIVAS === */
-        .word-reveal {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(20px) rotate(3deg);
-            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes slideUpFade {
-            to { opacity: 1; transform: translateY(0) rotate(0deg); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px) scale(0.95);
-            filter: blur(5px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            filter: blur(0);
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-
-        @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .spin-text { animation: spin-slow 12s linear infinite; }
-
-        .card-3d {
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-        }
-        .card-3d:hover {
-            transform: translateY(-10px) rotateX(3deg) rotateY(-3deg);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-
-        @keyframes tech-float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.05); }
-        }
-        .tech-icon { animation: tech-float 4s ease-in-out infinite; }
-        .tech-icon:nth-child(2) { animation-delay: 1s; }
-        .tech-icon:nth-child(3) { animation-delay: 2s; }
-
-        @keyframes drawLine { to { stroke-dashoffset: 0; } }
-        .animated-path {
-            stroke-dasharray: 200;
-            stroke-dashoffset: 200;
-            animation: drawLine 1.5s ease-out forwards;
-            animation-delay: 1s;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f1efe8">
+  <meta name="description" content="José Lelo. Desenvolvimento web, direção visual e experiências digitais.">
+  <title>José Lelo — Digital work. Distinct thinking.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--ink:#171717;--paper:#f1efe8;--blue:#3157ff;--muted:#77766f;--line:rgba(23,23,23,.22)}
+    *{box-sizing:border-box}
+    body{background:var(--paper);color:var(--ink);font-family:Inter,sans-serif}
+    h1,h2,h3,.display{font-family:"Space Grotesk",sans-serif}
+    .mono{font-family:"IBM Plex Mono",monospace}
+    ::selection{background:var(--blue);color:white}
+    .site-header{background:rgba(241,239,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-link{position:relative}
+    .nav-link:after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--blue);transition:width .25s}
+    .nav-link:hover:after{width:100%}
+    .blue-link{background:var(--blue);color:#fff;transition:transform .2s,background .2s}
+    .blue-link:hover{background:#2145e8;transform:translateY(-2px)}
+    .outline-link{border:1px solid var(--ink);transition:background .2s,color .2s}
+    .outline-link:hover{background:var(--ink);color:var(--paper)}
+    .rule{border-color:var(--line)}
+    .hero-title{font-size:clamp(4rem,10.5vw,9.8rem);line-height:.84;letter-spacing:-.095em}
+    .hero-title .blue{color:var(--blue)}
+    .hero-image{filter:grayscale(100%);transition:filter .5s,transform .7s}
+    .hero-image:hover{filter:grayscale(0);transform:scale(1.025)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .project{border-top:1px solid var(--line);transition:background .25s}
+    .project:hover{background:rgba(49,87,255,.045)}
+    .project img{transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s;filter:grayscale(20%)}
+    .project:hover img{transform:scale(1.035);filter:grayscale(0)}
+    .project-image{overflow:hidden;background:#dedbd2}
+    .project-index{color:var(--blue)}
+    .tag{border:1px solid var(--line);padding:.45rem .7rem;font:11px "IBM Plex Mono",monospace;text-transform:uppercase}
+    .contact-panel{background:var(--ink);color:var(--paper)}
+    input,textarea{font:inherit}
+    input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:2px}
+    @media(max-width:767px){.hero-title{font-size:clamp(3.65rem,17vw,6rem)}.mobile-menu{background:var(--paper)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
-<body class="bg-white font-sans text-brand-dark overflow-x-hidden">
+<body class="overflow-x-hidden">
+  <header class="site-header fixed top-0 inset-x-0 z-50">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 h-[76px] flex items-center justify-between">
+      <a href="#home" class="font-bold tracking-tight text-lg display">JL<span class="text-[#3157ff]">.</span> <span class="font-medium">José Lelo</span></a>
+      <nav class="hidden md:flex items-center gap-8 text-xs mono uppercase">
+        <a class="nav-link" href="#process">Processo</a><a class="nav-link" href="#work">Competências</a><a class="nav-link" href="#about">Sobre</a><a class="nav-link" href="#projects">Projetos</a>
+      </nav>
+      <a href="#contact" class="hidden md:inline-flex blue-link mono text-xs uppercase tracking-wide px-5 py-3">Vamos conversar <span class="ml-4">↗</span></a>
+      <button id="mobile-menu-btn" class="md:hidden text-2xl p-2" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu hidden md:hidden border-t rule px-5 py-5 flex-col gap-5 mono text-sm uppercase">
+      <a href="#process">Processo</a><a href="#work">Competências</a><a href="#about">Sobre</a><a href="#projects">Projetos</a><a href="#contact" class="text-[#3157ff]">Contactar ↗</a>
+    </nav>
+  </header>
 
-    <!-- HEADER FIXO -->
-    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#home" class="text-2xl font-extrabold tracking-tight flex items-center gap-1">
-                <span class="text-brand-orange">JL</span> José Lelo
-            </a>
-
-            <!-- Menu Desktop -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-brand-gray">
-                <a href="#home" class="hover:text-brand-dark transition-colors">Início</a>
-                <a href="#process" class="hover:text-brand-dark transition-colors">Processo</a>
-                <a href="#work" class="hover:text-brand-dark transition-colors">Especialização</a>
-                <a href="#about" class="hover:text-brand-dark transition-colors">Sobre</a>
-                <a href="#projects" class="hover:text-brand-dark transition-colors">Projetos</a>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden md:inline-block bg-brand-orange text-white text-sm font-semibold px-6 py-2.5 rounded-md hover:bg-brand-orangeHover transition-colors shadow-sm hover:scale-105 transform duration-300">
-                    Contactar-me
-                </a>
-                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-brand-dark focus:outline-none">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
+  <main>
+    <section id="home" class="pt-32 md:pt-40 pb-16 md:pb-24 px-5 md:px-10 max-w-[1440px] mx-auto">
+      <div class="flex flex-wrap justify-between gap-4 mb-12 mono text-[10px] md:text-xs uppercase tracking-wider reveal">
+        <span>Portfólio independente · 2026</span><span>Angola / Disponível para projetos</span>
+      </div>
+      <div class="grid lg:grid-cols-[1.35fr_.65fr] gap-10 lg:gap-16 items-end">
+        <div class="relative z-10">
+          <p class="mono text-xs uppercase mb-7 flex items-center gap-3"><span class="w-8 h-[2px] bg-[#3157ff]"></span> Desenvolvimento web & criação digital</p>
+          <h1 class="hero-title font-bold reveal" id="hero-title">Ideias<br>com <span class="blue">forma.</span><br>Web com<br>intenção<span class="blue">.</span></h1>
+          <div class="mt-10 md:mt-14 flex flex-col sm:flex-row sm:items-end gap-8 justify-between reveal">
+            <p class="max-w-md text-base md:text-lg leading-relaxed">Sou José Lelo. Transformo ideias em experiências digitais claras, funcionais e com identidade própria.</p>
+            <a href="#projects" class="mono text-xs uppercase border-b-2 border-[#3157ff] pb-2 inline-flex items-center gap-5 self-start">Explorar projetos <span class="text-[#3157ff] text-lg">↘</span></a>
+          </div>
         </div>
-
-        <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-semibold text-brand-gray">
-            <a href="#home" class="hover:text-brand-dark">Início</a>
-            <a href="#process" class="hover:text-brand-dark">Processo</a>
-            <a href="#work" class="hover:text-brand-dark">Especialização</a>
-            <a href="#about" class="hover:text-brand-dark">Sobre</a>
-            <a href="#projects" class="hover:text-brand-dark">Projetos</a>
-            <a href="#contact" class="bg-brand-orange text-white text-center py-2.5 rounded-md mt-2">Contactar-me</a>
+        <div class="relative lg:mb-3 reveal">
+          <div class="absolute -top-5 right-0 mono text-[10px] uppercase text-[#3157ff]">01 / Identidade</div>
+          <div class="aspect-[4/5] max-h-[590px] overflow-hidden bg-[#d8d5cc]">
+            <img src="perfil.png" alt="Retrato de José Lelo" class="hero-image w-full h-full object-cover object-center">
+          </div>
+          <div class="flex justify-between items-center pt-3 mono text-[10px] uppercase"><span>José Lelo</span><span>Digital creator</span></div>
         </div>
-    </header>
+      </div>
+      <div class="mt-20 border-t rule pt-4 flex justify-between mono text-[10px] uppercase"><span>Design · Desenvolvimento · Estratégia</span><a href="#process" class="hover:text-[#3157ff]">Descer para descobrir ↓</a></div>
+    </section>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Texto Animado -->
-                <div>
-                    <h1 class="text-5xl sm:text-6xl md:text-[5.5rem] font-extrabold leading-[1.05] tracking-tight mb-6" id="hero-title">
-                        Olá, eu sou <br> José Lelo, <br> <span class="text-brand-orange">Desenvolvedor</span> <br> de Sites
-                    </h1>
-                    
-                    <div class="relative flex items-center gap-6 mt-8 reveal">
-                        <p class="text-brand-gray font-medium flex items-center gap-2">
-                            <span class="text-lg">🇦🇴</span> Conheça me mais.
-                        </p>
-                        <!-- Seta Desenhada -->
-                        <svg class="hidden sm:block absolute -bottom-8 left-40 w-24 h-12 text-brand-dark" viewBox="0 0 100 50" fill="none">
-                            <path class="animated-path" d="M0,10 C40,10 70,10 90,30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M80,20 L90,30 L75,35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Imagem (Foto perfil.png) -->
-                <div class="reveal relative flex justify-center">
-                    <div class="w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] bg-gray-200 rounded-full overflow-hidden relative z-10 border-8 border-white shadow-2xl">
-                        <img src="perfil.png" alt="José Lelo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 animate-float">
-                    </div>
-                    
-                    <!-- Selo Rotativo "SABER MAIS" -->
-                    <a href="#process" class="absolute bottom-4 right-4 sm:right-10 z-20 w-28 h-28 sm:w-32 sm:h-32 bg-brand-orange rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer">
-                        <div class="absolute inset-0 spin-text">
-                            <svg viewBox="0 0 100 100" class="w-full h-full">
-                                <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                                <text class="text-[11px] font-bold tracking-widest fill-white uppercase">
-                                    <textPath href="#curve">SABER MAIS • SABER MAIS • </textPath>
-                                </text>
-                            </svg>
-                        </div>
-                        <i class="fa-solid fa-arrow-down text-white text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- COMO EU TRABALHO -->
-        <section id="process" class="bg-brand-dark py-24 px-6 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange rounded-full mix-blend-multiply filter blur-[100px] opacity-10"></div>
-            <div class="max-w-7xl mx-auto relative z-10">
-                <div class="text-center mb-16 reveal">
-                    <span class="text-brand-orange font-medium text-sm tracking-wider uppercase mb-4 block">O Meu Processo</span>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl text-white font-bold leading-tight">
-                        Como eu trabalho
-                    </h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl reveal hover:bg-white/10 transition-colors duration-300">
-                        <div class="w-14 h-14 bg-brand-orange/20 text-brand-orange rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-pen-nib"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">1. Design Focado</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Crio layouts modernos e responsivos, garantindo que a sua marca tenha uma presença digital única e atrativa.
-                        </p>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl reveal hover:bg-white/10 transition-colors duration-300" style="transition-delay: 100ms;">
-                        <div class="w-14 h-14 bg-brand-orange/20 text-brand-orange rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">2. Código Limpo</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Desenvolvo o site utilizando as melhores práticas (HTML5, CSS3, JavaScript), garantindo rapidez e segurança.
-                        </p>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl reveal hover:bg-white/10 transition-colors duration-300" style="transition-delay: 200ms;">
-                        <div class="w-14 h-14 bg-brand-orange/20 text-brand-orange rounded-xl flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-rocket"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">3. Entrega e Suporte</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Publico o seu projeto e fico disponível para dar suporte contínuo, para que nunca fique com o site parado.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESPECIALIZAÇÃO -->
-        <section id="work" class="py-24 px-6 max-w-7xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">A Minha Especialização</h2>
-                <p class="text-brand-gray">Desenvolvedor de Sites</p>
-            </div>
-
-            <div class="max-w-4xl mx-auto bg-brand-light p-10 md:p-16 rounded-3xl reveal hover:shadow-2xl transition-all duration-500 border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-48 h-48 bg-brand-orange opacity-5 rounded-bl-full"></div>
-                
-                <div class="mb-6 relative z-10">
-                    <h3 class="text-3xl font-extrabold mb-4">Desenvolvimento Web</h3>
-                    <p class="text-brand-gray text-lg leading-relaxed max-w-2xl">
-                        O desenvolvimento web foca-se em criar aplicações móveis e sites intuitivos, visualmente atraentes e altamente funcionais.
-                    </p>
-                </div>
-                
-                <div class="flex justify-center items-center gap-12 sm:gap-20 mt-12 relative z-10">
-                    <div class="tech-icon flex flex-col items-center gap-3 text-[#E34F26] hover:scale-125 transition-transform duration-300 cursor-pointer">
-                        <i class="fa-brands fa-html5 text-6xl sm:text-8xl drop-shadow-xl"></i>
-                        <span class="font-bold text-sm sm:text-base text-brand-dark tracking-wider">HTML5</span>
-                    </div>
-                    <div class="tech-icon flex flex-col items-center gap-3 text-[#1572B6] hover:scale-125 transition-transform duration-300 cursor-pointer">
-                        <i class="fa-brands fa-css3-alt text-6xl sm:text-8xl drop-shadow-xl"></i>
-                        <span class="font-bold text-sm sm:text-base text-brand-dark tracking-wider">CSS3</span>
-                    </div>
-                    <div class="tech-icon flex flex-col items-center gap-3 text-[#F7DF1E] hover:scale-125 transition-transform duration-300 cursor-pointer">
-                        <i class="fa-brands fa-square-js text-6xl sm:text-8xl drop-shadow-xl"></i>
-                        <span class="font-bold text-sm sm:text-base text-brand-dark tracking-wider">JavaScript</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECÇÃO SOBRE MIM -->
-        <section id="about" class="py-24 px-6 max-w-7xl mx-auto border-t border-gray-100 overflow-hidden">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
-                <div class="reveal relative flex justify-center order-2 lg:order-1">
-                    <div class="absolute inset-0 bg-brand-orange rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-                    <div class="absolute w-full max-w-sm aspect-square bg-brand-dark rounded-[2.5rem] transform rotate-6 border-4 border-white shadow-xl"></div>
-                    
-                    <div class="relative w-full max-w-sm aspect-square rounded-[2.5rem] transform -rotate-3 overflow-hidden border-4 border-white shadow-2xl z-10">
-                        <img src="perfil.png" alt="José Lelo" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
-                    </div>
-                </div>
-
-                <div class="reveal order-1 lg:order-2">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Sobre <span class="text-brand-orange">Mim</span></h2>
-                    <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        Olá! Sou o José Lelo, um desenvolvedor de sites apaixonado por criar <span class="font-bold text-brand-dark">experiências digitais intuitivas</span>, visualmente apelativas e centradas no utilizador.
-                    </p>
-                    <p class="text-brand-gray text-lg leading-relaxed mb-10">
-                        Com formação em design e uma compreensão profunda da psicologia do utilizador, crio experiências que não só têm uma ótima aparência, mas também <span class="font-bold text-brand-dark">resolvem problemas reais</span>.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2.5 bg-white border border-gray-200 text-brand-dark text-sm font-semibold rounded-full shadow-sm hover:border-brand-orange transition-colors">Design Moderno</span>
-                        <span class="px-5 py-2.5 bg-white border border-gray-200 text-brand-dark text-sm font-semibold rounded-full shadow-sm hover:border-brand-orange transition-colors">Focado no Utilizador</span>
-                        <span class="px-5 py-2.5 bg-white border border-gray-200 text-brand-dark text-sm font-semibold rounded-full shadow-sm hover:border-brand-orange transition-colors">Código Limpo</span>
-                        <span class="px-5 py-2.5 bg-white border border-gray-200 text-brand-dark text-sm font-semibold rounded-full shadow-sm hover:border-brand-orange transition-colors">Responsivo</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECÇÃO EXCLUSIVA DE PROJETOS -->
-        <section id="projects" class="py-24 px-6 bg-brand-light border-t border-gray-200">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Projetos Recentes</h2>
-                    <p class="text-brand-gray">Alguns dos meus trabalhos mais recentes</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Projeto 1 -->
-                    <div class="card-3d bg-white rounded-2xl p-4 border border-gray-100 flex flex-col">
-                        <a href="advogacia.html" target="_blank" rel="noopener noreferrer" class="block w-full aspect-[1340/637] rounded-xl overflow-hidden bg-gray-200 mb-5">
-                            <img src="advogacia.png" alt="Site Advogacia" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </a>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Site de Advocacia</h3>
-                            <p class="text-sm text-brand-gray mb-5 line-clamp-2">Website profissional para um escritório de advocacia, focado em credibilidade e captação de clientes.</p>
-                            <a href="advogacia.html" target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-brand-dark text-white text-sm font-semibold py-3 rounded-xl hover:bg-brand-orange transition-colors">
-                                Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Projeto 2 -->
-                    <div class="card-3d bg-white rounded-2xl p-4 border border-gray-100 flex flex-col">
-                        <a href="authentik.html" target="_blank" rel="noopener noreferrer" class="block w-full aspect-[1340/637] rounded-xl overflow-hidden bg-gray-200 mb-5">
-                            <img src="authentik.png" alt="Site Authentik" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </a>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Authentik</h3>
-                            <p class="text-sm text-brand-gray mb-5 line-clamp-2">Landing page moderna e minimalista focada em conversão para empresas de tecnologia.</p>
-                            <a href="authentik.html" target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-brand-dark text-white text-sm font-semibold py-3 rounded-xl hover:bg-brand-orange transition-colors">
-                                Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Projeto 3 -->
-                    <div class="card-3d bg-white rounded-2xl p-4 border border-gray-100 flex flex-col">
-                        <a href="rosa.html" target="_blank" rel="noopener noreferrer" class="block w-full aspect-[1340/637] rounded-xl overflow-hidden bg-gray-200 mb-5">
-                            <img src="rosa.png" alt="Site Cafeteria" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </a>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold text-brand-dark mb-2">Cafeteria</h3>
-                            <p class="text-sm text-brand-gray mb-5 line-clamp-2">Website elegante para uma cafeteria, com menu interativo e sistema de reservas.</p>
-                            <a href="rosa.html" target="_blank" rel="noopener noreferrer" class="mt-auto w-full text-center bg-brand-dark text-white text-sm font-semibold py-3 rounded-xl hover:bg-brand-orange transition-colors">
-                                Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SECÇÃO DE CONTACTO -->
-        <section id="contact" class="py-24 px-6 bg-white">
-            <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row reveal">
-                
-                <div class="lg:w-5/12 bg-brand-dark p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-between">
-                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-orange rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 translate-y-1/2"></div>
-                    
-                    <div class="relative z-10">
-                        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Contacte-me</h2>
-                        <p class="text-gray-400 mb-10 leading-relaxed">
-                            Tem um projeto em mente ou precisa de ajuda com o seu site? Estou pronto para o ajudar a construir a sua presença digital.
-                        </p>
-
-                        <div class="space-y-8">
-                            <div class="flex items-center gap-5 group cursor-pointer">
-                                <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-orange transition-colors duration-300">
-                                    <i class="fa-solid fa-envelope text-xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-400 mb-1">E-mail</p>
-                                    <a href="mailto:joselelowork@gmail.com" class="font-medium hover:text-brand-orange transition-colors">joselelowork@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-5 group cursor-pointer">
-                                <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#25D366] transition-colors duration-300">
-                                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-400 mb-1">WhatsApp</p>
-                                    <a href="https://wa.me/244955639957" target="_blank" class="font-medium hover:text-[#25D366] transition-colors">+244 955 639 957</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-7/12 p-10 md:p-14 bg-white">
-                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Envie uma mensagem</h3>
-                    
-                    <form id="whatsapp-form" class="space-y-5">
-                        <div>
-                            <label for="nome" class="block text-sm font-semibold text-brand-dark mb-2">Nome</label>
-                            <input type="text" id="nome" required placeholder="O seu nome" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all">
-                        </div>
-                        
-                        <div>
-                            <label for="mensagem" class="block text-sm font-semibold text-brand-dark mb-2">Mensagem</label>
-                            <textarea id="mensagem" required rows="5" placeholder="Como posso ajudar no seu projeto?" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all resize-none"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1EBE5A] text-white font-bold rounded-xl px-6 py-4 text-lg transition-all hover:scale-[1.02] shadow-lg shadow-green-500/30 flex items-center justify-center gap-3 mt-4">
-                            <i class="fa-brands fa-whatsapp text-2xl"></i> Enviar pelo WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark text-white py-8 px-6 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>&copy; 2026 José Lelo. Todos os direitos reservados.</p>
-            <div class="flex items-center gap-6">
-                <a href="mailto:joselelowork@gmail.com" class="hover:text-brand-orange transition-colors">joselelowork@gmail.com</a>
-                <a href="https://wa.me/244955639957" target="_blank" class="hover:text-brand-orange transition-colors">+244 955 639 957</a>
-            </div>
-            <a href="#home" class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center text-white hover:-translate-y-2 transition-transform shadow-lg mt-4 md:mt-0">
-                <i class="fa-solid fa-arrow-up"></i>
-            </a>
+    <section id="process" class="bg-[#171717] text-[#f1efe8] py-20 md:py-28 px-5 md:px-10">
+      <div class="max-w-[1440px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal">
+          <div><p class="mono text-xs uppercase text-[#8fa1ff] mb-5">02 / Método de trabalho</p><h2 class="display text-5xl md:text-7xl font-bold tracking-[-.07em] leading-[.95]">Do conceito<br>ao <span class="text-[#8fa1ff]">concreto.</span></h2></div>
+          <p class="max-w-sm text-[#aaa9a2] leading-relaxed">Cada projeto começa por compreender o problema. A tecnologia e o design entram para construir uma resposta útil.</p>
         </div>
-    </footer>
+        <div class="grid md:grid-cols-3 border-t border-white/25">
+          <article class="py-8 md:pr-8 md:border-r border-white/25 reveal"><p class="mono text-xs text-[#8fa1ff] mb-12">01 — DIREÇÃO</p><h3 class="display text-3xl font-semibold mb-4">Pensar antes de desenhar.</h3><p class="text-sm text-[#aaa9a2] leading-relaxed">Compreender o negócio, organizar a informação e definir uma direção visual que faça sentido para quem vai usar.</p></article>
+          <article class="py-8 md:px-8 md:border-r border-white/25 reveal"><p class="mono text-xs text-[#8fa1ff] mb-12">02 — CONSTRUÇÃO</p><h3 class="display text-3xl font-semibold mb-4">Dar forma à ideia.</h3><p class="text-sm text-[#aaa9a2] leading-relaxed">Desenvolver interfaces responsivas e funcionalidades que tornam a experiência simples, rápida e intuitiva.</p></article>
+          <article class="py-8 md:pl-8 reveal"><p class="mono text-xs text-[#8fa1ff] mb-12">03 — ENTREGA</p><h3 class="display text-3xl font-semibold mb-4">Colocar no mundo.</h3><p class="text-sm text-[#aaa9a2] leading-relaxed">Publicar o projeto, verificar o funcionamento e acompanhar os ajustes necessários à sua evolução.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <!-- SCRIPTS -->
-    <script>
-        // 1. Menu Hamburguer
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = btn.querySelector('i');
+    <section id="work" class="py-20 md:py-28 px-5 md:px-10 max-w-[1440px] mx-auto">
+      <div class="grid md:grid-cols-[.7fr_1.3fr] gap-10 md:gap-20">
+        <div class="reveal"><p class="mono text-xs uppercase text-[#3157ff] mb-5">03 / O que faço</p><h2 class="display text-5xl md:text-6xl font-bold tracking-[-.07em] leading-[.95]">A minha<br>área de<br><span class="text-[#3157ff]">trabalho.</span></h2></div>
+        <div class="reveal">
+          <p class="text-xl md:text-2xl leading-relaxed max-w-3xl mb-12">Desenvolvimento web com atenção ao detalhe, à experiência de utilização e ao propósito de cada projeto.</p>
+          <div class="border-t rule">
+            <div class="py-5 border-b rule flex justify-between items-center gap-4"><span class="display text-2xl md:text-3xl font-semibold">Web design</span><span class="mono text-[10px] uppercase text-[#77766f]">Estrutura & identidade</span></div>
+            <div class="py-5 border-b rule flex justify-between items-center gap-4"><span class="display text-2xl md:text-3xl font-semibold">Desenvolvimento</span><span class="mono text-[10px] uppercase text-[#77766f]">HTML · CSS · JS</span></div>
+            <div class="py-5 border-b rule flex justify-between items-center gap-4"><span class="display text-2xl md:text-3xl font-semibold">Experiência digital</span><span class="mono text-[10px] uppercase text-[#77766f]">Usabilidade & função</span></div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-8"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Interfaces responsivas</span></div>
+        </div>
+      </div>
+    </section>
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            if(menu.classList.contains('hidden')) {
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            } else {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            }
-        });
+    <section id="about" class="py-20 md:py-28 bg-[#e5e2d9] px-5 md:px-10">
+      <div class="max-w-[1440px] mx-auto grid md:grid-cols-[.85fr_1.15fr] gap-12 md:gap-24 items-center">
+        <div class="reveal relative max-w-md">
+          <div class="absolute -top-5 -left-5 mono text-[10px] text-[#3157ff]">04 / Por trás do trabalho</div>
+          <div class="aspect-[4/5] overflow-hidden bg-[#d0ccc2]"><img src="perfil.png" alt="José Lelo" class="w-full h-full object-cover object-center grayscale"></div>
+          <p class="mono text-[10px] uppercase mt-3 flex justify-between"><span>José Lelo</span><span>Programador & estrategista</span></p>
+        </div>
+        <div class="reveal">
+          <p class="mono text-xs uppercase text-[#3157ff] mb-6">Um pouco sobre mim</p>
+          <h2 class="display text-4xl md:text-6xl font-bold tracking-[-.07em] leading-[.98] mb-8">Gosto de criar coisas que <span class="text-[#3157ff]">fazem sentido.</span></h2>
+          <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-5">Sou o José Lelo, desenvolvedor de sites apaixonado por criar experiências digitais intuitivas, visualmente apelativas e centradas no utilizador.</p>
+          <p class="text-base md:text-lg leading-relaxed max-w-2xl mb-10">Com formação em design e uma compreensão da psicologia do utilizador, procuro construir experiências que não se ficam pela aparência: precisam de resolver problemas reais.</p>
+          <a href="#contact" class="inline-flex items-center gap-5 mono text-xs uppercase border-b-2 border-[#3157ff] pb-2">Falar sobre um projeto <span class="text-[#3157ff] text-lg">↗</span></a>
+        </div>
+      </div>
+    </section>
 
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            });
-        });
+    <section id="projects" class="py-20 md:py-28 px-5 md:px-10 max-w-[1440px] mx-auto">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-14 reveal">
+        <div><p class="mono text-xs uppercase text-[#3157ff] mb-5">05 / Selecção de trabalho</p><h2 class="display text-5xl md:text-7xl font-bold tracking-[-.08em]">Projetos<span class="text-[#3157ff]">.</span></h2></div>
+        <p class="max-w-xs text-sm leading-relaxed text-[#77766f]">Três exemplos de experiências digitais desenvolvidas para diferentes contextos e necessidades.</p>
+      </div>
+      <article class="project py-8 md:py-10 grid md:grid-cols-[.65fr_1.35fr] gap-8 md:gap-16 reveal">
+        <div class="flex flex-col justify-between"><div><p class="mono text-xs project-index mb-5">01 / Institucional</p><h3 class="display text-3xl md:text-4xl font-bold mb-4">Advocacia</h3><p class="text-sm text-[#77766f] max-w-sm leading-relaxed">Website para um escritório de advocacia, com foco em credibilidade e apresentação profissional.</p></div><a href="advogacia.html" target="_blank" rel="noopener noreferrer" class="mono text-xs uppercase mt-8 inline-flex items-center gap-4 hover:text-[#3157ff]">Ver projecto <span>↗</span></a></div>
+        <a href="advogacia.html" target="_blank" rel="noopener noreferrer" class="project-image block aspect-[16/8]"><img src="advogacia.png" alt="Pré-visualização do projecto de advocacia" class="w-full h-full object-cover"></a>
+      </article>
+      <article class="project py-8 md:py-10 grid md:grid-cols-[.65fr_1.35fr] gap-8 md:gap-16 reveal">
+        <div class="flex flex-col justify-between"><div><p class="mono text-xs project-index mb-5">02 / Tecnologia</p><h3 class="display text-3xl md:text-4xl font-bold mb-4">Authentik</h3><p class="text-sm text-[#77766f] max-w-sm leading-relaxed">Landing page para uma marca de tecnologia, construída para comunicar valor e orientar a conversão.</p></div><a href="authentik.html" target="_blank" rel="noopener noreferrer" class="mono text-xs uppercase mt-8 inline-flex items-center gap-4 hover:text-[#3157ff]">Ver projecto <span>↗</span></a></div>
+        <a href="authentik.html" target="_blank" rel="noopener noreferrer" class="project-image block aspect-[16/8]"><img src="authentik.png" alt="Pré-visualização do projecto Authentik" class="w-full h-full object-cover"></a>
+      </article>
+      <article class="project py-8 md:py-10 grid md:grid-cols-[.65fr_1.35fr] gap-8 md:gap-16 reveal">
+        <div class="flex flex-col justify-between"><div><p class="mono text-xs project-index mb-5">03 / Hospitalidade</p><h3 class="display text-3xl md:text-4xl font-bold mb-4">Cafeteria</h3><p class="text-sm text-[#77766f] max-w-sm leading-relaxed">Website para uma cafeteria, com menu interactivo e informação orientada à visita e reserva.</p></div><a href="rosa.html" target="_blank" rel="noopener noreferrer" class="mono text-xs uppercase mt-8 inline-flex items-center gap-4 hover:text-[#3157ff]">Ver projecto <span>↗</span></a></div>
+        <a href="rosa.html" target="_blank" rel="noopener noreferrer" class="project-image block aspect-[16/8]"><img src="rosa.png" alt="Pré-visualização do projecto de cafeteria" class="w-full h-full object-cover"></a>
+      </article>
+    </section>
 
-        // 2. Animação de Scroll (Reveal)
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            revealElements.forEach((reveal) => {
-                if (reveal.getBoundingClientRect().top < windowHeight - 100) {
-                    reveal.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
+    <section id="contact" class="px-5 md:px-10 pb-20 md:pb-28">
+      <div class="contact-panel max-w-[1440px] mx-auto p-7 md:p-16 lg:p-20">
+        <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-14 lg:gap-24">
+          <div class="reveal">
+            <p class="mono text-xs uppercase text-[#8fa1ff] mb-6">06 / Próximo passo</p>
+            <h2 class="display text-5xl md:text-7xl font-bold tracking-[-.08em] leading-[.9] mb-10">Tens uma<br>ideia? Vamos<br><span class="text-[#8fa1ff]">construir.</span></h2>
+            <p class="text-[#aaa9a2] max-w-md leading-relaxed mb-10">Se procuras alguém para transformar uma ideia num projecto digital, conta-me o que tens em mente.</p>
+            <div class="space-y-5 mono text-xs">
+              <a href="mailto:joselelowork@gmail.com" class="flex gap-5 items-center hover:text-[#8fa1ff]"><span class="text-[#8fa1ff]">E-MAIL</span> joselelowork@gmail.com ↗</a>
+              <a href="https://wa.me/244955639957" target="_blank" rel="noopener noreferrer" class="flex gap-5 items-center hover:text-[#8fa1ff]"><span class="text-[#8fa1ff]">WHATSAPP</span> +244 955 639 957 ↗</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <h3 class="display text-2xl font-semibold mb-8">Envia uma mensagem</h3>
+            <form id="whatsapp-form" class="space-y-7">
+              <div><label for="nome" class="mono text-[10px] uppercase text-[#aaa9a2] block mb-3">O teu nome</label><input id="nome" type="text" required placeholder="Como te chamas?" class="w-full bg-transparent border-b border-white/30 py-3 text-white placeholder:text-white/35"></div>
+              <div><label for="mensagem" class="mono text-[10px] uppercase text-[#aaa9a2] block mb-3">Sobre o projecto</label><textarea id="mensagem" required rows="4" placeholder="Conta-me um pouco sobre a tua ideia..." class="w-full bg-transparent border-b border-white/30 py-3 text-white placeholder:text-white/35 resize-y"></textarea></div>
+              <button type="submit" class="blue-link px-6 py-4 w-full flex items-center justify-between mono text-xs uppercase">Enviar pelo WhatsApp <span class="text-lg">↗</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // 3. Animação de Texto Palavra a Palavra
-        const heroTitle = document.getElementById('hero-title');
-        let htmlContent = heroTitle.innerHTML;
-        htmlContent = htmlContent.replace('<span class="text-brand-orange">Desenvolvedor</span>', '||ORANGE_START||Desenvolvedor||ORANGE_END||');
-        
-        const words = htmlContent.split(/(\s+|<br>)/);
-        heroTitle.innerHTML = '';
-        let delay = 0;
+  <footer class="px-5 md:px-10 pb-8">
+    <div class="max-w-[1440px] mx-auto border-t rule pt-5 flex flex-col md:flex-row justify-between gap-4 mono text-[10px] uppercase text-[#77766f]">
+      <span>© 2026 José Lelo. Todos os direitos reservados.</span><span>Digital work. Distinct thinking.</span><a href="#home" class="hover:text-[#3157ff]">Voltar ao topo ↑</a>
+    </div>
+  </footer>
 
-        words.forEach(word => {
-            if (word.trim() === '' || word === '<br>') {
-                if (word === '<br>') heroTitle.innerHTML += '<br>';
-                else if (word.includes('\n')) heroTitle.innerHTML += ' ';
-                return;
-            }
-
-            if (word.includes('||ORANGE_START||')) {
-                const span = document.createElement('span');
-                span.className = 'text-brand-orange word-reveal';
-                span.style.animationDelay = `${delay}s`;
-                span.textContent = 'Desenvolvedor';
-                heroTitle.appendChild(span);
-                delay += 0.15;
-            } else {
-                const span = document.createElement('span');
-                span.className = 'word-reveal';
-                span.style.animationDelay = `${delay}s`;
-                span.textContent = word;
-                heroTitle.appendChild(span);
-                delay += 0.15;
-            }
-            heroTitle.innerHTML += ' ';
-        });
-
-        // 4. Lógica do Formulário WhatsApp
-        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            
-            const telefone = "244955639957"; 
-            
-            const texto = encodeURIComponent(`Olá, meu nome é *${nome}*.\n\n*Mensagem:* ${mensagem}`);
-            
-            window.open(`https://wa.me/${telefone}?text=${texto}`, '_blank');
-        });
-    </script>
+  <script>
+    const menuButton=document.getElementById('mobile-menu-btn');
+    const mobileMenu=document.getElementById('mobile-menu');
+    const menuIcon=menuButton.querySelector('i');
+    menuButton.addEventListener('click',()=>{
+      const isOpen=!mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+      menuButton.setAttribute('aria-expanded',String(!isOpen));
+      menuIcon.classList.toggle('fa-bars',isOpen);
+      menuIcon.classList.toggle('fa-xmark',!isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      menuButton.setAttribute('aria-expanded','false');
+      menuIcon.classList.replace('fa-xmark','fa-bars');
+    }));
+    const revealItems=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('active');observer.unobserve(entry.target)}});
+      },{threshold:.12});
+      revealItems.forEach(item=>observer.observe(item));
+    }else{revealItems.forEach(item=>item.classList.add('active'))}
+    document.getElementById('whatsapp-form').addEventListener('submit',event=>{
+      event.preventDefault();
+      const nome=document.getElementById('nome').value.trim();
+      const mensagem=document.getElementById('mensagem').value.trim();
+      const texto=encodeURIComponent('Olá, meu nome é *'+nome+'.*\n\n*Mensagem:* '+mensagem);
+      window.open('https://wa.me/244955639957?text='+texto,'_blank','noopener,noreferrer');
+    });
+  </script>
 </body>
 </html>
