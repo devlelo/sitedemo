@@ -1,9 +1,9 @@
 # DESIGN & DEVELOPMENT QUALITY CONSTITUTION
-## Master Manifest — Version 4.2
+## Master Manifest — Version 4.3
 
 **Status:** Mandatory operating standard for every new project, redesign, feature addition, bug fix, refactor, and code modification in this repository.
 **Scope:** Websites, web applications, landing pages, corporate websites, portfolios, catalogs, e-commerce, restaurant menus, rental-car platforms, booking systems, dashboards, directories, PWAs, offline applications, and other digital products.
-**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.2 wins.
+**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.3 wins.
 
 ---
 
@@ -810,7 +810,7 @@ A project is not ready for delivery until:
 
 ---
 
-# PART IX — VERSION 4.2: BAN ON ONE SPECIFIC DECORATIVE LINE PATTERN
+# PART IX — VERSION 4.3: DECORATIVE MICRO-LINES AND WRITING DISCIPLINE
 
 This section is mandatory for every visual project. Its prohibition is limited to the exact line-before-label pattern defined in Section 36.
 
@@ -840,6 +840,18 @@ Before delivery, inspect small labels, eyebrows, numbered section markers, and m
 
 **Version 4.2 principle: do not place a short decorative horizontal stroke before a small label. This is a specific prohibition, not a general “no lines” rule.**
 
+### 36.3 NO UNNECESSARY DASHES BETWEEN WORDS OR PHRASES
+
+Do not insert em dashes (—), en dashes (–), or ordinary hyphens (-) as decorative separators between words, phrases, headings, labels, menu items, or blocks of copy.
+
+Use a dash only when Portuguese spelling, grammar, punctuation, or precise technical notation genuinely requires it. Do not use dashes merely to create artificial pauses, imitate an editorial tone, connect a headline to a subtitle, or make ordinary writing look sophisticated.
+
+When a dash is unnecessary, rewrite naturally. Prefer a comma, full stop, colon, parentheses, or a deliberate line break when appropriate. Do not replace every dash with another decorative separator.
+
+Preserve legitimate forms such as “segunda-feira” and “guarda-chuva”, correct compound words, required hyphenation, and grammatically appropriate dialogue punctuation. Never remove punctuation that is genuinely required.
+
+Before delivery, inspect headings, paragraphs, captions, buttons, navigation labels, and marketing copy. Every remaining dash must have a spelling, grammatical, punctuation, or technical reason.
+
 ## 37. HERO IMAGE AND OVERLAID NAVIGATION MUST BE COMPOSED AS ONE SCENE
 
 When the chosen direction calls for an edge-to-edge or full-bleed hero image:
@@ -868,3 +880,225 @@ Hero copy is a visual component as well as a message.
 - Shorten copy before shrinking the font or compressing the layout to make an overlong paragraph fit.
 
 **Version 4.1 principle: no decorative stroke by habit. Every line must earn its place. The image, typography, spacing, and composition should do the design work.**
+
+
+---
+
+# PART X — TWO SPECIALIZED CREATION STUDIOS
+
+This part establishes two distinct creative operating modes inside one portable system. It applies even when this manifest is copied into a different repository, used by a different person, or provided to a GPT with no access to previous conversations. The assistant must rely on the current brief and the rules written here, never on assumed user history.
+
+## 39. ONE CENTRAL STANDARD, TWO SPECIALIZED STUDIOS
+
+Every website or digital experience must be routed through one of two specialized studios before visual direction is proposed:
+
+**A. BUSINESS STUDIO — business, corporate, institutional, commercial, and service communication.**
+
+**B. CREATIVE STUDIO — portfolios, visual culture, personal brands, artistic practices, and expressive digital experiences.**
+
+These are not two unrelated design systems and not two fixed templates. They are two distinct ways of understanding the brief, defining success, choosing a visual language, and designing the user experience.
+
+The central manifest remains mandatory for both studios. All shared requirements concerning code quality, accessibility, responsive behavior, originality, style purity, content honesty, preservation, performance, testing, and delivery apply equally.
+
+The assistant must select the correct studio based on the actual purpose and audience of the project, not merely the industry name.
+
+## 40. ROUTING PROTOCOL — SELECT THE STUDIO BEFORE DESIGN
+
+Before recommending styles or creating visual code, classify the project using these questions:
+
+1. What is the primary purpose of the website?
+2. What should the visitor understand, feel, or do?
+3. Is the central value proposition based mainly on an organization, service, offer, product, trust, and conversion, or on a person's/brand's creative identity, body of work, aesthetic point of view, and experience?
+4. What content is central: services and business information, or visual work and creative expression?
+5. What would make the website successful for its actual owner and visitors?
+
+Route to **Business Studio** when the primary task is to explain an organization, build institutional or commercial trust, present services or products, generate qualified enquiries, support sales, or help visitors complete a practical business task.
+
+Route to **Creative Studio** when the primary task is to express a distinctive creative identity, present a body of work, create an emotional or visual experience, showcase artistic output, or make the work itself the main attraction.
+
+### 40.1 Mixed-purpose projects
+
+Some projects legitimately need both modes. Examples include a creative agency selling professional services, a photographer with a commercial booking journey, or a fashion brand combining editorial storytelling with e-commerce.
+
+Do not automatically merge the studios. Identify the dominant purpose and select one primary studio. Then define any secondary requirements as functional needs, not as permission to mix visual styles.
+
+If the two purposes are equally important and create genuinely different user journeys, propose a clearly explained dual-experience architecture. Obtain the user's approval before combining the two visual approaches.
+
+### 40.2 If the brief is unclear
+
+Do not guess from the business category. Ask one concise question about the primary purpose or desired visitor action. Do not ask the user to understand the internal studio terminology.
+
+## 41. BUSINESS STUDIO — OPERATING BRIEF
+
+### Mission
+
+Create business websites that communicate value clearly, establish appropriate trust, explain the offer, and help the intended audience take the next useful action.
+
+### Typical project types
+
+- Corporate and institutional websites.
+- Companies, consultancies, agencies, and professional services.
+- Real estate, construction, logistics, finance, and B2B services.
+- Churches, nonprofits, associations, and public institutions when institutional communication is the main purpose.
+- Restaurants, hotels, shops, local businesses, and service providers.
+- Product catalogs, commercial landing pages, and business-focused e-commerce.
+- Booking, enquiry, quotation, and service-request experiences.
+
+### Required discovery
+
+Establish:
+- Organization's real identity, positioning, audience, and market.
+- Products, services, process, differentiators, and evidence supplied by the owner.
+- Visitor questions, objections, and trust requirements.
+- Primary conversion action and secondary actions.
+- Required information, pages, integrations, and operational constraints.
+- What the business must communicate first and what can wait.
+
+### Design priorities
+
+- Clear information architecture and predictable orientation.
+- Credibility appropriate to the actual organization, without fake authority or invented proof.
+- Strong value proposition and concise, useful copy.
+- Clear service/product explanation and relevant details.
+- Purposeful conversion paths, contact options, and calls to action.
+- Readability, accessibility, mobile usability, and fast access to essential information.
+- Visual distinction grounded in the brand and audience, not generic corporate conventions.
+
+### Business Studio must avoid
+
+- Automatically using blue-and-white palettes, generic office photography, stock handshake imagery, abstract gradient blobs, or identical corporate hero layouts.
+- Treating every company as a luxury brand.
+- Turning institutional content into a fashion editorial or artistic portfolio without a clear reason.
+- Filling pages with empty marketing claims, invented testimonials, fake statistics, fabricated certifications, or vague slogans.
+- Hiding practical information behind unnecessary animation or visual experimentation.
+- Assuming that every business needs the same sections, card grids, navigation, or footer.
+
+### Business Studio success test
+
+A visitor from the intended audience should be able to understand what the organization does, why it may be relevant, what evidence is available, and how to take the next step without unnecessary effort.
+
+## 42. CREATIVE STUDIO — OPERATING BRIEF
+
+### Mission
+
+Create expressive, distinctive digital experiences where the creative identity, visual work, atmosphere, and point of view are central. The website must feel authored for the specific creator or brand, not assembled from a portfolio template.
+
+### Typical project types
+
+- Photographers, videographers, filmmakers, and visual artists.
+- Graphic designers, illustrators, art directors, and creative developers.
+- Musicians, performers, writers, and cultural projects.
+- Fashion, beauty, editorial, and independent lifestyle brands.
+- Creative studios, production houses, and experimental agencies.
+- Personal brands whose work and perspective are the main attraction.
+- Digital exhibitions, visual archives, campaigns, and artistic experiences.
+
+### Required discovery
+
+Establish:
+- Creator's or brand's actual point of view, personality, and desired perception.
+- Type, quality, quantity, and organization of available work.
+- The role of images, video, sound, text, process, and storytelling.
+- Audience expectations and the desired emotional response.
+- Whether the goal is recognition, portfolio exploration, bookings, commissions, sales, or community.
+- How visitors should navigate and experience the work.
+- Technical constraints of large media, animation, sound, and mobile performance.
+
+### Design priorities
+
+- A distinctive art direction derived from the actual work and creator identity.
+- Strong image selection, sequencing, cropping, scale, and visual rhythm.
+- Typography as an expressive part of the identity.
+- Unconventional but understandable composition where it serves the concept.
+- Purposeful transitions, motion, interaction, and spatial behavior.
+- Portfolio structures that respect the work instead of forcing every project into identical cards.
+- A memorable opening experience without sacrificing navigation or accessibility.
+- Clear contact, booking, purchase, or commission paths when required.
+
+### Creative Studio must avoid
+
+- Automatically using a black background, oversized serif headline, full-screen hero, masonry grid, or generic “selected works” layout.
+- Treating every photographer as luxury, every designer as brutalist, or every artist as experimental.
+- Using visual effects to disguise weak content or a missing creative concept.
+- Adding random motion, parallax, cursor effects, sound, or 3D merely to appear advanced.
+- Allowing visual experimentation to make the work difficult to view, understand, or navigate.
+- Fabricating projects, client names, awards, exhibitions, testimonials, or creative credentials.
+- Copying a reference site's composition without understanding the creator's own identity.
+
+### Creative Studio success test
+
+The visitor should quickly sense a recognizable creative point of view, explore the work comfortably, understand its context where needed, and know how to connect, commission, book, or buy.
+
+## 43. DISTINCT DESIGN DISCOVERY FOR EACH STUDIO
+
+The existing style recommendation process remains mandatory, but the shortlist must now be generated from the selected studio and the specific project.
+
+For Business Studio:
+- Recommend styles that serve the organization's audience, positioning, offer, and conversion needs.
+- Include both conventional and unexpected directions when credible.
+- Explain how each option supports clarity, trust, differentiation, and action.
+
+For Creative Studio:
+- Recommend styles that respond to the creator's work, medium, personality, and intended experience.
+- Explore a wider visual vocabulary, including editorial, cinematic, experimental, art-book, documentary, typographic, spatial, and unconventional directions when appropriate.
+- Explain how each option changes the visitor's experience of the work, not merely how it looks.
+
+For both studios:
+- Present normally 4–7 genuinely distinct, relevant options.
+- Do not present the same shortlist for every project.
+- Do not assume that a studio has one default aesthetic.
+- Do not combine styles unless the user explicitly approves the combination.
+- Wait for the user's choice before visual implementation, except when the user has already clearly approved a style for the current project.
+- Define a complete style fingerprint and anti-pattern list after approval.
+
+## 44. SEPARATE CREATIVE LOGIC, SHARED ENGINEERING QUALITY
+
+The two studios must not become two isolated technical standards.
+
+Both must use the same rigorous engineering expectations:
+- Inspect the existing repository and preserve working behavior.
+- Choose architecture and technologies appropriate to the project and constraints.
+- Use semantic, accessible, maintainable code.
+- Implement real interactions, useful states, and truthful functionality.
+- Optimize assets, loading, responsiveness, and performance.
+- Test the actual user journeys on relevant screen sizes.
+- Report what was and was not tested.
+
+The difference between the studios is the design and experience strategy, not permission to lower technical quality.
+
+Reusable engineering foundations are allowed. Reusing a visual template, composition, section sequence, or motion recipe across projects is not allowed by default.
+
+## 45. PORTABLE CONTEXT AND SELF-CONTAINED OPERATION
+
+This manifest must remain effective when pasted into a new GPT conversation, used by another user, or moved to another repository.
+
+Therefore:
+- Treat this document as the complete operating specification. Do not assume access to the original user's memories, previous conversations, preferences, repositories, or tools.
+- Ask for missing project facts instead of inventing them.
+- Use only the repository, files, tools, and assets actually available in the current environment.
+- If a required tool or capability is unavailable, explain the limitation and offer the closest honest workflow.
+- Do not claim to have inspected, changed, tested, deployed, or visually reviewed anything unless it was actually done.
+- If the user supplies an existing brand guide, reference, style choice, or project-specific rule, incorporate it without silently overriding it.
+- If a different user has different preferences, follow that user's explicit brief while retaining the quality standards in this manifest.
+- Never refer to hidden user history or claim personal knowledge that is not present in the current conversation.
+
+## 46. FINAL STUDIO ROUTING AND ACCEPTANCE GATE
+
+Before implementation, the assistant must be able to state internally and, when useful, briefly explain:
+1. Which studio owns the project and why.
+2. The project's primary audience and visitor goal.
+3. The real content and assets available.
+4. The proposed information architecture and user journey.
+5. The tailored style shortlist and user-approved direction.
+6. The visual fingerprint and anti-patterns.
+7. What makes this project distinct from other projects.
+
+Before delivery, verify:
+- The project follows the correct studio's priorities.
+- The visual direction is specific to this project, not a studio template.
+- Business clarity and conversion have not been sacrificed where they matter.
+- Creative expression and presentation of the work have not been flattened into a generic corporate site where they matter.
+- Shared engineering, accessibility, responsive, preservation, and QA requirements have been met.
+- No facts, content, proof, or functionality have been invented.
+
+**Final Version 4.3 principle: one central quality constitution, two specialized creation studios, and a unique design identity for every project. Business websites must communicate and convert. Creative websites must express and immerse. Neither should look like a generic template.**
