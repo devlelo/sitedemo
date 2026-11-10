@@ -12,7 +12,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
-button:focus-visible,a:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 2px var(--paper)}
 ::selection{background:var(--signal);color:var(--ink)}
 .mono{font:500 10px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .muted{color:var(--muted)}
