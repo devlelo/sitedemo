@@ -1,5 +1,12 @@
 (() => {
   const products = Array.isArray(window.GPM_PRODUCTS) ? window.GPM_PRODUCTS : [];
+  const areaNames = {
+    construction: 'Construção e materiais',
+    hospitality: 'Hotelaria e alojamento',
+    worksites: 'Estaleiros e operações',
+    offices: 'Escritórios e empresas',
+    foodservice: 'Alimentação profissional'
+  };
   const ref = new URLSearchParams(window.location.search).get('ref');
   const product = products.find(item => item.ref === ref);
   const unavailable = document.querySelector('#detail-unavailable');
@@ -22,7 +29,7 @@
     document.querySelector('#detail-title').textContent = product.name;
     document.querySelector('#detail-summary').textContent = product.summary || '';
     document.querySelector('#detail-description').textContent = product.description || product.summary || 'Descrição técnica a confirmar pela GPM.';
-    document.querySelector('#detail-area').textContent = 'ÁREA / ' + (product.area || 'A DEFINIR').toUpperCase();
+    document.querySelector('#detail-area').textContent = 'ÁREA / ' + (areaNames[product.area] || 'A DEFINIR').toUpperCase();
 
     const specs = document.querySelector('#detail-specs');
     (Array.isArray(product.specifications) ? product.specifications : []).forEach(spec => {
