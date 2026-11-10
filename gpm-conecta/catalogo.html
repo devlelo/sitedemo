@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a2945">
+  <meta name="description" content="Catálogo público de fornecimento empresarial da GPM Conecta.">
+  <title>Catálogo | GPM Conecta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./index.html#inicio" aria-label="GPM Conecta, início">
+      <span class="brand-symbol">G</span>
+      <span class="brand-name">GPM CONECTA<small>FORNECIMENTO EMPRESARIAL</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="./index.html#areas">Áreas</a>
+      <a href="./catalogo.html" aria-current="page">Catálogo</a>
+      <a href="./index.html#processo">Como funciona</a>
+    </nav>
+    <div class="header-right"><span class="header-code">CATÁLOGO / AO</span><a class="header-action" href="./index.html#processo">Como funciona ↗</a></div>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">≡</button>
+  </header>
+  <main class="catalog-page">
+    <section class="catalog-page-head">
+      <div class="section-id mono">GPM / CATÁLOGO PÚBLICO / 001</div>
+      <h1>Encontre o que a sua operação <em>precisa.</em></h1>
+      <p>Explore as áreas de fornecimento da GPM. Os produtos serão apresentados com informação validada. Preços, disponibilidade e prazos dependem de consulta comercial.</p>
+    </section>
+    <section class="catalog-workspace" aria-label="Exploração do catálogo">
+      <aside class="catalog-index">
+        <h2>Índice de áreas</h2>
+        <button type="button" data-filter="all" aria-pressed="true"><span>Todas as áreas</span><span>00</span></button>
+        <button type="button" data-filter="construction" aria-pressed="false"><span>Construção</span><span>01</span></button>
+        <button type="button" data-filter="hospitality" aria-pressed="false"><span>Hotelaria</span><span>02</span></button>
+        <button type="button" data-filter="worksites" aria-pressed="false"><span>Estaleiros</span><span>03</span></button>
+        <button type="button" data-filter="offices" aria-pressed="false"><span>Escritórios</span><span>04</span></button>
+        <button type="button" data-filter="foodservice" aria-pressed="false"><span>Alimentação profissional</span><span>05</span></button>
+      </aside>
+      <div class="catalog-results">
+        <div class="catalog-results-top">
+          <h2>Produtos publicados</h2>
+          <p id="catalog-total">0 REFERÊNCIAS PUBLICADAS</p>
+        </div>
+        <div class="catalog-page-search">
+          <label for="catalog-query">Pesquisar no catálogo</label>
+          <input id="catalog-query" type="search" placeholder="Nome, referência ou palavra-chave" autocomplete="off">
+        </div>
+        <div class="catalog-results-list" id="catalog-results-list" aria-live="polite"></div>
+        <div class="catalog-page-empty" id="catalog-page-empty">
+          <div class="empty-code" aria-hidden="true">00</div>
+          <div><h3>Catálogo em preparação</h3><p>A GPM ainda não publicou referências neste catálogo. Estamos a preparar a informação de cada produto para evitar apresentar especificações, preços ou disponibilidade sem validação.</p></div>
+        </div>
+        <p class="catalog-page-status" id="catalog-page-status" aria-live="polite">Ainda não existem produtos publicados.</p>
+        <div class="catalog-page-foot">A consulta de um produto não confirma stock, preço ou prazo. Cada condição será validada pela equipa GPM antes de qualquer proposta comercial.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-brand">GPM CONECTA<small>FORNECIMENTO EMPRESARIAL</small></div>
+    <div class="footer-note">CONSTRUÇÃO · HOTELARIA · OPERAÇÕES<br>ESCRITÓRIOS · ALIMENTAÇÃO PROFISSIONAL</div>
+    <div class="footer-end">CATÁLOGO PÚBLICO<br>© <span id="year">2026</span> GPM CONECTA</div>
+  </footer>
+  <script src="./products.js" defer></script>
+  <script src="./catalog.js" defer></script>
+</body>
+</html>
