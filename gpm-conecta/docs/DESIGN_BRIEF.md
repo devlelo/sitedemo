@@ -17,14 +17,14 @@ A GPM deve parecer um sistema técnico de fornecimento e coordenação operacion
 - IBM Plex Sans: texto corrido e leitura prolongada.
 - Hierarquia por escala, peso, alinhamento e largura; evitar serifas editoriais.
 
-### Paleta
-- Ink / carvão: #171A17, estrutura e superfícies principais.
-- Paper / marfim técnico: #F0EEE5, fundo de leitura.
-- Paper muted: #E3E0D5, superfícies secundárias.
-- Signal yellow: #D9F34A, acento operacional e foco.
-- Neutral gray: #777A70, metadados.
-- Borders: carvão com opacidade moderada.
-- Estados funcionais devem combinar cor e texto; o amarelo não será usado como único sinal.
+### Paleta oficial da marca GPM Conecta
+- Branco: #FFFFFF, fundo principal e superfícies de leitura.
+- Azul-marinho: #0A2945, cor estrutural dominante para cabeçalho, hero, títulos, texto de maior ênfase e superfícies institucionais.
+- Castanho claro / dourado: #CE9E53, acento de marca para chamadas à ação, destaques, indicadores e elementos de foco sobre fundos escuros.
+- Cinza azulado #F3F5F7 e cinzas de apoio são apenas neutros funcionais para separar superfícies, bordas e metadados; não substituem nem competem com as três cores oficiais.
+- Texto sobre dourado deve usar azul-marinho. Dourado não deve ser usado como texto pequeno sobre branco, devido ao contraste insuficiente.
+- Estados funcionais devem combinar cor e texto; nunca depender apenas da cor.
+- A paleta oficial substitui integralmente a paleta experimental anterior. Não usar carvão, marfim técnico ou amarelo-lima como cores da marca.
 
 ### Composição e grelha
 - Grelha técnica modular com margens consistentes, colunas assimétricas e áreas de informação alinhadas.
@@ -60,7 +60,7 @@ A GPM deve parecer um sistema técnico de fornecimento e coordenação operacion
 
 ## Auditoria de originalidade
 Projetos comparados: portfólio `index (6).html`, Oxe Café e Aresta.
-- Evitar paleta papel + azul elétrico do portfólio.
+- Evitar paleta papel + azul elétrico do portfólio; a GPM usa branco, azul-marinho #0A2945 e dourado #CE9E53.
 - Evitar madeira/castanho e laranja da Oxe.
 - Evitar papel mineral + oliva, serif editorial e hero imobiliário assimétrico da Aresta.
 - Evitar hero genérico com fotografia dominante, três cartões de serviços, testemunhos fabricados e grelha de cartões repetitiva.
@@ -69,7 +69,8 @@ Projetos comparados: portfólio `index (6).html`, Oxe Café e Aresta.
 **A folha de operações da cadeia de fornecimento torna-se a interface.** A página organiza a GPM como uma central de coordenação: áreas, catálogo, processo de validação e acesso comercial são apresentados como informação operacional clara.
 
 ## Anti-patterns proibidos
-- Azul corporativo, dourado premium ou gradientes roxos.
+- Paletas fora das cores oficiais da GPM, incluindo azul elétrico, amarelo-lima e gradientes roxos.
+- Tratar o dourado como estética de luxo genérica; deve funcionar como acento institucional da marca, não como tema decorativo dominante.
 - Serif editorial ou estética de luxo.
 - Fotografia genérica de aperto de mãos, escritórios ou armazéns não confirmados.
 - Cartões arredondados e sombras suaves como linguagem dominante.
