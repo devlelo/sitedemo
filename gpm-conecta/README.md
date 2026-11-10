@@ -2,7 +2,7 @@
 
 Plataforma de fornecimento empresarial para construção, alojamento, estaleiros, escritórios e operações de alimentação profissional.
 
-> Estado: fundação e especificação inicial. A interface visual ainda não foi implementada porque a direção de design precisa de aprovação, conforme o `manifest.txt` da raiz do repositório.
+> Estado: interface institucional, catálogo público e modelo de ficha de produto implementados em frontend estático. O catálogo permanece sem referências até a GPM fornecer dados reais e validados.
 
 ## Objetivo
 
