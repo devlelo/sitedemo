@@ -134,3 +134,14 @@ SMS deve usar um adaptador de fornecedor externo. Guardar estado, resposta, tent
 - Alterações de estado ficam auditadas.
 - Falha de SMS não bloqueia o pedido.
 - Sistema permanece utilizável sem gateway de pagamento e sem APIs de fornecedores.
+
+
+## 11. Catálogo público e ficha de produto
+
+- O catálogo público tem página própria com pesquisa por nome, referência e palavras-chave, além de filtro por área.
+- Cada referência publicada abre uma ficha individual através de uma referência estável.
+- A ficha apresenta apenas descrição e especificações validadas.
+- Preços, disponibilidade, quantidades mínimas e prazos são confirmados pela GPM após consulta comercial.
+- Uma ficha pública não representa uma proposta nem confirma stock.
+- Enquanto não existirem referências aprovadas, o catálogo e a ficha apresentam estados vazios claros.
+- O catálogo frontend atual não possui backend, autenticação, carrinho persistente nem submissão de pedidos.
