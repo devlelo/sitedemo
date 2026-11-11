@@ -81,4 +81,40 @@
   filters.forEach(button => button.addEventListener('click', () => setFilter(button.dataset.filter)));
   search?.addEventListener('input', updateCatalogMessage);
   updateCatalogMessage();
+
+  // Scroll reveal: progressive enhancement, with reduced-motion support.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets = document.querySelectorAll('.section-head, .areas-layout, .catalog-top, .catalog-tools, .catalog-empty, .process-step, .contact-band, .site-footer');
+  revealTargets.forEach((element,index) => {
+    element.classList.add('js-reveal');
+    if(element.classList.contains('process-step')) element.style.setProperty('--reveal-delay',(index%4)*90+'ms');
+  });
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    const observer = new IntersectionObserver((entries,obs) => entries.forEach(entry => {
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target);}
+    }),{threshold:.12,rootMargin:'0px 0px -45px 0px'});
+    revealTargets.forEach(element => observer.observe(element));
+  } else revealTargets.forEach(element => element.classList.add('is-visible'));
+
+  const header = document.querySelector('.site-header');
+  const syncHeader = () => header?.classList.toggle('is-scrolled',window.scrollY>18);
+  syncHeader();
+  window.addEventListener('scroll',syncHeader,{passive:true});
+
+  const hero = document.querySelector('.hero');
+  const board = document.querySelector('.hero-board');
+  if(hero && board && !reduceMotion && window.matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('pointermove',event => {
+      const bounds=hero.getBoundingClientRect();
+      const x=(event.clientX-bounds.left)/bounds.width-.5;
+      const y=(event.clientY-bounds.top)/bounds.height-.5;
+      board.style.setProperty('--board-x',(x*8).toFixed(1)+'px');
+      board.style.setProperty('--board-y',(y*7).toFixed(1)+'px');
+    });
+    hero.addEventListener('pointerleave',() => {
+      board.style.setProperty('--board-x','0px');
+      board.style.setProperty('--board-y','0px');
+    });
+  }
+
 })();
