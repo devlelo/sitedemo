@@ -1,12 +1,6 @@
 (() => {
-  const products = Array.isArray(window.GPM_PRODUCTS) ? window.GPM_PRODUCTS : [];
-  const areaNames = {
-    construction: 'Construção',
-    hospitality: 'Hotelaria',
-    worksites: 'Estaleiros',
-    offices: 'Escritórios',
-    foodservice: 'Alimentação profissional'
-  };
+  const catalog = window.GPM_CATALOG;
+  const products = catalog ? catalog.getProducts(window.GPM_PRODUCTS) : [];
   const filters = [...document.querySelectorAll('[data-filter]')];
   const search = document.querySelector('#catalog-query');
   const list = document.querySelector('#catalog-results-list');
@@ -18,52 +12,71 @@
   function makeProductRow(product, index) {
     const row = document.createElement('a');
     row.className = 'catalog-product-row';
-    row.href = './produto.html?ref=' + encodeURIComponent(product.ref);
+    row.href = './produto.html?ref=' + encodeURIComponent(product.ref.trim());
+
     const code = document.createElement('span');
     code.className = 'catalog-product-code';
     code.textContent = String(index + 1).padStart(2, '0');
+
     const info = document.createElement('span');
     const name = document.createElement('span');
     name.className = 'catalog-product-name';
-    name.textContent = product.name;
+    name.textContent = product.name.trim();
+
     const meta = document.createElement('span');
     meta.className = 'catalog-product-meta';
-    meta.textContent = [product.ref, areaNames[product.area] || 'Área GPM'].filter(Boolean).join(' / ');
+    meta.textContent = [product.ref.trim(), catalog.getAreaLabel(product.area)].join(' / ');
     info.append(name, meta);
+
     const action = document.createElement('span');
     action.className = 'catalog-product-link';
     action.textContent = 'Ver ficha ↗';
+
     row.append(code, info, action);
     return row;
   }
 
   function render() {
-    const query = (search?.value || '').trim().toLocaleLowerCase('pt');
-    const visible = products.filter(product => {
-      const matchesArea = activeFilter === 'all' || product.area === activeFilter;
-      const haystack = [product.name, product.ref, product.summary, ...(product.keywords || [])].join(' ').toLocaleLowerCase('pt');
-      return matchesArea && haystack.includes(query);
-    });
+    const query = (search?.value || '').trim();
+    const visible = catalog.searchProducts(products, query, activeFilter);
+
     list.replaceChildren(...visible.map(makeProductRow));
     empty.hidden = visible.length > 0;
-    total.textContent = visible.length + (visible.length === 1 ? ' REFERÊNCIA' : ' REFERÊNCIAS') + ' / ' + products.length + ' PUBLICADAS';
+    total.textContent = visible.length + (visible.length === 1 ? ' REFERÊNCIA' : ' REFERÊNCIAS') +
+      ' / ' + products.length + ' PUBLICADAS';
+
     const emptyTitle = empty.querySelector('h3');
     const emptyText = empty.querySelector('p');
+
     if (products.length === 0) {
       emptyTitle.textContent = 'Catálogo em preparação';
       emptyText.textContent = 'A GPM ainda não publicou referências neste catálogo. Estamos a preparar a informação de cada produto para evitar apresentar especificações, preços ou disponibilidade sem validação.';
       status.textContent = 'Ainda não existem produtos publicados. A pesquisa e os filtros estão prontos para o catálogo validado.';
-    } else if (visible.length === 0) {
-      emptyTitle.textContent = 'Sem resultados nesta seleção';
-      emptyText.textContent = 'Não encontrámos produtos para os termos pesquisados nesta área. Experimente outra palavra ou selecione todas as áreas.';
-      status.textContent = 'Nenhum produto corresponde à pesquisa e à área selecionada.';
-    } else {
-      status.textContent = visible.length + ' produto(s) encontrado(s). Consulte cada ficha para conhecer a informação validada.';
+      return;
     }
+
+    if (visible.length === 0) {
+      if (query) {
+        const scope = activeFilter === 'all' ? '' : ' na área ' + catalog.getAreaLabel(activeFilter);
+        emptyTitle.textContent = 'Sem resultados para a pesquisa';
+        emptyText.textContent = 'Não encontrámos referências para "' + query + '"' + scope +
+          '. Experimente outra palavra ou selecione todas as áreas.';
+        status.textContent = 'Nenhuma referência corresponde à pesquisa e à área selecionada.';
+      } else {
+        const areaLabel = catalog.getAreaLabel(activeFilter);
+        emptyTitle.textContent = 'Sem referências nesta área';
+        emptyText.textContent = 'Ainda não existem referências publicadas para ' + areaLabel +
+          '. Selecione outra área para consultar os produtos disponíveis.';
+        status.textContent = 'Não existem referências publicadas na área ' + areaLabel + '.';
+      }
+      return;
+    }
+
+    status.textContent = visible.length + ' referência(s) encontrada(s). Consulte cada ficha para conhecer a informação validada.';
   }
 
   filters.forEach(button => button.addEventListener('click', () => {
-    activeFilter = button.dataset.filter;
+    activeFilter = button.dataset.filter || 'all';
     filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     render();
   }));
@@ -80,7 +93,11 @@
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
-    if (toggle) { toggle.setAttribute('aria-label', 'Abrir menu'); toggle.textContent = '≡'; }
+    if (toggle) {
+      toggle.setAttribute('aria-label', 'Abrir menu');
+      toggle.textContent = '≡';
+    }
   }));
+
   render();
 })();
