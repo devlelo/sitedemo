@@ -9,9 +9,11 @@ A experiência de catálogo e detalhe está implementada no frontend estático. 
 - `catalogo.html`: página pública de descoberta, pesquisa e filtro por área.
 - `produto.html`: modelo de detalhe por referência.
 - `products.js`: fonte local de dados públicos do catálogo.
-- `catalog.js`: pesquisa, filtros, contagem e apresentação das referências.
+- `catalog-data.js`: validação, normalização e pesquisa partilhadas entre catálogo e ficha.
+- `catalog.js`: filtros, pesquisa, contagem e apresentação das referências.
 - `product.js`: resolução da referência e apresentação da ficha.
 - `styles.css`: sistema visual partilhado com as páginas institucionais.
+- `tests/catalog-data.test.js`: testes automáticos da validação e pesquisa do catálogo.
 
 ## Estrutura de uma referência
 
@@ -37,11 +39,22 @@ Cada produto publicado em `window.GPM_PRODUCTS` deve seguir este formato:
 ## Regras de publicação
 
 1. Publicar apenas referências e descrições confirmadas pela GPM.
-2. Não adicionar preços, stock, prazos, quantidades mínimas ou fornecedores sem validação comercial atual.
-3. A ficha pública não é uma proposta, uma reserva nem uma confirmação de disponibilidade.
-4. Não incluir contactos privados, credenciais, dados de clientes ou informação confidencial de fornecedores.
-5. Usar referências únicas e estáveis para construir o URL `produto.html?ref=...`.
-6. Se futuramente forem necessários preço e disponibilidade, estes devem ser servidos por uma API com regras de validade e autorização adequadas, não tratados como garantias permanentes no ficheiro estático.
+2. Cada referência deve ter identificador único, nome e uma das áreas aceites.
+3. Registos incompletos e referências duplicadas são ignorados pelo catálogo público.
+4. A pesquisa ignora diferenças entre maiúsculas/minúsculas e acentos; procura no nome, referência, área, resumo, descrição, palavras-chave e especificações.
+5. Não adicionar preços, stock, prazos, quantidades mínimas ou fornecedores sem validação comercial atual.
+6. A ficha pública não é uma proposta, uma reserva nem uma confirmação de disponibilidade.
+7. Não incluir contactos privados, credenciais, dados de clientes ou informação confidencial de fornecedores.
+8. Usar referências únicas e estáveis para construir o URL `produto.html?ref=...`.
+9. Se futuramente forem necessários preço e disponibilidade, estes devem ser servidos por uma API com regras de validade e autorização adequadas, não tratados como garantias permanentes no ficheiro estático.
+
+## Testes
+
+A partir da raiz do repositório, executar:
+
+```bash
+node --test gpm-conecta/tests/catalog-data.test.js
+```
 
 ## Limites atuais
 
