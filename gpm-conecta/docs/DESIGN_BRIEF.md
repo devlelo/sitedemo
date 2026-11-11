@@ -89,3 +89,25 @@ Projetos comparados: portfólio `index (6).html`, Oxe Café e Aresta.
 
 ## Limites desta primeira implementação
 O protótipo é frontend estático. Não cria contas, não grava pedidos, não envia mensagens, não consulta fornecedores e não processa pagamentos. Estas funções serão implementadas com backend e integrações reais nas fases seguintes.
+
+
+## Revisão visual — 11/11/2026
+
+**Motivo:** a primeira apresentação foi considerada demasiado estática e sem vida. A revisão mantém a identidade cromática aprovada e acrescenta movimento e profundidade sem alterar regras comerciais ou estrutura funcional.
+
+### Alterações implementadas na branch `feat/gpm-visual-revival`
+- Fundo do hero com grelha técnica animada e halos discretos.
+- Entrada animada do título, texto e ações.
+- Linhas e nós do diagrama com movimento contínuo subtil.
+- Parallax ligeiro no painel visual, apenas em dispositivos com ponteiro preciso.
+- Revelação progressiva de secções ao entrar no ecrã.
+- Cabeçalho com tratamento visual ao deslocar a página.
+- Estados hover com deslocamento e realce em áreas, etapas e botões.
+- Respeito pela preferência do sistema por movimento reduzido.
+- Paleta preservada: branco `#FFFFFF`, azul-marinho `#0A2945`, dourado `#CE9E53`.
+
+### Limites desta revisão
+Esta etapa é exclusivamente visual. Não altera autenticação, catálogo, dados, pedidos, preços, disponibilidade, estados comerciais, Laravel ou base de dados. A branch original `feat/gpm-conecta-foundation` permanece intacta.
+
+### Próxima validação
+Rever o comportamento em desktop e telemóvel. Só depois da aprovação visual se deve avançar para imagens reais das áreas, novas composições de conteúdo ou integração com o Laravel.
