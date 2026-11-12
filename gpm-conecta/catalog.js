@@ -8,6 +8,11 @@
   const status = document.querySelector('#catalog-page-status');
   const total = document.querySelector('#catalog-total');
   let activeFilter = 'all';
+  const requestedArea = new URLSearchParams(window.location.search).get('area');
+  if (requestedArea && filters.some(button => button.dataset.filter === requestedArea)) {
+    activeFilter = requestedArea;
+    filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === activeFilter)));
+  }
 
   function makeProductRow(product, index) {
     const row = document.createElement('a');
