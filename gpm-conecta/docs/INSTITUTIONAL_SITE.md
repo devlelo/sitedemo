@@ -1,22 +1,26 @@
-# GPM Conecta — atualização da experiência institucional
+# GPM Conecta — website institucional multipágina
 
-## Direção
-A página institucional adota o modelo Editorial Commerce usado como referência no projeto Angomarket, adaptado à identidade e ao contexto B2B da GPM. A adoção é visual e composicional; a arquitetura funcional, o catálogo e as regras comerciais da GPM mantêm-se próprios.
+## Referência visual
+A estrutura visual foi refeita para seguir diretamente a composição do Angomarket fornecido como referência: cabeçalho, navegação, hero fotográfico, tipografia, secções editoriais, faixa animada, cartões com fotografia, blocos de abordagem/princípios, secção de contacto e rodapé. O objetivo é manter a mesma linguagem visual e geometria, adaptando a marca, as cores e o texto à GPM Conecta.
 
-## Estrutura da página inicial
-- Abertura estratégica e proposta de valor.
-- Sobre a empresa, com posicionamento fundamentado na especificação do produto.
-- Áreas de fornecimento existentes na documentação.
-- Projetos e portfólio em estado vazio até existirem casos reais autorizados.
-- Processo de pedido, consulta, proposta e confirmação.
-- Integrações previstas e respetivo estado real.
-- Contacto e formulário preparatório.
+## Páginas entregues
+- Página inicial estratégica: `index.html`.
+- Sobre a empresa: `sobre.html`.
+- Serviços/produtos: `servicos.html`.
+- Portfólio/projetos: `projetos.html`.
+- Contacto: `contacto.html`.
+
+O catálogo e a ficha de produto permanecem em `catalogo.html` e `produto.html`.
+
+## Identidade
+- Logo oficial GPM Conecta.
+- Azul-marinho `#0A2945`.
+- Dourado `#CE9E53`.
+- Fundos claros e tipografia equivalente à referência.
+- CSS partilhado em `gpm-site.css`.
+
+## Limites funcionais
+O formulário valida os campos e prepara o pedido para cópia; não envia dados ao servidor. A integração com o backend Laravel é uma etapa posterior. Contactos oficiais não foram inventados. O portfólio não apresenta projetos fictícios; só devem ser adicionados casos reais autorizados.
 
 ## Preservação
-- `catalogo.html`, `produto.html`, `catalog.js`, `product.js`, `catalog-data.js` e dados do catálogo não são alterados.
-- `styles.css` permanece dedicado às páginas do catálogo e fichas.
-- A nova página inicial utiliza `home.css` e `home.js`.
-- A aplicação Laravel não é alterada por esta entrega.
-
-## Honestidade funcional
-O formulário valida e prepara o texto do pedido para cópia. Não envia dados nem cria pedidos. A integração com backend deve ser feita numa etapa própria, com validação no servidor, proteção CSRF, rate limiting, armazenamento, consentimento e notificações.
+A implementação Laravel e as páginas existentes de catálogo/produto não foram alteradas nesta atualização.
