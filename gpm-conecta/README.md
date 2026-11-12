@@ -1,66 +1,40 @@
-# GPM Conecta
+# GPM Conecta · Website institucional
 
-Plataforma de fornecimento empresarial para construção, alojamento, estaleiros, escritórios e operações de alimentação profissional.
+Website institucional e ponto de entrada para o catálogo B2B da GPM Conecta.
 
-> Estado: interface institucional, catálogo público e modelo de ficha de produto implementados em frontend estático. O catálogo permanece sem referências até a GPM fornecer dados reais e validados.
+## Direção visual
+- Modelo visual: Editorial Commerce, adaptado ao fornecimento empresarial.
+- Identidade: branco, azul-marinho #0A2945 e dourado #CE9E53.
+- Tipografia: Archivo Black, Playfair Display, Manrope e DM Mono.
+- Composição editorial assimétrica, headline de escala ampla, grelha técnica, listas de áreas, painéis escuros e movimento discreto.
+- A logo oficial é utilizada como imagem completa. Não é reconstruída em texto.
 
-## Objetivo
+## Páginas e secções
+A página inicial inclui:
+1. Abertura estratégica.
+2. Sobre a empresa.
+3. Serviços e áreas de fornecimento.
+4. Portfólio/projetos, com estado vazio honesto até existirem casos autorizados.
+5. Processo de fornecimento.
+6. Integrações previstas.
+7. Contacto e formulário de preparação de pedido.
 
-Permitir que visitantes explorem o catálogo publicamente e que clientes autenticados submetam pedidos de fornecimento. Cada pedido é analisado pela equipa GPM antes de ser confirmado como encomenda comercial.
+O catálogo público e a ficha de produto existentes permanecem em `catalogo.html` e `produto.html`.
 
-A GPM consulta fornecedores manualmente na primeira fase. A arquitetura deverá permitir automatizar essas consultas através de APIs de parceiros no futuro.
+## Formulário
+O formulário valida os campos no browser e prepara uma mensagem que pode ser copiada. Ainda não envia dados para um servidor. A ligação ao backend Laravel, armazenamento, notificações e consentimento final devem ser implementados e testados antes de ativar a submissão online.
 
-## Áreas do produto
+## Integrações
+O website não declara integrações ativas que ainda não foram contratadas ou ligadas. Email/notificações, conectores de fornecedores, pagamentos angolanos e logística estão documentados como etapas futuras em `docs/INTEGRATIONS.md`.
 
-- Website institucional.
-- Marketplace público para descoberta e consulta de produtos.
-- Registo e autenticação de clientes empresariais, com NIF.
-- Carrinho e submissão de pedidos.
-- Portal do cliente: perfil, pedidos, acompanhamento, conversas e documentos PDF.
-- Administração GPM: catálogo, clientes, pedidos, consultas a fornecedores, propostas, equipa e relatórios.
-- Chat associado individualmente a cada pedido.
-- Notificações por SMS e email através de adaptadores.
-- Arquitetura preparada para gateway de pagamento angolano e integrações de fornecedores/logística.
+## Logo
+A imagem oficial está no repositório em `gpm/GPM CONECTA.png` na branch principal. O website usa o ficheiro raw do mesmo repositório enquanto a branch de desenvolvimento mantém a pasta institucional isolada.
 
-## Regras comerciais fundamentais
+## Execução
+Abrir `index.html` ou servir a pasta `gpm-conecta` com um servidor estático. Fontes externas exigem ligação à internet.
 
-1. Navegar no catálogo não exige conta.
-2. Submeter um pedido exige conta autenticada e NIF.
-3. Submeter um pedido não significa que a GPM aceitou a venda.
-4. A equipa GPM verifica disponibilidade, quantidade, preço, prazo e condições com fornecedores.
-5. A GPM pode propor alterações e alternativas sem apagar o pedido original.
-6. Só depois da aceitação comercial o pedido passa a encomenda confirmada.
-7. Cada pedido mantém o seu próprio histórico, conversa, versões de proposta e documentos.
-8. Pagamentos online ficam para uma fase posterior, sem acoplamento ao núcleo de pedidos.
-
-## Primeira implementação visual
-
-A interface institucional está em `index.html`. O catálogo dedicado está em `catalogo.html` e as fichas individuais em `produto.html`. Os estilos partilhados estão em `styles.css`; as interações institucionais e de catálogo usam `app.js`, `catalog.js` e `product.js`. A direção aprovada é Neo-Industrial Field Manual, adaptada à identidade oficial da GPM: branco `#FFFFFF`, azul-marinho `#0A2945` e dourado `#CE9E53`. O catálogo apresenta um estado vazio honesto até existirem produtos reais validados. Esta versão é frontend estático e não processa pedidos nem autenticação.
-
-O catálogo partilha a validação e a normalização de pesquisa em `catalog-data.js`. A pesquisa ignora acentos e inclui área e especificações; referências incompletas ou duplicadas não são apresentadas. Os testes da camada de dados estão em `tests/catalog-data.test.js`.
-
-## Estrutura
-
-- `docs/PRODUCT_SPEC.md`: requisitos e jornadas.
-- `docs/ARCHITECTURE.md`: arquitetura e fronteiras entre módulos.
-- `docs/INTEGRATIONS.md`: estratégia para APIs, gateways e fornecedores.
-- `docs/DESIGN_BRIEF.md`: fingerprint visual aprovado e identidade oficial.
-- `docs/CATALOG.md`: modelo de dados, regras e limites do catálogo público.
-- `catalogo.html` e `produto.html`: descoberta pública e ficha de produto.
-- `products.js` e `catalog-data.js`: dados e regras partilhadas de publicação/pesquisa.
-- `catalog.js` e `product.js`: interações do catálogo e da ficha.
-- `tests/catalog-data.test.js`: testes automáticos da camada de dados do catálogo.
-
-## Base tecnológica
-
-Aimeos está em avaliação como candidato de e-commerce Laravel API-first. Não foi ainda aprovado como dependência definitiva. A seleção será feita após validação de compatibilidade, instalação, extensão, licenças, segurança e adequação ao fluxo de pedidos da GPM.
-
-## Desenvolvimento
-
-Para executar os testes da camada de dados do catálogo, a partir da raiz do repositório:
-
-```bash
-node --test gpm-conecta/tests/catalog-data.test.js
-```
-
-A aplicação Laravel executável será criada depois da validação técnica da base e da aprovação da direção visual. Não colocar credenciais, tokens ou dados reais de clientes no repositório.
+## Limites conhecidos
+- Contactos oficiais, morada, email e telefone não foram fornecidos; não foram inventados.
+- O portfólio não apresenta projetos fictícios.
+- O catálogo permanece dependente de referências reais e validadas.
+- O formulário é preparatório, não é um canal de submissão ativo.
