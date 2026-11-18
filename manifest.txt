@@ -29,11 +29,11 @@ This applies even to a one-line fix, a small CSS adjustment, a copy change, an a
 
 The master manifest is the entry point, not the only document to consult. Before beginning any website, landing page, portfolio, digital product interface, redesign, or task involving customer-facing content, the assistant must explicitly load and read the complete current versions of the specialist documents below from the active repository branch:
 
-1. `DIRECAO-DE-EDICAO.md` — mandatory for visual direction, editorial design, style selection, art direction, imagery, motion, originality, and visual audit.
+1. `manifestedicao.md` — mandatory for visual direction, editorial design, style selection, art direction, imagery, motion, originality, and visual audit.
 2. `MANIFEST-COPY.md` — mandatory for business research, messaging strategy, website copy, headlines, body text, CTAs, microcopy, tone, localization, and copy audit.
 
 **Execution command / operating instruction:**
-`READ manifest.txt → READ DIRECAO-DE-EDICAO.md → READ MANIFEST-COPY.md → INSPECT THE PROJECT → BEGIN THE TASK.`
+`READ manifest.txt → READ manifestedicao.md → READ MANIFEST-COPY.md → INSPECT THE PROJECT → BEGIN THE TASK.`
 
 This is a mandatory execution sequence, not an optional recommendation. The assistant must perform the equivalent repository file-read operations; merely repeating the command, recalling a summary, or claiming to have loaded the files is not sufficient.
 
@@ -43,13 +43,13 @@ This is a mandatory execution sequence, not an optional recommendation. The assi
 - If a specialist document is missing, inaccessible, or incomplete, stop the affected visual or copy implementation and tell the user which document could not be loaded. Do not pretend the requirements were read.
 - For a purely technical task that does not affect visual presentation or customer-facing language, read the master manifest and inspect the relevant specialist document whenever the task touches its domain. Do not force unnecessary design or copy work.
 - If the task changes both visual presentation and copy, both specialist documents are mandatory.
-- If the task changes only copy, read `MANIFEST-COPY.md` and the master manifest. Read `DIRECAO-DE-EDICAO.md` as well when the copy must be fitted to an existing or new visual direction.
-- If the task changes only visual direction, read `DIRECAO-DE-EDICAO.md` and the master manifest. Read `MANIFEST-COPY.md` if any customer-facing text is created or materially revised.
+- If the task changes only copy, read `MANIFEST-COPY.md` and the master manifest. Read `manifestedicao.md` as well when the copy must be fitted to an existing or new visual direction.
+- If the task changes only visual direction, read `manifestedicao.md` and the master manifest. Read `MANIFEST-COPY.md` if any customer-facing text is created or materially revised.
 - Re-read a specialist document if its content has changed during the task or if there is uncertainty about the applicable rule.
-- The master manifest governs shared project quality and code preservation. The design direction governs visual execution. The copy manifest governs verbal communication. Apply all relevant requirements together; do not use one document to bypass another.
+- The master manifest governs shared project quality and code preservation. The editing direction governs visual execution. The copy manifest governs verbal communication. Apply all relevant requirements together; do not use one document to bypass another.
 - If rules appear to conflict, preserve factual accuracy, user-approved scope, accessibility, functionality, and existing working behavior. Explain any genuine conflict and ask for direction when it cannot be resolved safely.
 
-**No visual implementation may begin before the design direction has been read. No substantive website copy may be written before the copy manifest has been read. No implementation may begin before the master manifest has been read.**
+**No visual implementation may begin before the editing direction has been read. No substantive website copy may be written before the copy manifest has been read. No implementation may begin before the master manifest has been read.**
 
 
 
@@ -716,7 +716,7 @@ Consider, when supplied:
 - Cultural and local context.
 - What the user wants to communicate and what they explicitly do not want.
 
-The same niche can support very different design directions. Two photographers may require opposite visual identities; two restaurants may have different audiences and service models; two rental-car companies may need different positioning and booking experiences.
+The same niche can support very different editing directions. Two photographers may require opposite visual identities; two restaurants may have different audiences and service models; two rental-car companies may need different positioning and booking experiences.
 
 Do not impose stereotypes based on geography, industry, price level, or assumptions about the user's identity.
 
@@ -809,7 +809,7 @@ For each completed project, record:
 - Patterns deliberately avoided.
 - What makes the project different from other projects in the repository.
 
-Before starting another visual project, read this history as well as inspecting relevant source projects. Update it only after the design direction is implemented. Do not invent a history entry for work that was never completed.
+Before starting another visual project, read this history as well as inspecting relevant source projects. Update it only after the editing direction is implemented. Do not invent a history entry for work that was never completed.
 
 If maintaining this file is not possible, perform and report the available repository comparison without claiming a complete historical audit.
 
@@ -1141,7 +1141,7 @@ Before delivery, verify:
 This repository uses three coordinated standards:
 
 1. **`manifest.txt` — Master Manifest:** overall project governance, discovery, architecture, originality, engineering, preservation, quality assurance, and delivery.
-2. **`DIRECAO-DE-EDICAO.md` — Design Direction:** visual identity, style catalog, brand essence discovery, art direction, image direction, motion, anti-repetition, and visual fidelity audit.
+2. **`manifestedicao.md` — Design Direction:** visual identity, style catalog, brand essence discovery, art direction, image direction, motion, anti-repetition, and visual fidelity audit.
 3. **`MANIFEST-COPY.md` — Copy Manifest:** research, positioning, audience, offer, proof, language, copywriting, page sequence, CTAs, microcopy, localization, and copy audit.
 
 All three documents are complementary. They must not be treated as alternatives or interchangeable summaries.
@@ -1152,7 +1152,7 @@ At the beginning of a new website or digital experience task, execute this seque
 
 ```text
 COMMAND 01: READ the complete current manifest.txt.
-COMMAND 02: READ the complete current DIRECAO-DE-EDICAO.md.
+COMMAND 02: READ the complete current manifestedicao.md.
 COMMAND 03: READ the complete current MANIFEST-COPY.md.
 COMMAND 04: INSPECT the current repository, project files, assets, and existing behavior.
 COMMAND 05: CLASSIFY the task: new project, redesign, copy revision, visual revision, or technical change.
@@ -1166,8 +1166,8 @@ COMMAND 07: ONLY THEN propose, write, design, or modify.
 - **Full redesign:** call/read all three documents.
 - **New landing page:** call/read all three documents.
 - **New page with original copy and visual direction:** call/read all three documents.
-- **Copywriting or copy revision:** read `manifest.txt` and `MANIFEST-COPY.md`; also read `DIRECAO-DE-EDICAO.md` when copy is being fitted to a visual composition or style.
-- **Visual redesign or art-direction revision:** read `manifest.txt` and `DIRECAO-DE-EDICAO.md`; also read `MANIFEST-COPY.md` when visible text is created or materially changed.
+- **Copywriting or copy revision:** read `manifest.txt` and `MANIFEST-COPY.md`; also read `manifestedicao.md` when copy is being fitted to a visual composition or style.
+- **Visual redesign or art-direction revision:** read `manifest.txt` and `manifestedicao.md`; also read `MANIFEST-COPY.md` when visible text is created or materially changed.
 - **Purely technical fix with no visual or verbal impact:** read `manifest.txt`, inspect the relevant code, and consult specialist documents only if the scope touches their requirements.
 
 ### 48.2 Execution is real, not ceremonial
@@ -1185,4 +1185,4 @@ The final experience must be coherent across:
 - Product architecture and user journey.
 - Technical implementation and actual behavior.
 
-**Version 4.4 principle: read the master, call the design direction, call the copy manifest, inspect the project, and only then execute. Three documents. One coherent standard. No shortcuts.**
+**Version 4.4 principle: read the master, call the editing direction, call the copy manifest, inspect the project, and only then execute. Three documents. One coherent standard. No shortcuts.**
