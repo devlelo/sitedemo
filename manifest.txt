@@ -1,9 +1,9 @@
 # DESIGN & DEVELOPMENT QUALITY CONSTITUTION
-## Master Manifest — Version 4.4
+## Master Manifest — Version 4.5
 
 **Status:** Mandatory operating standard for every new project, redesign, feature addition, bug fix, refactor, and code modification in this repository.
 **Scope:** Websites, web applications, landing pages, corporate websites, portfolios, catalogs, e-commerce, restaurant menus, rental-car platforms, booking systems, dashboards, directories, PWAs, offline applications, and other digital products.
-**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.4 wins.
+**Precedence:** This document supersedes earlier versions. If an older instruction conflicts with this version, Version 4.5 wins.
 
 ---
 
@@ -363,22 +363,32 @@ Typography must be part of the identity, not a last-minute decoration.
 
 ## 16. MOTION AND INTERACTION AS A DESIGN LANGUAGE
 
-Motion should express the selected style and improve feedback, orientation, or storytelling.
+Motion is a design decision governed by the approved style, the product's purpose, the content, accessibility, and performance. Motion is neither universally mandatory nor automatically optional: it must be used when it genuinely belongs to the selected style and improves the experience. If the approved style and task call for a static, restrained, or motion-free experience, do not add animation merely to satisfy a quota; record the reason in the editing brief.
 
-Explore where appropriate:
+Before implementation, define a project-specific motion plan:
+- The role of motion in this experience: atmosphere, storytelling, orientation, feedback, emphasis, or state change.
+- The selected motion techniques and the exact elements/states to which they apply.
+- The primary transition or signature movement, if the style benefits from one.
+- Supporting motion and functional microinteractions, where appropriate.
+- Desktop, touch, mobile, and reduced-motion behavior.
+- The implementation method and the way each effect will be verified.
+
+Explore suitable techniques where they serve the approved direction:
 - Hero entrances and staggered typography.
 - Scroll-triggered reveals.
 - Image and mask transitions.
 - Parallax and depth.
 - Horizontal movement or scroll sequences.
 - Hover-driven compositions.
-- Cursor responses.
+- Cursor responses, only where a pointer exists and the effect adds value.
 - Animated graphic elements.
 - Progress indicators.
-- Section transitions.
+- Section and page transitions.
 - Microinteractions and state feedback.
 
-Do not reuse the same animation recipe on every project. Motion must be project-specific and consistent with the selected style.
+Do not reuse the same animation recipe on every project. Motion must be project-specific and consistent with the selected style. Do not force effects from another visual language into the approved direction.
+
+The assistant must implement the selected motion plan, not merely mention it. A planned effect that is absent, broken, inaccessible, or never verified must not be reported as implemented. When motion is intentionally omitted, explain why it would conflict with the style, content, usability, accessibility, or performance.
 
 When the user asks to fully explore or “abuse” a style, interpret that as deeper expression of its defining visual language—not random effects or uncontrolled motion.
 
@@ -1129,7 +1139,7 @@ Before delivery, verify:
 - Shared engineering, accessibility, responsive, preservation, and QA requirements have been met.
 - No facts, content, proof, or functionality have been invented.
 
-**Final Version 4.4 principle: one central quality constitution, two specialized creation studios, and a unique design identity for every project. Business websites must communicate and convert. Creative websites must express and immerse. Neither should look like a generic template.**
+**Final Version 4.5 principle: one central quality constitution, two specialized creation studios, and a unique design identity for every project. Business websites must communicate and convert. Creative websites must express and immerse. Neither should look like a generic template.**
 
 
 ---
@@ -1186,3 +1196,89 @@ The final experience must be coherent across:
 - Technical implementation and actual behavior.
 
 **Version 4.4 principle: read the master, call the editing direction, call the copy manifest, inspect the project, and only then execute. Three documents. One coherent standard. No shortcuts.**
+
+
+# PART XII — VERSION 4.5: EXECUTION PROOF, STYLE-SPECIFIC MOTION, AND ANTI-TEMPLATE CONTROL
+
+## 49. THE THREE MANIFESTS FORM ONE EXECUTION SYSTEM
+
+The three documents have distinct responsibilities and must be applied together whenever the task requires them:
+- `manifest.txt` is the governing standard: workflow, scope, preservation, originality, quality gates, and delivery truthfulness.
+- `manifestedicao.md` is the visual execution standard: art direction, composition, imagery, design systems, motion, transitions, and visual verification.
+- `MANIFEST-COPY.md` is the verbal execution standard: research, positioning, copy, tone, information hierarchy, and content verification.
+
+The master manifest decides when specialist standards are required. The specialist documents explain how to execute their domains. Neither specialist document may silently override the master rules. A conflict must be surfaced and resolved; do not choose whichever instruction is easier.
+
+## 50. MOTION IS CONDITIONAL, BUT EXECUTION IS NOT OPTIONAL
+
+Animations and transitions are required only when they are appropriate to the approved visual style, the product's purpose, the content, and the user's needs.
+
+This means:
+- Do not force animation into a style or interface that is stronger, clearer, faster, or more accessible without it.
+- Do not omit motion merely because a static layout is easier to implement when the approved direction clearly calls for movement.
+- Do not interpret performance and accessibility rules as a blanket ban on expressive motion.
+- Do not interpret creative freedom as permission for random, excessive, or style-inconsistent effects.
+- Do not reuse a familiar set of fades, upward reveals, parallax, and hover transforms as a default motion identity.
+
+For every new visual project or substantial visual redesign, the assistant must include a motion decision in the approved design fingerprint:
+1. **Motion role:** what motion contributes to this experience.
+2. **Selected techniques:** which transitions, animation families, or interaction responses fit the approved style.
+3. **Placement:** which specific elements, sections, or states use them.
+4. **Omissions:** which motion types are intentionally excluded and why.
+5. **Responsive/accessibility behavior:** how the experience changes for touch, smaller devices, and `prefers-reduced-motion`.
+6. **Verification:** how the implemented behavior will be tested.
+
+If motion is appropriate, implement it with enough craft to be perceptible and coherent—not as token decoration. If motion is not appropriate, keep the experience intentionally restrained and record the reason. No arbitrary animation count is required.
+
+## 51. IMPLEMENTATION PROOF — PLANNED IS NOT IMPLEMENTED
+
+The assistant must distinguish:
+- **Planned:** included in the design or motion plan.
+- **Implemented:** present in the code and connected to the intended elements or states.
+- **Verified:** executed and observed working in the actual page or a reliable test environment.
+
+Never describe a planned effect as implemented. Never describe an implemented effect as verified unless it was actually tested. If the browser, preview, or runtime is unavailable, state the limitation and mark the result as unverified or partially verified.
+
+For each meaningful visual interaction, verify:
+- Its trigger works.
+- Its end state is correct.
+- It does not block navigation or primary actions.
+- It does not cause layout shifts, clipping, or accidental overflow.
+- It has a usable touch behavior when relevant.
+- It respects reduced-motion preferences.
+- It does not hide essential content if JavaScript or the animation fails.
+
+## 52. ANTI-TEMPLATE RELEASE GATE
+
+Before approving a new website, compare its rendered result—not only its source code—with the recent relevant projects available in the repository.
+
+Reject or revise the design if it is essentially a previous layout with different text, images, colors, or brand assets. Check at least:
+- Hero composition and headline placement.
+- Section order and rhythm.
+- Image placement and cropping strategy.
+- Navigation and footer structure.
+- Grid, card, button, border, radius, and spacing language.
+- Typography pairing and scale.
+- Motion choreography and transition timing.
+- Background treatments and decorative devices.
+
+A familiar pattern may remain only when there is a specific product, accessibility, or user-approved reason. Record that reason. Engineering reuse is allowed; unexamined visual reuse is not.
+
+If relevant earlier projects cannot be accessed, state that comparison limitation and do not claim a completed cross-project audit.
+
+## 53. APPROVAL GATES MUST NOT BE CONFUSED
+
+Keep these decisions separate:
+1. **Style approval:** the user selects the visual language or explicitly authorizes a combination.
+2. **Concept approval:** the user approves the project-specific creative direction and composition before substantial visual implementation.
+3. **Implementation verification:** the assistant tests the built result and reports what was actually verified.
+
+The assistant must not treat a style selection as automatic approval of every layout decision. It must not treat a concept proposal as proof that the final implementation matches it.
+
+Do not ask the user to approve every minor detail. Ask for approval at meaningful direction changes and preserve the approved scope during execution.
+
+## 54. FINAL HONESTY RULE
+
+The delivery report must distinguish what was designed, coded, executed, and visually verified. Never claim that a library, animation, responsive state, interaction, or visual audit was used or completed without evidence. A limitation must be reported plainly; it must not be hidden behind a confident completion statement.
+
+**Version 4.5 principle: one governing manifest, two specialist standards, one coherent workflow, style-dependent motion, and proof of execution.**
