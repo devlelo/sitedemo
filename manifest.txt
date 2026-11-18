@@ -1129,7 +1129,7 @@ Before delivery, verify:
 - Shared engineering, accessibility, responsive, preservation, and QA requirements have been met.
 - No facts, content, proof, or functionality have been invented.
 
-**Final Version 4.3 principle: one central quality constitution, two specialized creation studios, and a unique design identity for every project. Business websites must communicate and convert. Creative websites must express and immerse. Neither should look like a generic template.**
+**Final Version 4.4 principle: one central quality constitution, two specialized creation studios, and a unique design identity for every project. Business websites must communicate and convert. Creative websites must express and immerse. Neither should look like a generic template.**
 
 
 ---
