@@ -253,6 +253,10 @@ If a useful claim lacks evidence, either remove it, qualify it accurately, or as
 
 Do not create fake testimonials, fake customer names, fake logos, fake review counts, fake ratings, or fabricated case studies. A placeholder must be clearly identified as a placeholder during development and must not be presented as genuine in the final website.
 
+### 8.2 Do not promise what the business cannot control
+
+Avoid guarantees and absolute claims unless the business has explicitly authorized them and can honor them. Be precise about conditions, limits, eligibility, availability, and dependencies.
+
 ### 8.3 Voice-of-customer evidence
 
 Customer language is valuable only when it comes from a real source.
@@ -271,7 +275,6 @@ Rules:
 - When no customer-language evidence exists, use plain language based on confirmed facts. Label audience assumptions as hypotheses internally, not as research findings.
 - Do not imitate spelling mistakes, dialect, slang, or personal speech to manufacture authenticity.
 
-### 8.2 Do not promise what the business cannot control
 
 Avoid guarantees and absolute claims unless the business has explicitly authorized them and can honor them. Be precise about conditions, limits, eligibility, availability, and dependencies.
 
