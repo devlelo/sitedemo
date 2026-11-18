@@ -32,7 +32,7 @@ Com o cartão RedotPay, pode utilizar serviços e plataformas que aceitem o cart
 - Comprar jogos e conteúdos digitais.
 - Pagar serviços e plataformas internacionais.
 
-* A aceitação depende da plataforma, do país, do tipo de cartão e das condições de pagamento. Alguns serviços podem exigir métodos de pagamento específicos.
+*A aceitação depende da plataforma, do país, do tipo de cartão e das condições de pagamento. Alguns serviços podem exigir métodos de pagamento específicos.*
 
 **Preço ilustrativo: 15.000 Kz**
 
