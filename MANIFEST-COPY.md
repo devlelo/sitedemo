@@ -1,11 +1,11 @@
 # COPYWRITING CONSTITUTION
 ## Master Copy Manifest — Version 1.0
-### Companion standard to `manifest.txt` and `DIRECAO-DE-EDICAO.md`
+### Companion standard to `manifest.txt` and `manifestedicao.md`
 
 **Status:** Mandatory operating standard for researching, planning, writing, editing, reviewing, and implementing copy for every website and digital product in this repository.
 **Language principle:** Simple, natural, conversational, concrete, sequential, truthful, and specific to the actual business.
 **Primary objective:** Help the right visitor understand the offer, recognize its relevance, trust what can be proven, and know what to do next.
-**Relationship:** This document governs copy and verbal communication. The master `manifest.txt` governs the full project and execution process. `DIRECAO-DE-EDICAO.md` governs visual and editorial art direction. All three documents must be read and applied together.
+**Relationship:** This document governs copy and verbal communication. The master `manifest.txt` governs the full project and execution process. `manifestedicao.md` governs visual and editorial art direction. All three documents must be read and applied together.
 
 ---
 
@@ -252,6 +252,24 @@ If a useful claim lacks evidence, either remove it, qualify it accurately, or as
 ### 8.1 Never fabricate social proof
 
 Do not create fake testimonials, fake customer names, fake logos, fake review counts, fake ratings, or fabricated case studies. A placeholder must be clearly identified as a placeholder during development and must not be presented as genuine in the final website.
+
+### 8.3 Voice-of-customer evidence
+
+Customer language is valuable only when it comes from a real source.
+
+Useful sources may include:
+- Customer interviews supplied by the business.
+- Authorized reviews and testimonials.
+- Real questions received through WhatsApp, email, calls, or support.
+- Sales conversations and objections recorded by the team.
+- Search queries or feedback data when legitimately available.
+
+Rules:
+- Never invent a customer quote or present an AI-generated sentence as something a customer said.
+- Do not claim that a phrase is commonly used by customers unless there is evidence.
+- Remove personal information and obtain permission where a quote, name, image, or identifiable story is to be published.
+- When no customer-language evidence exists, use plain language based on confirmed facts. Label audience assumptions as hypotheses internally, not as research findings.
+- Do not imitate spelling mistakes, dialect, slang, or personal speech to manufacture authenticity.
 
 ### 8.2 Do not promise what the business cannot control
 
@@ -734,6 +752,25 @@ For multilingual websites:
 
 Accessibility is not an optional layer after copywriting. The words themselves must help people use the website.
 
+## 26.1 SEO AND SEARCH INTENT WITHOUT KEYWORD STUFFING
+
+Search optimization must help the right visitor find and understand the page. It must never make the copy unnatural.
+
+- Identify the real search intent behind each important page.
+- Use the audience's natural vocabulary and the actual names of products, services, locations, and categories.
+- Give each page one clear subject and a useful, distinct purpose.
+- Write page titles and meta descriptions that accurately describe the page and invite a relevant visit.
+- Use descriptive headings that help readers scan the content.
+- Use internal links with meaningful anchor text.
+- Include location terms only when the business genuinely serves that location.
+- Do not repeat keywords unnaturally, create doorway pages, or add irrelevant location lists.
+- Do not invent search volume, ranking positions, traffic, or SEO performance.
+- Do not promise first place on Google or guaranteed rankings.
+- Do not sacrifice clarity, accuracy, or the brand voice to satisfy a keyword-density target.
+- Treat structured data and metadata as factual representations of visible page content; never add ratings, prices, reviews, or business details that are not true.
+
+SEO copy must remain useful when read aloud by a human. If a sentence exists only to repeat a keyword, rewrite or remove it.
+
 ---
 
 # PART VIII — COPY BY STUDIO AND PRODUCT TYPE
@@ -812,7 +849,7 @@ Explain the mission and activities plainly. Avoid emotional pressure, invented i
 Follow this order for each new website or substantial copy revision.
 
 ### Step 1 — Read the governing documents
-Read the complete current `manifest.txt`, `DIRECAO-DE-EDICAO.md`, and this `MANIFEST-COPY.md`. Follow the loading protocol in the master manifest. Do not rely on memory or summaries.
+Read the complete current `manifest.txt`, `manifestedicao.md`, and this `MANIFEST-COPY.md`. Follow the loading protocol in the master manifest. Do not rely on memory or summaries.
 
 ### Step 2 — Inspect the actual project
 Review the existing website, content, repository, business materials, supplied assets, and relevant pages. Identify what already works and what must remain unchanged.
@@ -902,9 +939,13 @@ Evaluate:
 14. Fit with the visual direction.
 15. Consistency across desktop and mobile content.
 
-**Approval threshold:** no criterion may score below 4. A factual accuracy score below 5 is a release blocker. Unsupported claims, invented proof, misleading CTAs, or fabricated business details must be corrected regardless of the average score.
+**Applicability rule:** mark a criterion as N/A only when it genuinely does not apply to the page or project. State the reason briefly. Do not use N/A to hide a weakness or avoid a required check. For example, a simple contact page may not need objection handling; a product page may need it.
 
-Scores must reflect an actual review. Do not claim a perfect score without checking the full page and available source material.
+**Approval threshold:** every applicable criterion must score at least 4. Factual accuracy must score 5 whenever factual claims are published. If a criterion is not applicable, exclude it from the average and explain why. A missing testimonial or unavailable proof is not a reason to invent content or force a testimonial section; it is a reason to communicate honestly with the evidence that exists. Unsupported claims, invented proof, misleading CTAs, or fabricated business details are release blockers regardless of the average score.
+
+The audit must also verify that the page does not add sections, claims, or content merely to satisfy the scorecard. Relevance and truth take precedence over completeness by checklist.
+
+Scores must reflect an actual review. Do not claim a perfect score without checking the full page and available source material. Distinguish between copy reviewed in source files and copy inspected in the rendered interface. If the actual page could not be rendered, say so.
 
 ## 33. FINAL COPY CHECKLIST
 
@@ -1008,7 +1049,7 @@ The best copy is not the most decorated. It is the copy that communicates the ri
 
 Before writing:
 1. Read `manifest.txt`.
-2. Read `DIRECAO-DE-EDICAO.md`.
+2. Read `manifestedicao.md`.
 3. Read `MANIFEST-COPY.md`.
 4. Understand the real business and audience.
 5. Separate facts from assumptions.
@@ -1017,3 +1058,62 @@ Before writing:
 8. Write simply, naturally, and specifically.
 9. Edit for human voice and remove repetition.
 10. Test the copy in the actual website and audit it before delivery.
+
+
+---
+
+# PART XII — AUTHENTICITY, SEARCH, AND AUDIT INTEGRITY
+
+## 37. AUTHENTICITY IS NOT AN AI-DETECTOR GAME
+
+The objective is not to fool AI detectors or to manufacture random imperfections. No writing process can guarantee that a detector will classify text as human.
+
+The objective is to produce communication grounded in the real business:
+- Use confirmed information.
+- Learn the vocabulary of the actual audience when reliable sources exist.
+- Preserve the business's real way of speaking.
+- Prefer useful details over generic marketing language.
+- Edit for clarity, rhythm, specificity, and truth.
+- Never insert deliberate mistakes, awkward wording, or slang merely to appear human.
+
+A copy is authentic because its content, point of view, and details belong to the business—not because it passes a detector.
+
+## 38. DO NOT FORCE COMPLETENESS
+
+Not every website needs every possible section. A short page can be stronger than a long one when it answers the visitor's questions with less friction.
+
+- Do not add testimonials when none are available.
+- Do not add statistics when no reliable numbers exist.
+- Do not create a founder story when the business has not supplied one.
+- Do not create an FAQ merely to increase page length.
+- Do not add a benefits grid that repeats the service descriptions.
+- Do not add a comparison table unless visitors need to compare real options.
+- Do not add SEO paragraphs that do not help the reader.
+
+The page is complete when it contains the information needed for its purpose—not when it contains every section in a template.
+
+## 39. CLAIM AND SOURCE REGISTER
+
+For substantial commercial, institutional, health, financial, technical, or regulated claims, maintain an internal claim register where practical:
+
+| Claim or statement | Source | Status | Publishing decision |
+|---|---|---|---|
+| Business fact | Owner material or verified source | Confirmed / unverified | Use / qualify / omit |
+| Performance claim | Documented evidence | Confirmed / unverified | Use / qualify / omit |
+| Customer quote | Original authorized source | Authorized / not authorized | Use / omit |
+| Creative positioning | Strategy proposal | Pending / approved | Internal / approved copy |
+
+Do not display the register publicly unless the project explicitly requires it. Its purpose is to prevent assumptions from becoming published facts.
+
+## 40. COPY QA MUST MATCH WHAT WAS ACTUALLY TESTED
+
+The final report must distinguish:
+- Copy reviewed in source files.
+- Copy inspected in the rendered website.
+- Responsive text wrapping checked.
+- Links and CTAs clicked and verified.
+- Forms and validation messages tested.
+- Metadata and structured data inspected, if in scope.
+- Items not tested and the reason.
+
+Never claim that SEO metadata, forms, analytics, conversion, or user comprehension were tested unless the corresponding checks were actually performed.
