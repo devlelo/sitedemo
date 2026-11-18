@@ -1,9 +1,9 @@
 # MANIFESTEdição — DIREÇÃO DE EDIÇÃO, DESIGN E MOTION
-## Guia complementar ao manifest.txt v4.4
+## Guia complementar ao manifest.txt v4.5
 
 **Estado:** Norma complementar de direção criativa e implementação.  
 **Âmbito:** Todos os websites e experiências digitais criados ou editados neste repositório.  
-**Precedência:** Este guia complementa o `manifest.txt` v4.4. Não substitui nem enfraquece nenhuma regra do Manifest 4.4. Em caso de conflito, prevalece o manifest.
+**Precedência:** Este guia complementa o `manifest.txt` v4.5. Não substitui nem enfraquece nenhuma regra do Manifest 4.5. Em caso de conflito, prevalece o manifest.
 
 ---
 
@@ -17,16 +17,20 @@ Não aplicar efeitos só porque são modernos. Não escolher bibliotecas pela po
 
 # 2. ORDEM OBRIGATÓRIA DE TRABALHO
 
-Antes de editar:
+Antes de editar qualquer website, landing page ou experiência visual:
 
 1. Ler integralmente o `manifest.txt` da branch ativa.
-2. Inspecionar a estrutura do projeto e os ficheiros relevantes.
-3. Identificar o que já funciona e deve ser preservado.
-4. Compreender o negócio, o público, o conteúdo, os objetivos e as ações principais.
-5. Confirmar o estilo escolhido pelo utilizador. Se ainda não foi escolhido, seguir o processo de recomendação do Manifest 4.4 e aguardar aprovação.
-6. Criar uma direção de edição específica para o projeto.
-7. Definir a arquitetura técnica e as bibliotecas estritamente necessárias.
-8. Implementar por etapas e testar os fluxos reais.
+2. Ler integralmente este `manifestedicao.md` da mesma branch.
+3. Ler integralmente o `MANIFEST-COPY.md` quando houver criação, revisão ou composição de texto visível.
+4. Inspecionar a estrutura do projeto, os ficheiros, os assets e o comportamento atual.
+5. Identificar o que já funciona e deve ser preservado.
+6. Compreender o negócio, o público, o conteúdo, os objetivos e as ações principais.
+7. Confirmar o estilo escolhido pelo utilizador. Se ainda não foi escolhido, seguir o processo de recomendação do Manifest 4.5 e aguardar aprovação.
+8. Criar a ficha de direção de edição, incluindo uma decisão explícita sobre motion.
+9. Definir a arquitetura técnica e as bibliotecas estritamente necessárias.
+10. Implementar por etapas e testar os fluxos reais.
+
+Esta sequência deve permanecer alinhada com o router da secção 48 do Manifest 4.5. Não substituir a leitura integral por resumos ou memória.
 
 Não começar pela instalação de dependências nem pela escolha de efeitos.
 
@@ -132,7 +136,9 @@ Regras técnicas:
 
 # 6. BIBLIOTECA DE TRANSIÇÕES E ANIMAÇÕES
 
-Escolher o movimento a partir do estilo e da intenção. A lista abaixo é um repertório de possibilidades, não uma lista de efeitos obrigatórios.
+Escolher o movimento a partir do estilo aprovado e da intenção do projeto. A lista abaixo é um repertório de possibilidades, não uma lista de efeitos obrigatórios.
+
+**Regra de execução:** motion não é obrigatório em todos os websites. É obrigatório tomar e registar uma decisão consciente sobre motion em cada projeto visual. Quando o estilo e a experiência pedirem movimento, o agente deve selecionar, implementar e verificar efeitos coerentes. Quando a ausência de movimento for a melhor decisão, deve registar a justificação. Nunca omitir motion apenas por conveniência de implementação, nem o adicionar para cumprir uma quota.
 
 ## 6.1 Transições inspiradas em edição de vídeo
 
@@ -346,7 +352,7 @@ No relatório final, indicar as bibliotecas adicionadas, a razão de cada uma, o
 
 Antes de considerar a edição concluída:
 
-- [ ] O Manifest 4.4 foi respeitado.
+- [ ] O Manifest 4.5 foi respeitado.
 - [ ] O estilo aprovado foi seguido sem mistura não autorizada.
 - [ ] A composição é específica deste projeto.
 - [ ] Imagens, tipografia, cor e movimento pertencem à mesma direção.
@@ -411,7 +417,7 @@ Este catálogo incorpora as linguagens editoriais, gráficas e de publicação e
 
 ## 14.2 Outras famílias do catálogo principal
 
-Consultar também as famílias do Manifest 4.4: Brutalist Editorial, Swiss / International Typographic, Editorial Luxury, Modernist Editorial, Experimental Typography, Art Book, Contemporary Art Direction, Dark Cinematic Editorial, Documentary / Photojournalistic, Film Noir, Analog Film, Spatial / 3D Web Design, Story-driven Scrollytelling, Digital Brutalism, Neo-Brutalism, Futuristic Interface, Retro-Futurism, Cyberpunk, Y2K Digital, Digital Collage, Avant-Garde, Surrealism, Organic / Biomorphic, Abstract Minimalism, Maximalism, Memphis Design, Premium Commerce, Editorial Commerce, Boutique Retail, Hospitality Editorial, Automotive Performance e Utility-first Interface.
+Consultar também as famílias do Manifest 4.5: Brutalist Editorial, Swiss / International Typographic, Editorial Luxury, Modernist Editorial, Experimental Typography, Art Book, Contemporary Art Direction, Dark Cinematic Editorial, Documentary / Photojournalistic, Film Noir, Analog Film, Spatial / 3D Web Design, Story-driven Scrollytelling, Digital Brutalism, Neo-Brutalism, Futuristic Interface, Retro-Futurism, Cyberpunk, Y2K Digital, Digital Collage, Avant-Garde, Surrealism, Organic / Biomorphic, Abstract Minimalism, Maximalism, Memphis Design, Premium Commerce, Editorial Commerce, Boutique Retail, Hospitality Editorial, Automotive Performance e Utility-first Interface.
 
 ## 14.3 Escolha e aplicação
 
@@ -711,3 +717,338 @@ O relatório visual deve distinguir claramente:
 - **Não verificado:** não houve acesso à renderização ou ao ambiente necessário.
 
 Não declarar auditoria visual completa com base apenas na leitura do HTML/CSS/JS. Não declarar responsividade aprovada sem testar dimensões representativas. Registar os dispositivos, larguras ou ambientes efetivamente verificados quando essa informação estiver disponível.
+
+
+---
+
+# 22. CONTRATO DE EXECUÇÃO DE MOTION — ESTILO PRIMEIRO, EFEITOS DEPOIS
+
+Esta secção transforma o catálogo de motion numa regra de execução. O objetivo não é animar tudo: é garantir que o movimento escolhido para o projeto seja intencional, implementado e verificado.
+
+## 22.1 Decisão obrigatória em todos os projetos visuais
+
+A ficha de direção deve responder:
+- O estilo aprovado beneficia de movimento? Porquê?
+- O movimento deve ser discreto, expressivo, cinematográfico, funcional, editorial, lúdico, técnico ou inexistente?
+- Que elementos devem mover-se e em que momento?
+- Que transições ligam secções, páginas ou estados?
+- Que microinterações dão feedback às ações?
+- Que efeitos devem ser evitados por contradizerem o estilo?
+- Como será adaptado para touch, mobile e movimento reduzido?
+
+A resposta pode ser “sem animações decorativas” ou “transições mínimas de estado” quando essa for a decisão certa. A ausência intencional é diferente de esquecer a camada de motion.
+
+## 22.2 Hierarquia de movimento
+
+Quando o estilo justificar motion, definir uma hierarquia em vez de animar tudo:
+
+1. **Movimento de assinatura:** uma experiência principal que ajuda a reconhecer o projeto, como uma máscara de imagem, uma sequência cinematográfica, uma transição tipográfica ou uma transformação de composição.
+2. **Movimento estrutural:** entradas, saídas ou transições que organizam a leitura e a passagem entre secções.
+3. **Feedback funcional:** hover, focus, active, loading, sucesso, erro, tabs, menus, filtros e formulários.
+4. **Movimento ambiente:** detalhes contínuos ou atmosféricos, apenas se não prejudicarem desempenho, leitura ou concentração.
+
+Nem todos os projetos precisam dos quatro níveis. A seleção deve corresponder à identidade aprovada.
+
+## 22.3 Matriz de seleção por linguagem visual
+
+Usar como orientação, nunca como receita automática:
+
+| Linguagem aprovada | Movimento que pode fazer sentido | Evitar por defeito |
+|---|---|---|
+| Editorial / Newspaper | revelação tipográfica, cortes de imagem, mudanças de página, detalhes de navegação | parallax constante e animações elásticas |
+| Swiss / Tipográfico | transições precisas, linhas e grelhas que se reorganizam, feedback curto | efeitos decorativos sem função |
+| Cinematográfico | máscaras, zooms, cortes, dissolves, profundidade e sequências narrativas | movimento permanente que destrói o ritmo |
+| Luxo / Premium | fades precisos, deslocamentos subtis, transições lentas e controladas | bounce, glitch e efeitos ruidosos |
+| Brutalista | cortes secos, deslocamentos firmes, mudanças de escala e estados diretos | suavização excessiva que apaga a força visual |
+| Orgânico / Biomórfico | morphing, movimento fluido, formas que respiram e transições suaves | movimento mecânico repetitivo |
+| Retro / Analógico | flicker controlado, film burn, grain, wipe e transições de arquivo | filtros pesados permanentes |
+| Futurista / Digital | interfaces reativas, linhas, dados, parallax pontual e transições técnicas | glow e partículas em excesso |
+| Comercial / E-commerce | feedback de produto, galeria, carrinho, filtros e confirmação | transições que atrasam compra ou consulta |
+| Dashboard / Utility | feedback de estado, progressos, expansão e recolha de painéis | storytelling que atrasa tarefas |
+
+Se o estilo aprovado não estiver na tabela, derivar o movimento dos seus princípios. Não forçar uma categoria próxima.
+
+## 22.4 Biblioteca técnica: receitas de referência
+
+As receitas seguintes são pontos de partida reutilizáveis no nível técnico. Devem ser adaptadas ao estilo, à composição, ao projeto e à arquitetura existente. Não copiar a mesma coreografia em todos os websites.
+
+### A. Reveal por interseção — CSS + IntersectionObserver
+
+CSS:
+
+```css
+.motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 1.25rem, 0);
+  transition:
+    opacity 700ms cubic-bezier(.2, .7, .2, 1),
+    transform 700ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .motion-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+```
+
+JavaScript:
+
+```js
+const revealItems = document.querySelectorAll(".motion-reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+```
+
+Utilizar apenas quando a revelação progressiva pertencer ao estilo. O conteúdo deve continuar disponível sem depender do JavaScript; definir uma estratégia de fallback adequada para a página real e evitar esconder informação essencial.
+
+### B. Image curtain reveal — CSS
+
+```css
+.image-curtain {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.image-curtain img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 1100ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.image-curtain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--curtain-color, currentColor);
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 850ms cubic-bezier(.76, 0, .24, 1);
+}
+
+.image-curtain.is-visible::after {
+  transform: scaleY(0);
+}
+
+.image-curtain.is-visible img {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-curtain::after,
+  .image-curtain img {
+    transition: none;
+    transform: none;
+  }
+
+  .image-curtain::after {
+    content: none;
+  }
+}
+```
+
+A classe `is-visible` deve ser aplicada por um mecanismo de entrada apropriado. Definir `--curtain-color` de acordo com a superfície do projeto. Garantir que a imagem não fique permanentemente tapada se o script falhar.
+
+### C. Stagger tipográfico — CSS com atraso controlado
+
+```css
+.motion-stagger > * {
+  opacity: 0;
+  transform: translateY(.65em);
+  transition:
+    opacity 550ms ease,
+    transform 650ms cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-stagger > *:nth-child(1) { --motion-delay: 0ms; }
+.motion-stagger > *:nth-child(2) { --motion-delay: 90ms; }
+.motion-stagger > *:nth-child(3) { --motion-delay: 180ms; }
+.motion-stagger > *:nth-child(4) { --motion-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+```
+
+Não aplicar automaticamente a todos os títulos e listas. A sequência deve melhorar o ritmo, não atrasar a leitura.
+
+### D. Microinteração de botão — CSS
+
+```css
+.button-motion {
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.button-motion:active {
+  transform: translateY(1px) scale(.985);
+}
+
+.button-motion:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button-motion:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-motion {
+    transition: none;
+  }
+
+  .button-motion:active,
+  .button-motion:hover {
+    transform: none;
+  }
+}
+```
+
+Adaptar a resposta do botão à linguagem visual. Nem todos os botões devem saltar ou aumentar.
+
+### E. Page transition — View Transitions API com fallback
+
+```css
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+```
+
+Utilizar apenas se a navegação e a arquitetura suportarem esta experiência. Verificar suporte no browser alvo e manter navegação funcional sem a API. Não introduzir uma dependência apenas para obter uma transição simples.
+
+**Importante:** estes snippets são receitas ilustrativas e devem ser adaptados e testados no projeto real. Não copiar todos para cada site. Verificar conflitos de CSS, estados iniciais, conteúdo sem JavaScript, carregamento, navegação e acessibilidade.
+
+## 22.5 Regras para qualquer implementação de motion
+
+- Preferir `transform` e `opacity` quando adequados.
+- Evitar animar dimensões e propriedades que provoquem layout repetido sem necessidade.
+- Não usar `will-change` globalmente.
+- Respeitar `prefers-reduced-motion` em todas as receitas, incluindo bibliotecas externas.
+- Não esconder conteúdo essencial até o observador, scroll ou JavaScript funcionar.
+- Limpar listeners, observers, timelines e animações quando componentes forem removidos.
+- Evitar bloquear scroll, teclado, foco ou navegação.
+- Não depender exclusivamente de hover em dispositivos touch.
+- Não usar efeitos de cursor em touch.
+- Garantir que a animação não cria overflow horizontal nem desloca elementos de forma inesperada.
+- Definir fallback quando uma API ou biblioteca não estiver disponível.
+- Não instalar GSAP, Lenis, Motion, Lottie, Three.js ou outra dependência sem uma necessidade demonstrável.
+
+## 22.6 Verificação de execução
+
+Para cada efeito selecionado, registar:
+- Nome e objetivo.
+- Elemento ou estado a que se aplica.
+- Tecnologia utilizada.
+- Trigger.
+- Comportamento esperado.
+- Fallback.
+- Resultado do teste: implementado e verificado, implementado mas não verificado, ou não implementado.
+
+A inspeção deve acontecer no browser/preview sempre que disponível. Ler o código não prova que o movimento funciona.
+
+## 22.7 Quando não usar motion
+
+Não usar animações decorativas quando:
+- O estilo aprovado exige contenção ou imobilidade.
+- O movimento prejudica a leitura ou a rapidez de uma tarefa.
+- O conteúdo é operacional e precisa de resposta imediata.
+- O dispositivo ou contexto de utilização não suporta a experiência com qualidade.
+- A animação cria barreiras de acessibilidade.
+- O efeito não acrescenta significado, feedback ou qualidade perceptível.
+
+Nestes casos, preservar microfeedback funcional quando necessário e registar a decisão. Não inventar uma animação apenas para preencher esta secção.
+
+# 23. ANTI-REPETIÇÃO DE COREOGRAFIA E COMPOSIÇÃO
+
+A proibição de repetição aplica-se também ao movimento, não apenas ao layout.
+
+Antes de escolher os efeitos:
+1. Consultar o histórico visual disponível.
+2. Identificar receitas de motion usadas recentemente.
+3. Evitar repetir a mesma sequência de entrada, os mesmos tempos, a mesma direção e os mesmos gatilhos.
+4. Escolher uma coreografia que derive da identidade atual.
+5. Se uma técnica recorrente for a melhor solução, mudar a sua função e composição apenas quando isso for justificável — não fingir novidade por mudar 100ms na duração.
+
+É permitido reutilizar funções técnicas e componentes de animação neutros. A coreografia visual deve ser decidida para cada projeto.
+
+# 24. ALINHAMENTO COM O MANIFEST PRINCIPAL
+
+O `manifest.txt` governa o processo, o âmbito, a originalidade, a preservação e a aprovação. Este documento governa a execução visual.
+
+- Não alterar o fluxo de aprovação definido no Manifest 4.5.
+- O utilizador aprova primeiro a linguagem visual.
+- Depois, o agente apresenta a direção de arte e a composição do projeto.
+- O agente não precisa de pedir aprovação para cada detalhe técnico, mas deve parar perante uma mudança substancial de direção ou uma combinação de estilos não autorizada.
+- A decisão sobre motion deve respeitar o estilo aprovado: usar quando adequado, omitir quando a omissão for a melhor decisão.
+- A auditoria final deve separar planeado, implementado e verificado.
+- Se o ambiente não permitir verificação visual, declarar isso sem afirmar aprovação total.
+
+# 25. CHECKLIST FINAL DE MOTION E ORIGINALIDADE
+
+- [ ] A decisão de motion foi registada e está alinhada com o estilo aprovado.
+- [ ] Os efeitos escolhidos têm função ou intenção visual clara.
+- [ ] Os efeitos adequados foram efetivamente implementados.
+- [ ] Não foram adicionados efeitos apenas para cumprir uma quantidade.
+- [ ] A coreografia não foi copiada automaticamente de projetos recentes.
+- [ ] As transições não prejudicam o acesso à informação nem às ações.
+- [ ] O fallback funciona quando JavaScript ou uma API não está disponível.
+- [ ] `prefers-reduced-motion` foi respeitado.
+- [ ] Desktop, touch e mobile foram considerados.
+- [ ] O resultado foi executado e verificado quando o ambiente permitiu.
+- [ ] O relatório distingue planeado, implementado e verificado.
+- [ ] A identidade do projeto não se tornou um template previsível.
+
+**Regra final:** movimento apenas quando o estilo o pede; quando o pede, executar com intenção e qualidade. Nunca confundir contenção com omissão por preguiça, nem criatividade com excesso de efeitos.
