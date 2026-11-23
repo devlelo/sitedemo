@@ -456,6 +456,13 @@
     .contact-method strong{overflow-wrap:anywhere}
     @media(max-width:600px){.accordion-gallery{height:520px;flex-direction:column}.ag-panel{min-height:65px}.ag-panel.is-active{flex-grow:3.2}.contact-method strong{font-size:13px}}
 
+  
+    .ba-range{appearance:none;-webkit-appearance:none;background:transparent;border:0}
+    .ba-range::-webkit-slider-runnable-track{height:100%;background:transparent}
+    .ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:3px;height:100%;background:transparent;border:0}
+    .ba-range::-moz-range-track{height:100%;background:transparent}
+    .ba-range::-moz-range-thumb{width:3px;height:100%;background:transparent;border:0;border-radius:0}
+
   </style>
 </head>
 <body id="top">
@@ -633,7 +640,7 @@
           'Telefone: ' + data.get('phone'),
           'Tipo de projecto: ' + data.get('service'),
           'Descrição: ' + (data.get('message') || 'Não indicada.')
-        ].join('\\n');
+        ].join('\n');
         window.open('https://wa.me/244913409833?text=' + encodeURIComponent(message), '_blank', 'noopener');
       });
       const menuToggle = document.querySelector('.menu-toggle');
@@ -753,7 +760,6 @@
         };
         range.addEventListener('input', () => update(range.value));
         frame.addEventListener('pointerdown', (event) => {
-          if (event.target === range) return;
           frame.setPointerCapture?.(event.pointerId);
           fromPointer(event);
         });
