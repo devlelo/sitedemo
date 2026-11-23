@@ -406,6 +406,41 @@
       .gallery-block{margin-top:26px!important}
     }
 
+  
+    /* Galerias: comparadores e acordeão com interacção independente do GSAP */
+    .before-after-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+    .ba-room-heading{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}
+    .ba-room-heading>span{font:700 10px Manrope,sans-serif;color:var(--red);letter-spacing:.12em}
+    .ba-room-heading h4{font:600 20px Manrope,sans-serif;letter-spacing:-.045em;margin:0}
+    .before-after-image{height:390px;position:relative;overflow:hidden;background:#ccc;isolation:isolate;touch-action:pan-y;user-select:none}
+    .before-after-image>img,.before-after-reveal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+    .before-after-reveal{position:absolute;inset:0 auto 0 0;width:50%;overflow:hidden;z-index:2}
+    .before-after-reveal img{width:100%;max-width:none}
+    .ba-divider{position:absolute;z-index:3;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 12px #0006}
+    .ba-handle{position:absolute;left:50%;top:50%;width:44px;height:44px;border:1px solid #fff;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;gap:5px;transform:translate(-50%,-50%);box-shadow:0 3px 15px #0005}
+    .ba-handle i{height:12px;width:1px;background:#fff}
+    .ba-range{position:absolute;z-index:5;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+    .ba-label{position:absolute;z-index:4;top:14px;padding:8px 10px;background:#171717d9;color:#fff;font-size:9px;font-weight:700;letter-spacing:.14em;pointer-events:none}
+    .ba-label-before{left:14px}.ba-label-after{right:14px}
+    .ba-caption{display:flex;justify-content:space-between;gap:8px;padding-top:12px;color:#777;font-size:9px;letter-spacing:.03em}
+    .ba-caption span:last-child{white-space:nowrap;letter-spacing:.1em}.ba-caption b{color:var(--red);font-size:13px;margin-left:5px}
+    .accordion-gallery{--gap:9px;display:flex;gap:var(--gap);height:440px;width:100%;perspective:1000px}
+    .ag-panel{appearance:none;-webkit-appearance:none;padding:0;border:0;font:inherit;text-align:left;position:relative;display:block;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;background:#333;outline:none;border-radius:2px;transform:translateZ(0);transition:flex-grow .65s cubic-bezier(.2,.7,.2,1),filter .5s}
+    .ag-panel:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+    .ag-panel__media{position:absolute;inset:0;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
+    .ag-panel__media img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;pointer-events:none}
+    .ag-panel__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 20%,rgba(0,0,0,.76) 100%);pointer-events:none}
+    .ag-panel__label{position:absolute;left:18px;right:14px;bottom:20px;display:flex;align-items:center;gap:10px;z-index:2;pointer-events:none}
+    .ag-panel__bar{height:27px;width:3px;background:var(--red);flex:none}
+    .ag-panel__text{font:700 13px Manrope,sans-serif;color:#fff;text-shadow:0 2px 12px #0008;white-space:normal;line-height:1.3}
+    .ag-panel:not(.is-active) .ag-panel__media{transform:scale(1.08);filter:grayscale(75%)}
+    .ag-panel.is-active .ag-panel__media{transform:scale(1);filter:grayscale(0)}
+    .ag-panel.is-active{flex-grow:3.2}
+    .gallery-block-commercial{background:#171717;color:#fff;padding:30px}
+    @media(max-width:900px){.before-after-grid{grid-template-columns:1fr 1fr}.before-after-image{height:420px}.before-after:last-child{grid-column:1/-1}.before-after:last-child .before-after-image{height:480px}}
+    @media(max-width:600px){.before-after-grid{grid-template-columns:1fr;gap:28px}.before-after:last-child{grid-column:auto}.before-after-image,.before-after:last-child .before-after-image{height:390px}.gallery-block-commercial{padding:22px 16px 20px;margin-left:-8px;margin-right:-8px}.accordion-gallery{height:520px;flex-direction:column}.ag-panel{flex:1 1 0}.ag-panel.is-active{flex-grow:3.2}.ag-panel__label{left:15px;bottom:14px}.ba-caption{font-size:9px}}
+    @media(prefers-reduced-motion:reduce){.ag-panel,.ag-panel__media{transition:none!important}}
+
   </style>
 </head>
 <body id="top">
@@ -466,75 +501,64 @@
           <p>Veja algumas referências de ambientes, materiais e soluções para espaços residenciais e comerciais.</p>
         </div>
 
-        <div class="gallery-block">
+        <div class="gallery-block gallery-block-furniture">
           <div class="gallery-block-top"><h3>Mobiliário planeado</h3><span>01 / INTERIORES</span></div>
-          <div class="before-after" data-before-after>
-            <div class="before-after-image">
-              <img class="before-after-base" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=90" alt="Referência de ambiente com mobiliário planeado">
-              <div class="before-after-reveal"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90" alt="Segunda referência de ambiente com mobiliário planeado"></div>
-              <span class="ba-label ba-label-before">REFERÊNCIA A</span><span class="ba-label ba-label-after">REFERÊNCIA B</span>
-              <div class="ba-divider"><span class="ba-handle"><i></i><i></i></span></div>
-              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Arraste para revelar a segunda imagem">
-            </div>
-            <div class="ba-caption"><span>Arraste a linha para comparar as duas referências</span><span>DESLIZE <b>↔</b></span></div>
+          <div class="before-after-grid">
+            <article class="before-after" data-before-after>
+              <div class="ba-room-heading"><span>01</span><h4>Quarto</h4></div>
+              <div class="before-after-image">
+                <img class="before-after-base" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=88" alt="Quarto simples antes da instalação de mobiliário planeado">
+                <div class="before-after-reveal"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=88" alt="Quarto mobilado com solução de interiores"></div>
+                <span class="ba-label ba-label-before">ANTES</span><span class="ba-label ba-label-after">DEPOIS</span>
+                <div class="ba-divider"><span class="ba-handle"><i></i><i></i></span></div>
+                <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar quarto antes e depois">
+              </div>
+              <div class="ba-caption"><span>Quarto · solução residencial</span><span>DESLIZE <b>↔</b></span></div>
+            </article>
+            <article class="before-after" data-before-after>
+              <div class="ba-room-heading"><span>02</span><h4>Sala</h4></div>
+              <div class="before-after-image">
+                <img class="before-after-base" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=88" alt="Sala sem composição de mobiliário planeado">
+                <div class="before-after-reveal"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=88" alt="Sala com mobiliário e decoração integrados"></div>
+                <span class="ba-label ba-label-before">ANTES</span><span class="ba-label ba-label-after">DEPOIS</span>
+                <div class="ba-divider"><span class="ba-handle"><i></i><i></i></span></div>
+                <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar sala antes e depois">
+              </div>
+              <div class="ba-caption"><span>Sala · mobiliário integrado</span><span>DESLIZE <b>↔</b></span></div>
+            </article>
+            <article class="before-after" data-before-after>
+              <div class="ba-room-heading"><span>03</span><h4>Cozinha</h4></div>
+              <div class="before-after-image">
+                <img class="before-after-base" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=88" alt="Cozinha simples antes da instalação de armários planeados">
+                <div class="before-after-reveal"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=88" alt="Cozinha equipada com mobiliário e armários"></div>
+                <span class="ba-label ba-label-before">ANTES</span><span class="ba-label ba-label-after">DEPOIS</span>
+                <div class="ba-divider"><span class="ba-handle"><i></i><i></i></span></div>
+                <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar cozinha antes e depois">
+              </div>
+              <div class="ba-caption"><span>Cozinha · armários por medida</span><span>DESLIZE <b>↔</b></span></div>
+            </article>
           </div>
-          <p class="gallery-note">Imagens de referência visual. Substituir por fotografias de projectos reais da LVA antes da publicação comercial.</p>
+          <p class="gallery-note">Comparações ilustrativas com fotografias de referência — não representam obras executadas pela LVA. Substituir por fotografias reais dos projectos antes da publicação comercial.</p>
         </div>
 
         <div class="gallery-block gallery-block-commercial">
           <div class="gallery-block-top"><h3>Stands e espaços comerciais</h3><span>02 / EXPOSIÇÃO</span></div>
-          <div class="accordion-gallery" data-gallery aria-label="Galeria de stands e espaços comerciais">
-            <a class="ag-panel" href="#contacto" aria-label="Ver referência de stand de exposição">
-              <span class="ag-panel__media"><img data-parallax="image" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85" alt="Espaço comercial com desenho contemporâneo"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Stands de exposição</span></span>
-            </a>
-            <a class="ag-panel" href="#contacto" aria-label="Ver referência de loja">
-              <span class="ag-panel__media"><img data-parallax="image" src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1100&q=85" alt="Interior comercial com acabamentos contemporâneos"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Lojas e atendimento</span></span>
-            </a>
-            <a class="ag-panel" href="#contacto" aria-label="Ver referência de recepção comercial">
-              <span class="ag-panel__media"><img data-parallax="image" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=85" alt="Recepção de espaço profissional"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Recepções e balcões</span></span>
-            </a>
-            <a class="ag-panel" href="#contacto" aria-label="Ver referência de ambiente de marca">
-              <span class="ag-panel__media"><img data-parallax="image" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1100&q=85" alt="Ambiente de design com materiais e mobiliário"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Ambientes de marca</span></span>
-            </a>
+          <div class="accordion-gallery" data-gallery aria-label="Galeria interactiva de stands e espaços comerciais">
+            <button class="ag-panel" type="button" aria-label="Seleccionar stand de exposição">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85" alt="Stand de exposição contemporâneo"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Stands de exposição</span></span>
+            </button>
+            <button class="ag-panel" type="button" aria-label="Seleccionar lojas e atendimento">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1100&q=85" alt="Loja com mobiliário comercial"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Lojas e atendimento</span></span>
+            </button>
+            <button class="ag-panel" type="button" aria-label="Seleccionar recepções e balcões">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=85" alt="Recepção de espaço profissional"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Recepções e balcões</span></span>
+            </button>
+            <button class="ag-panel" type="button" aria-label="Seleccionar ambientes de marca">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1100&q=85" alt="Ambiente comercial com design contemporâneo"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Ambientes de marca</span></span>
+            </button>
           </div>
           <p class="gallery-note">Imagens de referência visual. Substituir por fotografias de stands e instalações efectivamente realizados pela LVA.</p>
         </div>
-      </div>
-    </section>
-
-    
-
-    
-
-    
-
-    <section class="contact-section" id="contacto">
-      <div class="wrap">
-        <div class="contact-heading">
-          <div><div class="eyebrow">04 / FALE CONNOSCO</div><h2>Tem um projecto<br>em mente?</h2></div>
-          <p>Fale connosco e apresente-nos o que pretende realizar.</p>
-        </div>
-        <div class="contact-layout">
-          <aside class="contact-details">
-            <div><div class="eyebrow">CONTACTO DIRECTO</div><h3>Fale connosco sobre o seu projecto.</h3><p>Escolha a forma mais prática de falar com a LVA Planejados.</p></div>
-            <div class="contact-methods">
-              <a class="contact-method" href="https://wa.me/244913409833" target="_blank" rel="noopener"><span><small>WHATSAPP / TELEFONE</small><strong>+244 913 409 833</strong></span><span class="method-arrow">↗</span></a>
-              <a class="contact-method" href="tel:+244913409833"><span><small>LIGAR DIRECTAMENTE</small><strong>Falar com a LVA</strong></span><span class="method-arrow">↗</span></a>
-            </div>
-            <div class="contact-details-note">LVA PLANEJADOS · ANGOLA</div>
-          </aside>
-          <div class="contact-form-wrap">
-            <div class="form-topline"><strong>PEÇA UM ORÇAMENTO</strong><span>FORMULÁRIO DE CONTACTO · 01</span></div>
-            <form class="contact-form" id="budgetForm">
-              <div class="form-field"><label for="clientName">Nome</label><input id="clientName" name="name" autocomplete="name" placeholder="Como se chama?" required></div>
-              <div class="form-field"><label for="clientPhone">Telefone / WhatsApp</label><input id="clientPhone" name="phone" type="tel" autocomplete="tel" placeholder="+244 ..." required></div>
-              <div class="form-field full"><label for="clientService">O que procura?</label><select id="clientService" name="service" required><option value="" disabled selected>Seleccione o tipo de projecto</option><option>Móveis planeados</option><option>Stand de exposição</option><option>Outro projecto</option></select></div>
-              <div class="form-field full"><label for="clientMessage">Conte-nos um pouco sobre o projecto</label><textarea id="clientMessage" name="message" placeholder="Tipo de espaço, medidas aproximadas, localização ou ideia inicial..."></textarea></div>
-              <div class="form-submit"><small>Ao enviar, o seu pedido será preparado no WhatsApp da LVA para dar continuidade ao atendimento.</small><button class="btn-red" type="submit">ENVIAR PEDIDO <span class="arrow">↗</span></button></div>
-            </form>
-          </div>
-        </div>
-      </div>
     </section>
     <section class="map-section" aria-labelledby="mapTitle">
       <div class="wrap">
@@ -663,64 +687,54 @@
       });
 
       document.querySelectorAll('[data-before-after]').forEach((comparison) => {
+        const frame = comparison.querySelector('.before-after-image');
         const range = comparison.querySelector('.ba-range');
         const reveal = comparison.querySelector('.before-after-reveal');
         const divider = comparison.querySelector('.ba-divider');
         const revealImage = comparison.querySelector('.before-after-reveal img');
+        if (!frame || !range || !reveal || !divider || !revealImage) return;
         const update = () => {
-          const value = Number(range.value);
+          const value = Math.max(0, Math.min(100, Number(range.value)));
           reveal.style.width = value + '%';
           divider.style.left = value + '%';
-          revealImage.style.width = comparison.querySelector('.before-after-image').clientWidth + 'px';
+          revealImage.style.width = frame.clientWidth + 'px';
+          revealImage.style.height = frame.clientHeight + 'px';
         };
         range.addEventListener('input', update);
-        window.addEventListener('resize', update, { passive: true });
+        range.addEventListener('change', update);
+        if ('ResizeObserver' in window) new ResizeObserver(update).observe(frame);
+        else window.addEventListener('resize', update, { passive: true });
+        revealImage.addEventListener('load', update);
         update();
       });
 
       document.querySelectorAll('[data-gallery]').forEach((gallery) => {
         const panels = [...gallery.querySelectorAll('.ag-panel')];
-        let active = Math.min(1, panels.length - 1);
-        const isMobile = () => window.matchMedia('(max-width: 520px)').matches;
-
-        function layout(animate = true) {
-          const mobile = isMobile();
-          panels.forEach((panel, index) => {
-            const selected = index === active;
+        if (!panels.length) return;
+        let active = 0;
+        const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
+        const layout = (index) => {
+          active = (index + panels.length) % panels.length;
+          panels.forEach((panel, i) => {
+            const selected = i === active;
             panel.classList.toggle('is-active', selected);
-            panel.setAttribute('aria-current', selected ? 'true' : 'false');
-            const target = mobile ? (selected ? 4 : 1) : (selected ? 3.2 : 1);
-            if (window.gsap && !reduceMotion && animate) {
-              gsap.to(panel, { flexGrow: target, rotateY: mobile ? 0 : (selected ? 0 : (index < active ? 3 : -3)), duration: .65, ease: 'power3.out', overwrite: true });
-              const media = panel.querySelector('.ag-panel__media');
-              gsap.to(media, { scale: selected ? 1 : 1.09, x: selected ? 0 : (index < active ? 8 : -8), filter: selected ? 'grayscale(0)' : 'grayscale(75%)', duration: .7, ease: 'power3.out', overwrite: true });
-            } else {
-              panel.style.flexGrow = target;
-              panel.style.transform = 'none';
-              const media = panel.querySelector('.ag-panel__media');
-              media.style.transform = selected ? 'scale(1)' : 'scale(1.08)';
-              media.style.filter = selected ? 'grayscale(0)' : 'grayscale(75%)';
-            }
+            panel.setAttribute('aria-pressed', String(selected));
           });
-        }
-
+        };
         panels.forEach((panel, index) => {
-          panel.addEventListener('mouseenter', () => { if (!isMobile()) { active = index; layout(); } });
-          panel.addEventListener('focus', () => { active = index; layout(); });
-          panel.addEventListener('click', (event) => {
-            if (active !== index) { event.preventDefault(); active = index; layout(); }
-          });
+          panel.addEventListener('mouseenter', () => { if (!isMobile()) layout(index); });
+          panel.addEventListener('focus', () => layout(index));
+          panel.addEventListener('click', () => layout(index));
           panel.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-              event.preventDefault(); active = (index + 1) % panels.length; panels[active].focus(); layout();
+              event.preventDefault(); const next = (index + 1) % panels.length; layout(next); panels[next].focus();
             }
             if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-              event.preventDefault(); active = (index - 1 + panels.length) % panels.length; panels[active].focus(); layout();
+              event.preventDefault(); const previous = (index - 1 + panels.length) % panels.length; layout(previous); panels[previous].focus();
             }
           });
         });
-        layout(false);
-        window.addEventListener('resize', () => layout(false), { passive: true });
+        layout(0);
       });
 
     })();
