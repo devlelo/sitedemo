@@ -441,6 +441,21 @@
     @media(max-width:600px){.before-after-grid{grid-template-columns:1fr;gap:28px}.before-after:last-child{grid-column:auto}.before-after-image,.before-after:last-child .before-after-image{height:390px}.gallery-block-commercial{padding:22px 16px 20px;margin-left:-8px;margin-right:-8px}.accordion-gallery{height:520px;flex-direction:column}.ag-panel{flex:1 1 0}.ag-panel.is-active{flex-grow:3.2}.ag-panel__label{left:15px;bottom:14px}.ba-caption{font-size:9px}}
     @media(prefers-reduced-motion:reduce){.ag-panel,.ag-panel__media{transition:none!important}}
 
+  
+    /* Correcções finais dos comparadores e da galeria animada */
+    .before-after-image{position:relative;overflow:hidden;touch-action:pan-y;cursor:ew-resize}
+    .before-after-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .before-after-reveal{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;clip-path:inset(0 50% 0 0);z-index:2;pointer-events:none}
+    .before-after-reveal img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
+    .ba-range{z-index:6;touch-action:pan-y}
+    .accordion-gallery{overflow:hidden}
+    .ag-panel{flex:1 1 0;will-change:flex-grow,transform;transition:flex-grow .7s cubic-bezier(.22,.75,.25,1),transform .7s cubic-bezier(.22,.75,.25,1)}
+    .ag-panel__media{transition:transform .75s cubic-bezier(.22,.75,.25,1),filter .75s cubic-bezier(.22,.75,.25,1)}
+    .ag-panel.is-active{flex-grow:3.2}
+    .contact-section{scroll-margin-top:90px}
+    .contact-method strong{overflow-wrap:anywhere}
+    @media(max-width:600px){.accordion-gallery{height:520px;flex-direction:column}.ag-panel{min-height:65px}.ag-panel.is-active{flex-grow:3.2}.contact-method strong{font-size:13px}}
+
   </style>
 </head>
 <body id="top">
@@ -560,6 +575,39 @@
           <p class="gallery-note">Imagens de referência visual. Substituir por fotografias de stands e instalações efectivamente realizados pela LVA.</p>
         </div>
     </section>
+    <section class="contact-section" id="contacto" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <div class="contact-heading">
+          <div><div class="eyebrow">04 / CONTACTO</div><h2 id="contactTitle">Vamos falar<br>do seu projecto.</h2></div>
+          <p>Explique-nos o que pretende para a sua casa, loja ou espaço de exposição. A equipa da LVA pode ajudar a encontrar a solução adequada.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-details">
+            <div>
+              <div class="eyebrow">FALE DIRECTAMENTE CONNOSCO</div>
+              <h3>O próximo passo começa com uma conversa.</h3>
+              <p>Entre em contacto pelos canais oficiais da LVA Planejados.</p>
+              <div class="contact-methods">
+                <a class="contact-method" href="mailto:geral@lvaplanejados.co.ao"><span><small>EMAIL</small><strong>geral@lvaplanejados.co.ao</strong></span><span class="method-arrow">↗</span></a>
+                <a class="contact-method" href="https://www.instagram.com/lva.planejadosoficial/" target="_blank" rel="noopener"><span><small>INSTAGRAM</small><strong>@lva.planejadosoficial</strong></span><span class="method-arrow">↗</span></a>
+                <a class="contact-method" href="https://wa.me/244913409833" target="_blank" rel="noopener"><span><small>WHATSAPP</small><strong>+244 913 409 833</strong></span><span class="method-arrow">↗</span></a>
+              </div>
+            </div>
+            <div class="contact-details-note">LVA PLANEJADOS · ANGOLA</div>
+          </div>
+          <div class="contact-form-wrap">
+            <div class="form-topline"><strong>PEÇA UM ORÇAMENTO</strong><span>RESPOSTA PELO WHATSAPP</span></div>
+            <form class="contact-form" id="budgetForm">
+              <div class="form-field"><label for="contactName">Nome</label><input id="contactName" name="name" type="text" placeholder="O seu nome" required></div>
+              <div class="form-field"><label for="contactPhone">Telefone</label><input id="contactPhone" name="phone" type="tel" placeholder="+244 ..." required></div>
+              <div class="form-field full"><label for="contactService">Tipo de projecto</label><select id="contactService" name="service" required><option value="" disabled selected>Seleccione uma opção</option><option>Móveis planeados</option><option>Stand / espaço comercial</option><option>Outro projecto</option></select></div>
+              <div class="form-field full"><label for="contactMessage">Conte-nos sobre o projecto</label><textarea id="contactMessage" name="message" placeholder="Descreva o espaço e o que pretende..."></textarea></div>
+              <div class="form-submit"><small>Ao enviar, será aberta uma conversa no WhatsApp com os dados do seu pedido.</small><button class="btn-red" type="submit">ENVIAR PEDIDO <span>↗</span></button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="map-section" aria-labelledby="mapTitle">
       <div class="wrap">
         <div class="map-head"><div><div class="eyebrow">05 / LOCALIZAÇÃO</div><h3 id="mapTitle">Encontre a LVA.</h3></div><p>Consulte o mapa e abra a pesquisa no Google Maps para obter indicações.</p></div>
@@ -585,8 +633,7 @@
           'Telefone: ' + data.get('phone'),
           'Tipo de projecto: ' + data.get('service'),
           'Descrição: ' + (data.get('message') || 'Não indicada.')
-        ].join('
-');
+        ].join('\\n');
         window.open('https://wa.me/244913409833?text=' + encodeURIComponent(message), '_blank', 'noopener');
       });
       const menuToggle = document.querySelector('.menu-toggle');
@@ -686,56 +733,76 @@
         }
       });
 
+      // Comparadores antes/depois: a imagem revelada mantém sempre o tamanho total do quadro.
       document.querySelectorAll('[data-before-after]').forEach((comparison) => {
         const frame = comparison.querySelector('.before-after-image');
         const range = comparison.querySelector('.ba-range');
         const reveal = comparison.querySelector('.before-after-reveal');
         const divider = comparison.querySelector('.ba-divider');
-        const revealImage = comparison.querySelector('.before-after-reveal img');
-        if (!frame || !range || !reveal || !divider || !revealImage) return;
-        const update = () => {
-          const value = Math.max(0, Math.min(100, Number(range.value)));
-          reveal.style.width = value + '%';
-          divider.style.left = value + '%';
-          revealImage.style.width = frame.clientWidth + 'px';
-          revealImage.style.height = frame.clientHeight + 'px';
+        if (!frame || !range || !reveal || !divider) return;
+        const update = (value) => {
+          const percent = Math.max(0, Math.min(100, Number(value)));
+          range.value = String(percent);
+          reveal.style.clipPath = 'inset(0 ' + (100 - percent) + '% 0 0)';
+          divider.style.left = percent + '%';
+          comparison.style.setProperty('--ba-position', percent + '%');
         };
-        range.addEventListener('input', update);
-        range.addEventListener('change', update);
-        if ('ResizeObserver' in window) new ResizeObserver(update).observe(frame);
-        else window.addEventListener('resize', update, { passive: true });
-        revealImage.addEventListener('load', update);
-        update();
+        const fromPointer = (event) => {
+          const rect = frame.getBoundingClientRect();
+          update(((event.clientX - rect.left) / rect.width) * 100);
+        };
+        range.addEventListener('input', () => update(range.value));
+        frame.addEventListener('pointerdown', (event) => {
+          if (event.target === range) return;
+          frame.setPointerCapture?.(event.pointerId);
+          fromPointer(event);
+        });
+        frame.addEventListener('pointermove', (event) => {
+          if (event.buttons || event.pressure > 0) fromPointer(event);
+        });
+        if ('ResizeObserver' in window) new ResizeObserver(() => update(range.value)).observe(frame);
+        update(range.value);
       });
 
-      document.querySelectorAll('[data-gallery]').forEach((gallery) => {
-        const panels = [...gallery.querySelectorAll('.ag-panel')];
-        if (!panels.length) return;
-        let active = 0;
-        const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
-        const layout = (index) => {
-          active = (index + panels.length) % panels.length;
-          panels.forEach((panel, i) => {
-            const selected = i === active;
-            panel.classList.toggle('is-active', selected);
-            panel.setAttribute('aria-pressed', String(selected));
+      // Galeria de stands: animação GSAP quando disponível e transição CSS como fallback.
+      const initAccordionGalleries = () => {
+        document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+          const panels = [...gallery.querySelectorAll('.ag-panel')];
+          if (!panels.length || gallery.dataset.galleryReady === 'true') return;
+          gallery.dataset.galleryReady = 'true';
+          let active = Math.min(1, panels.length - 1);
+          const mobile = () => window.matchMedia('(max-width: 600px)').matches;
+          const setActive = (index) => {
+            active = (index + panels.length) % panels.length;
+            panels.forEach((panel, i) => {
+              const selected = i === active;
+              panel.classList.toggle('is-active', selected);
+              panel.setAttribute('aria-pressed', String(selected));
+              const media = panel.querySelector('.ag-panel__media');
+              if (window.gsap && !reduceMotion) {
+                gsap.to(panel, { flexGrow: selected ? 3.2 : 1, rotateY: mobile() ? 0 : (selected ? 0 : (i < active ? 5 : -5)), duration: .7, ease: 'power3.out', overwrite: true });
+                if (media) gsap.to(media, { scale: selected ? 1 : 1.1, filter: selected ? 'grayscale(0%)' : 'grayscale(75%)', x: selected ? 0 : (i < active ? 9 : -9), duration: .75, ease: 'power3.out', overwrite: true });
+              } else {
+                panel.style.flexGrow = selected ? '3.2' : '1';
+                panel.style.transform = 'none';
+                if (media) { media.style.transform = selected ? 'scale(1)' : 'scale(1.1)'; media.style.filter = selected ? 'grayscale(0%)' : 'grayscale(75%)'; }
+              }
+            });
+          };
+          panels.forEach((panel, index) => {
+            panel.addEventListener('mouseenter', () => { if (!mobile()) setActive(index); });
+            panel.addEventListener('focus', () => setActive(index));
+            panel.addEventListener('click', () => setActive(index));
+            panel.addEventListener('keydown', (event) => {
+              if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { event.preventDefault(); const next = (index + 1) % panels.length; setActive(next); panels[next].focus(); }
+              if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { event.preventDefault(); const previous = (index - 1 + panels.length) % panels.length; setActive(previous); panels[previous].focus(); }
+            });
           });
-        };
-        panels.forEach((panel, index) => {
-          panel.addEventListener('mouseenter', () => { if (!isMobile()) layout(index); });
-          panel.addEventListener('focus', () => layout(index));
-          panel.addEventListener('click', () => layout(index));
-          panel.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-              event.preventDefault(); const next = (index + 1) % panels.length; layout(next); panels[next].focus();
-            }
-            if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-              event.preventDefault(); const previous = (index - 1 + panels.length) % panels.length; layout(previous); panels[previous].focus();
-            }
-          });
+          setActive(active);
         });
-        layout(0);
-      });
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAccordionGalleries, { once: true });
+      else initAccordionGalleries();
 
     })();
   </script>
