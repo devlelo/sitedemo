@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="LVA Planejados — soluções de mobiliário planeado e stands em Angola.">
+  <title>LVA Planejados — Espaços pensados ao detalhe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <style>
+    :root{--paper:#f7f7f5;--white:#fff;--ink:#171717;--muted:#747474;--line:#dededb;--red:#bd2929;--soft:#ececea;--max:1240px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
+    .topline{height:4px;background:var(--red)}
+    header{height:88px;display:flex;align-items:center;border-bottom:1px solid rgba(23,23,23,.09);background:rgba(247,247,245,.92);position:relative;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{display:flex;align-items:center;gap:12px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.07em;font-size:27px}
+    .brand-mark{width:35px;height:35px;border:2px solid var(--ink);display:grid;place-items:center;font-size:14px;letter-spacing:-.08em;position:relative}
+    .brand-mark:after{content:"";position:absolute;width:7px;height:7px;background:var(--red);right:-4px;top:-4px}
+    .brand small{display:block;font:600 9px "DM Sans",sans-serif;letter-spacing:.2em;color:var(--muted);margin-top:1px}
+    .nav-links{display:flex;align-items:center;gap:34px;font-size:12px;font-weight:600;color:#555}
+    .nav-links a{transition:color .2s}.nav-links a:hover{color:var(--red)}
+    .nav-cta,.btn-dark{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:14px 19px;background:var(--ink);color:white;font-size:11px;font-weight:700;letter-spacing:.04em;transition:background .2s,transform .2s}
+    .nav-cta:hover,.btn-dark:hover{background:var(--red);transform:translateY(-2px)}
+    .arrow{font-size:17px;line-height:10px}
+    .hero{padding:76px 0 62px;display:grid;grid-template-columns:1fr .78fr;gap:7%;align-items:end}
+    .eyebrow{display:flex;align-items:center;gap:11px;text-transform:uppercase;font-size:10px;letter-spacing:.2em;font-weight:700;color:var(--muted)}
+    .eyebrow:before{content:"";width:27px;height:2px;background:var(--red)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:Manrope,sans-serif}
+    h1{font-size:clamp(46px,6.1vw,82px);line-height:.99;letter-spacing:-.075em;font-weight:600;margin:24px 0 22px;max-width:780px}
+    h1 em{font-style:normal;color:var(--red)}
+    .hero-copy{max-width:370px;margin:0 0 8px 0;color:#666;font-size:15px;line-height:1.8}
+    .hero-image{height:490px;position:relative;overflow:hidden;background:#ddd}
+    .hero-image img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88)}
+    .hero-stamp{position:absolute;bottom:24px;left:24px;background:var(--paper);padding:18px 21px;min-width:190px}
+    .hero-stamp strong{display:block;font:700 12px Manrope,sans-serif;letter-spacing:.02em}
+    .hero-stamp span{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+    .hero-number{position:absolute;right:22px;top:20px;color:white;font-size:10px;letter-spacing:.18em}
+    .intro{padding:88px 0 90px;border-top:1px solid var(--line);display:grid;grid-template-columns:.6fr 1fr;gap:10%}
+    .section-index{font:700 11px Manrope,sans-serif;color:var(--red);letter-spacing:.12em}
+    .intro h2{font-size:clamp(32px,4vw,52px);letter-spacing:-.065em;line-height:1.08;font-weight:600;max-width:650px;margin:0}
+    .intro-copy{max-width:490px;color:var(--muted);font-size:14px;line-height:1.9;margin-top:18px}
+    .intro-aside{align-self:end;display:flex;justify-content:space-between;gap:20px;align-items:end}
+    .intro-aside .big-letter{font:800 90px/.8 Manrope,sans-serif;letter-spacing:-.12em;color:#e2e2df}
+    .gallery-section{padding:80px 0 92px;background:#ededeb}
+    .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+    .gallery-head h2{font-size:clamp(34px,4.4vw,55px);letter-spacing:-.07em;font-weight:600;margin:15px 0 0}
+    .gallery-head p{max-width:340px;color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+    .gallery-block{margin-top:54px}
+    .gallery-block:first-of-type{margin-top:0}
+    .gallery-block-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .gallery-block-top h3{font-size:17px;letter-spacing:-.035em;margin:0;font-weight:700}
+    .gallery-block-top span{font-size:10px;letter-spacing:.13em;color:#888;text-transform:uppercase}
+    .accordion-gallery{--gap:9px;display:flex;gap:var(--gap);height:430px;width:100%;perspective:1200px}
+    .ag-panel{position:relative;display:block;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;background:#d5d5d2;outline:none;transform-origin:center center;border-radius:2px}
+    .ag-panel:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+    .ag-panel__media{position:absolute;inset:0;will-change:transform,filter}
+    .ag-panel__media img{width:100%;height:100%;object-fit:cover;display:block;user-select:none}
+    .ag-panel__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 25%,rgba(0,0,0,.68) 100%);pointer-events:none}
+    .ag-panel__label{position:absolute;left:22px;right:16px;bottom:22px;display:flex;align-items:center;gap:12px;z-index:2;pointer-events:none}
+    .ag-panel__bar{height:27px;width:3px;background:var(--red);flex:none}
+    .ag-panel__text{font:700 14px Manrope,sans-serif;color:#fff;text-shadow:0 2px 12px #0008;white-space:normal;line-height:1.3}
+    .gallery-note{font-size:10px;color:#777;margin:13px 0 0;line-height:1.6}
+    .statement{padding:105px 0 112px;background:var(--ink);color:white}
+    .statement-grid{display:grid;grid-template-columns:.55fr 1fr;gap:10%}
+    .statement .eyebrow{color:#aaa}
+    .statement h2{font-size:clamp(38px,5.4vw,68px);line-height:1.04;letter-spacing:-.075em;font-weight:500;margin:18px 0 22px;max-width:750px}
+    .statement h2 span{color:#999}
+    .statement p{max-width:420px;color:#aaa;font-size:14px;line-height:1.85}
+    .services{padding:90px 0}
+    .services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px;gap:30px}
+    .services-head h2{font-size:clamp(34px,4vw,50px);letter-spacing:-.065em;font-weight:600;margin:15px 0 0}
+    .services-head p{max-width:340px;color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+    .service-list{border-top:1px solid var(--line)}
+    .service{display:grid;grid-template-columns:70px 1fr 1fr 30px;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+    .service-no{font:600 11px Manrope,sans-serif;color:var(--red)}
+    .service h3{font-size:21px;letter-spacing:-.045em;margin:0;font-weight:600}
+    .service p{font-size:12px;color:var(--muted);line-height:1.7;margin:0;max-width:390px}
+    .service-arrow{font-size:20px;text-align:right}
+    .contact{background:#e8e8e5;padding:78px 0}
+    .contact-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .contact h2{font-size:clamp(34px,4.8vw,60px);line-height:1.05;letter-spacing:-.07em;font-weight:600;margin:15px 0 14px}
+    .contact p{font-size:13px;color:var(--muted);line-height:1.8;max-width:430px;margin:0}
+    footer{background:#171717;color:#fff;padding:28px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .footer-brand{font:800 18px Manrope,sans-serif;letter-spacing:-.06em}
+    .footer-brand span{color:var(--red)}
+    footer small{font-size:10px;color:#999}
+    .reveal{opacity:0;transform:translateY(22px)}
+    @media(max-width:800px){
+      .wrap{width:min(100% - 38px,var(--max))}
+      header{height:75px}.nav-links{display:none}.nav-cta{padding:12px 13px;font-size:10px}
+      .hero{padding:54px 0 40px;grid-template-columns:1fr;gap:28px}
+      h1{font-size:clamp(48px,11vw,72px);max-width:620px}
+      .hero-copy{max-width:540px}
+      .hero-image{height:390px}
+      .intro{padding:65px 0;grid-template-columns:1fr;gap:23px}
+      .intro-aside{display:none}
+      .gallery-section{padding:65px 0}
+      .gallery-head,.services-head{align-items:start;flex-direction:column}
+      .gallery-head p,.services-head p{max-width:500px}
+      .accordion-gallery{height:390px}
+      .ag-panel__label{left:13px;right:10px;bottom:16px;gap:8px}
+      .ag-panel__text{font-size:12px}
+      .statement{padding:75px 0}
+      .statement-grid{grid-template-columns:1fr;gap:22px}
+      .services{padding:70px 0}
+      .service{grid-template-columns:35px 1fr 22px;gap:12px}
+      .service p{grid-column:2;grid-row:2}
+      .service-arrow{grid-column:3;grid-row:1}
+      .contact{padding:65px 0}
+      .contact-inner{align-items:start;flex-direction:column}
+    }
+    @media(max-width:520px){
+      .wrap{width:calc(100% - 32px)}
+      .brand{font-size:23px}.brand-mark{width:31px;height:31px}
+      .hero{padding-top:43px}
+      .hero-image{height:320px}
+      .hero-stamp{left:12px;bottom:12px;padding:13px 15px}
+      .gallery-block{margin-top:40px}
+      .accordion-gallery{height:430px;flex-direction:column;perspective:none;gap:7px}
+      .ag-panel{min-height:54px;flex:1 1 0;border-radius:1px}
+      .ag-panel.is-active{flex:4 1 0}
+      .ag-panel__label{left:15px;bottom:13px}
+      .ag-panel__text{font-size:12px}
+      .gallery-block-top h3{font-size:15px}
+      .gallery-block-top span{font-size:9px}
+      .statement h2{font-size:43px}
+      .service{padding:21px 0}
+      .service h3{font-size:17px}
+      .footer-inner{align-items:flex-start;flex-direction:column;gap:9px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="LVA Planejados, início">
+        <span class="brand-mark">LVA</span>
+        <span>LVA<small>PLANEJADOS</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">A LVA</a><a href="#galeria">Galeria</a><a href="#solucoes">Soluções</a>
+      </nav>
+      <a class="nav-cta" href="#contacto">FALAR SOBRE UM PROJECTO <span class="arrow">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Mobiliário planeado · Stands · Angola</div>
+        <h1>Espaços com<br>intenção. Feitos<br><em>à sua medida.</em></h1>
+        <p class="hero-copy">A LVA Planejados transforma ideias em soluções de mobiliário e ambientes de exposição, com atenção à função, aos materiais e a cada detalhe.</p>
+        <a class="btn-dark" href="#galeria">EXPLORAR GALERIA <span class="arrow">↘</span></a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=85" alt="Interior contemporâneo com mobiliário de linhas simples">
+        <span class="hero-number">LVA / 001</span>
+        <div class="hero-stamp"><strong>DESENHO. FUNÇÃO. DETALHE.</strong><span>Soluções pensadas para cada espaço.</span></div>
+      </div>
+    </section>
+
+    <section class="wrap intro" id="sobre">
+      <div class="section-index">01 / SOBRE A LVA</div>
+      <div>
+        <h2>O espaço certo começa com uma ideia bem pensada.</h2>
+        <p class="intro-copy">A LVA Planejados é especializada em móveis planeados e stands. Cada projecto é uma oportunidade para aproveitar melhor o espaço, criar uma presença marcante e aproximar estética e funcionalidade.</p>
+        <div class="intro-aside"><span class="big-letter">L.</span><span class="eyebrow">Angola · Projectos à medida</span></div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeria">
+      <div class="wrap">
+        <div class="gallery-head">
+          <div><div class="eyebrow">02 / GALERIA</div><h2>Detalhes que fazem<br>a diferença.</h2></div>
+          <p>Explore referências visuais de ambientes e soluções. Seleccione uma imagem para a expandir e observar melhor a composição.</p>
+        </div>
+
+        <div class="gallery-block">
+          <div class="gallery-block-top"><h3>Mobiliário planeado</h3><span>01 — 04 / Interiores</span></div>
+          <div class="accordion-gallery" data-gallery aria-label="Galeria de mobiliário planeado">
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de sala contemporânea">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=85" alt="Sala contemporânea com mobiliário integrado"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Salas e áreas sociais</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de cozinha">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1100&q=85" alt="Cozinha contemporânea com armários planeados"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Cozinhas e arrumação</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de quarto">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=85" alt="Quarto com mobiliário de linhas minimalistas"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Quartos e closets</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de escritório">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=85" alt="Espaço de trabalho contemporâneo"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Escritórios e trabalho</span></span>
+            </a>
+          </div>
+          <p class="gallery-note">Imagens de referência visual. Substituir por fotografias de projectos reais da LVA antes da publicação comercial.</p>
+        </div>
+
+        <div class="gallery-block">
+          <div class="gallery-block-top"><h3>Stands e espaços comerciais</h3><span>02 — 04 / Exposição</span></div>
+          <div class="accordion-gallery" data-gallery aria-label="Galeria de stands e espaços comerciais">
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de stand de exposição">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85" alt="Espaço comercial com desenho contemporâneo"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Stands de exposição</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de loja">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1100&q=85" alt="Interior comercial com acabamentos contemporâneos"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Lojas e atendimento</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de recepção comercial">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=85" alt="Recepção de espaço profissional"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Recepções e balcões</span></span>
+            </a>
+            <a class="ag-panel" href="#contacto" aria-label="Ver referência de ambiente de marca">
+              <span class="ag-panel__media"><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1100&q=85" alt="Ambiente de design com materiais e mobiliário"></span><span class="ag-panel__overlay"></span><span class="ag-panel__label"><i class="ag-panel__bar"></i><span class="ag-panel__text">Ambientes de marca</span></span>
+            </a>
+          </div>
+          <p class="gallery-note">Imagens de referência visual. Substituir por fotografias de stands e instalações efectivamente realizados pela LVA.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="wrap statement-grid">
+        <div class="eyebrow">03 / A NOSSA ABORDAGEM</div>
+        <div><h2>Não é apenas preencher um espaço. <span>É dar-lhe propósito.</span></h2><p>Do mobiliário planeado aos espaços de exposição, o objectivo é criar soluções coerentes com a identidade, a utilização e as necessidades de cada projecto.</p></div>
+      </div>
+    </section>
+
+    <section class="wrap services" id="solucoes">
+      <div class="services-head">
+        <div><div class="eyebrow">04 / SOLUÇÕES</div><h2>O que podemos criar.</h2></div>
+        <p>Uma abordagem centrada no espaço, na utilização e no resultado que pretende alcançar.</p>
+      </div>
+      <div class="service-list">
+        <article class="service"><span class="service-no">01</span><h3>Móveis planeados</h3><p>Soluções de mobiliário pensadas para integrar-se no espaço e responder à sua utilização.</p><span class="service-arrow">↗</span></article>
+        <article class="service"><span class="service-no">02</span><h3>Stands</h3><p>Estruturas e ambientes para apresentar produtos, serviços e marcas em contextos de exposição.</p><span class="service-arrow">↗</span></article>
+        <article class="service"><span class="service-no">03</span><h3>Espaços comerciais</h3><p>Elementos de mobiliário e composição para ambientes de atendimento e apresentação.</p><span class="service-arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-inner">
+        <div><div class="eyebrow">05 / VAMOS CONVERSAR</div><h2>Tem um espaço<br>para transformar?</h2><p>Partilhe a sua ideia com a LVA Planejados e comece a pensar numa solução à medida do seu projecto.</p></div>
+        <a class="btn-dark" href="mailto:?subject=Pedido%20de%20informa%C3%A7%C3%A3o%20-%20LVA%20Planejados">SOLICITAR INFORMAÇÕES <span class="arrow">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div class="footer-brand">LVA<span>.</span> PLANEJADOS</div><small>Angola · Mobiliário planeado e stands</small><small>© <span id="year"></span> LVA Planejados</small></div></footer>
+
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+        const panels = [...gallery.querySelectorAll('.ag-panel')];
+        let active = Math.min(1, panels.length - 1);
+        const isMobile = () => window.matchMedia('(max-width: 520px)').matches;
+
+        function layout(animate = true) {
+          const mobile = isMobile();
+          panels.forEach((panel, index) => {
+            const selected = index === active;
+            panel.classList.toggle('is-active', selected);
+            panel.setAttribute('aria-current', selected ? 'true' : 'false');
+            const target = mobile ? (selected ? 4 : 1) : (selected ? 3.2 : 1);
+            if (window.gsap && !reduceMotion && animate) {
+              gsap.to(panel, { flexGrow: target, rotateY: mobile ? 0 : (selected ? 0 : (index < active ? 3 : -3)), duration: .65, ease: 'power3.out', overwrite: true });
+              const media = panel.querySelector('.ag-panel__media');
+              gsap.to(media, { scale: selected ? 1 : 1.09, x: selected ? 0 : (index < active ? 8 : -8), filter: selected ? 'grayscale(0)' : 'grayscale(75%)', duration: .7, ease: 'power3.out', overwrite: true });
+            } else {
+              panel.style.flexGrow = target;
+              panel.style.transform = 'none';
+              const media = panel.querySelector('.ag-panel__media');
+              media.style.transform = selected ? 'scale(1)' : 'scale(1.08)';
+              media.style.filter = selected ? 'grayscale(0)' : 'grayscale(75%)';
+            }
+          });
+        }
+
+        panels.forEach((panel, index) => {
+          panel.addEventListener('mouseenter', () => { if (!isMobile()) { active = index; layout(); } });
+          panel.addEventListener('focus', () => { active = index; layout(); });
+          panel.addEventListener('click', (event) => {
+            if (active !== index) { event.preventDefault(); active = index; layout(); }
+          });
+          panel.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+              event.preventDefault(); active = (index + 1) % panels.length; panels[active].focus(); layout();
+            }
+            if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+              event.preventDefault(); active = (index - 1 + panels.length) % panels.length; panels[active].focus(); layout();
+            }
+          });
+        });
+        layout(false);
+        window.addEventListener('resize', () => layout(false), { passive: true });
+      });
+
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              if (window.gsap) gsap.to(entry.target, { opacity: 1, y: 0, duration: .8, ease: 'power2.out' });
+              else { entry.target.style.opacity = 1; entry.target.style.transform = 'none'; }
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12 });
+        document.querySelectorAll('.intro h2,.gallery-head,.gallery-block,.statement-grid,.services-head,.service,.contact-inner').forEach((el) => {
+          el.classList.add('reveal'); observer.observe(el);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
