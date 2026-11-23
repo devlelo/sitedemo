@@ -474,13 +474,22 @@
     .ba-range::-moz-range-thumb{width:3px;height:100%;background:transparent;border:0;border-radius:0}
 
   
-    .return-services{padding:clamp(90px,12vw,155px) 0;background:#eeefec}
-    .return-services-inner{display:flex;flex-direction:column;align-items:flex-start}
-    .return-services .eyebrow{color:#888}
-    .return-services h2{font:500 clamp(38px,7vw,86px)/.98 Manrope,sans-serif;letter-spacing:-.075em;margin:25px 0 38px;max-width:900px}
-    .return-services-link{display:inline-flex;align-items:center;gap:35px;padding:17px 21px;background:#111;color:#fff;text-decoration:none;font-size:10px;letter-spacing:.1em;transition:background .25s ease}
-    .return-services-link:hover{background:#444}
-    .return-services-link span{font-size:16px}
+    .return-services{position:relative;overflow:hidden;padding:clamp(76px,10vw,132px) 0;background:#171717;color:#fff}
+    .return-services:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--red)}
+    .return-services:after{content:"LVA";position:absolute;right:-.025em;bottom:-.34em;font:800 clamp(190px,31vw,430px)/.8 Manrope,sans-serif;letter-spacing:-.12em;color:rgba(255,255,255,.035);pointer-events:none}
+    .return-services-inner{position:relative;z-index:1;display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:end;gap:clamp(25px,5vw,75px)}
+    .return-services-index{align-self:start;display:flex;align-items:center;gap:12px;color:#aaa;font-size:9px;letter-spacing:.16em;white-space:nowrap}
+    .return-services-index:before{content:"";width:30px;height:1px;background:var(--red)}
+    .return-services-copy{max-width:790px}
+    .return-services .eyebrow{color:#aaa;font-size:9px;letter-spacing:.17em}
+    .return-services h2{font:500 clamp(42px,6.2vw,82px)/.96 Manrope,sans-serif;letter-spacing:-.075em;margin:22px 0 20px;max-width:790px}
+    .return-services h2 em{font-style:normal;color:#e05a50}
+    .return-services-copy p{max-width:440px;margin:0;color:#aaa;font-size:13px;line-height:1.8}
+    .return-services-link{display:inline-flex;align-items:center;justify-content:space-between;gap:34px;min-width:205px;padding:19px 20px;background:var(--red);color:#fff;text-decoration:none;font-size:9px;font-weight:700;letter-spacing:.1em;transition:background .25s,transform .25s;white-space:nowrap}
+    .return-services-link:hover{background:#981f1f;transform:translateY(-3px)}
+    .return-services-link span{font-size:19px}
+    @media(max-width:900px){.return-services-inner{grid-template-columns:1fr auto;align-items:end}.return-services-index{grid-column:1/-1}.return-services-copy{grid-column:1}.return-services-link{grid-column:2;grid-row:2}}
+    @media(max-width:620px){.return-services{padding:76px 0 82px}.return-services-inner{grid-template-columns:1fr;gap:27px}.return-services-index,.return-services-copy,.return-services-link{grid-column:1;grid-row:auto}.return-services h2{font-size:clamp(42px,12vw,62px);margin:17px 0}.return-services-link{width:100%;max-width:290px}.return-services:after{font-size:210px;right:-.04em;bottom:-.15em}}
 </style>
 </head>
 <body id="top">
@@ -634,13 +643,17 @@
         </div>
       </div>
     </section>
-    <section class="return-services" aria-label="Descubra os serviços da LVA">
+    <section class="return-services" aria-label="Explore as soluções da LVA">
       <div class="wrap return-services-inner">
-        <div class="eyebrow">O SEU PROJECTO COMEÇA COM UMA IDEIA</div>
-        <h2>Vamos pensar melhor<br>o seu próximo espaço?</h2>
-        <a class="return-services-link" href="#solucoes">VOLTAR A O QUE FAZEMOS <span>↗</span></a>
+        <div class="return-services-index">LVA / 06 — PRÓXIMO PASSO</div>
+        <div class="return-services-copy">
+          <div class="eyebrow">CADA ESPAÇO TEM POTENCIAL.</div>
+          <h2>O próximo projecto pode começar <em>aqui.</em></h2>
+          <p>Do primeiro esboço à solução final, descubra o que podemos criar para o seu espaço.</p>
+        </div>
+        <a class="return-services-link" href="#solucoes">EXPLORE AS SOLUÇÕES <span>↗</span></a>
       </div>
-    </section>ion>
+    </section>
   </main>
   <footer><div class="wrap footer-inner"><div class="footer-brand">LVA<span>.</span> PLANEJADOS</div><small>Angola · Mobiliário planeado e stands</small><small>© <span id="year"></span> LVA Planejados</small></div></footer>
 
