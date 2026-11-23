@@ -599,7 +599,9 @@
             if (rect.bottom < 0 || rect.top > viewport) return;
             const speed = item.dataset.parallax === 'hero' ? .22 : .12;
             const offset = (rect.top + rect.height / 2 - viewport / 2) * -speed;
-            item.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+            item.style.transform = item.dataset.parallax === 'image'
+              ? 'translate3d(0,' + offset.toFixed(1) + 'px,0) scale(1.12)'
+              : 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
           });
           ticking = false;
         };
